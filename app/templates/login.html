@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>MyBucket</title>
+    <link rel="shortcut icon" href="{{url_for('static', filename='images/lava.jpg')}}" >
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/my.css') }}" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+</head>
+
+<body ng-app="valApp" ng-controller="form1Ctrl" w3-test-directive>
+
+    <div style="background:floralwhite;" id="header">
+        <div class="area">
+            <div>
+                <a href="{{ url_for('index')}}" target>
+                    <img id="book" src="{{ url_for('static',filename='images/book.jpeg')}}">
+                </a>
+                <a href="{{ url_for('index')}}" target>
+                    <img id="book1" src="{{ url_for('static', filename='images/book.jpeg')}}">
+                </a>
+            </div>
+            <div id="title">
+                <u>MyBucket List</u>
+            </div>
+
+            <ul id="navigation">
+                <li>
+                    <a href="{{ url_for('about')}}">About</a>
+                </li>
+                <li class="selected">
+                    <a id="lSignIn" href="{{ url_for('login')}}">Sign in</a>
+                </li>
+                <li>
+                    <a id="lSignUp"  href="{{ url_for('register')}}">Sign up</a>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+
+    <div id="contents">
+        <!-- the Sign in and register forms -->
+        <div  id="signIn" class="form">
+            <img src="{{ url_for('static', filename='images/smiling.png') }}" />
+            <form name="bucket" method="POST" action="{{url_for('login1') }}">
+                <div ng-show="showInput=true" class="form-input">
+                    <b>Username: </b><input focus-me="focusInput=true" ng-open="regShow()" ng-click="editLogin()" type="text" name="username" placeholder="e.g. georgie" ng-model="usr" required/>
+                </div>
+                <div class="form-input">
+                    <b>Password: </b><input type="password" name="pass" placeholder="*******" ng-model="passwd" required/>
+                </div>
+                <input type="submit" ng-click="submitForm1()" name="submit" value="SIGN IN" class="btn-sign">
+                <p></p>
+                <a href="{{ url_for('forgot')}}"><u>Forgot password?</u></a>
+                <a href="{{ url_for('register')}}"><u>Create an account?</u></a>
+            </form>
+        </div>
+
+    </div>
+
+    <div style="background:wheat;" id="footer">
+        <span class="divider"></span>
+        <div class="area">
+            <div id="connect">
+                <a href="gegohcomp@gmail.com" target="_blank" class="googleplus"></a>
+                <a href="" target="_blank" class="mail"></a>
+                <a href="www.facebook.com/georgiegegoh" target="_blank" class="facebook"></a>
+                <a href="www.twitter.com/georgiegegoh" target="_blank" class="twitter"></a>
+            </div>
+            <p id="copyright">
+                © 2017 MyBucket List. All Rights Reserved.
+                <br> Proudly powered by <a href="http://tuklab.tk" target="_blank">TUKLAB.</a>
+            </p>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/vanilla.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/angular.js') }}"></script>
+</body>
+
+</html>

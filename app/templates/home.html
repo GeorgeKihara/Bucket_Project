@@ -1,0 +1,123 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>MyBucket</title>
+    <link rel="shortcut icon" href="{{url_for('static', filename='images/lava.jpg')}}" >
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/my.css') }}" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+</head>
+
+<body ng-app="homeApp" ng-controller="goalCtrl">
+        
+    <div style="background:floralwhite;" id="header">
+        <div class="area">
+            <div>
+               <a  href="{{ url_for('index')}}" target>
+                    <img id="book" src="{{ url_for('static',filename='images/book.jpeg')}}">
+                </a>
+                <a href="{{ url_for('index')}}" target>
+                    <img id="book1" src="{{ url_for('static', filename='images/book.jpeg')}}">
+                </a>
+            </div>
+            <div id="title">
+                <u>MyBucket List</u>
+                <p ng-open="homeName()" id="welcome">Welcome <b id="welcome1"><u>{{ '{{user | uppercase}}' }}</u></b> to your bucket list.</p>
+            </div>
+
+            <ul id="navigation">
+                <li class="selected">
+                    <a href="#">Home</a>
+                </li>
+                <li>
+                    <a href="about.html">About</a>
+                </li>
+                <li>
+                    <a ng-click="signOut()" href="{{ url_for('index')}}">Sign out</a>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+    <!-- The bucket list -->
+    <div id="content">
+        <p ng-open="homeName()" id="welcome">Welcome <b id="welcome1"><u>{{ '{{user | uppercase}}' }}</u></b> to your bucket list.</p>
+        <div class="bucket">
+            <form id="bucketForm" method="POST" name="goalie" action="{{ url_for('store') }}">
+                <input id="goal" name="details" ng-model="list" type="text" value="" placeholder="What do u wish to do?" required/>
+                <input type="submit" value=""   id="btn-tick">
+            </form>
+            <header>
+                Your Bucket List
+            </header>
+            <div class="flashes">
+                {% for message in get_flashed_messages()%}
+                    {{ message }}
+                {% endfor %}
+            </div>
+            <div id="scroll">
+                <div id="one">
+                    <label id = "moja"> 1.{{ '{{one}}' }}</label>
+                </div>
+                <p><button ng-click="edit1()" id="edit"></button> <button ng-click="delete1()" id="delete"></button></p>
+                <div id="two">
+                    <label>2.{{ '{{two}}' }}</label>
+                </div>
+                <p><button ng-click="edit2()" id="edit"></button> <button ng-click="delete2()" id="delete"></button></p>
+                <div id="three">
+                    <label>3.{{ '{{three}}' }}</label>
+                </div>
+                <p><button ng-click="edit3()" id="edit"></button> <button ng-click="delete3()" id="delete"></button></p>
+                <div id="four">
+                    <label>4.{{ '{{four}}' }}</label>
+                </div>
+                <p><button ng-click="edit4()" id="edit"></button> <button ng-click="delete4()" id="delete"></button></p>
+                <div id="five">
+                    <label>5.{{ '{{five}}' }}</label>
+                </div>
+                <p><button ng-click="edit5()" id="edit"></button> <button ng-click="delete5()" id="delete"></button></p>
+                <div id="six">
+                    <label>6.{{ '{{six}}' }}</label>
+                </div>
+                <p><button ng-click="edit6()" id="edit"></button> <button ng-click="delete6()" id="delete"></button></p>
+                <div id="seven">
+                    <label>7.{{ '{{seven}}' }}</label>
+                </div>
+                <p><button ng-click="edit7()" id="edit"></button> <button ng-click="delete7()" id="delete"></button></p>
+                <div id="eight">
+                    <label>8.{{ '{{eight}}' }}</label>
+                </div>
+                <p><button ng-click="edit8()" id="edit"></button> <button ng-click="delete8()" id="delete"></button></p>
+                <div id="nine">
+                    <label>9.{{ '{{nine}}' }}</label>
+                </div>
+                <p><button ng-click="edit9()" id="edit"></button> <button ng-click="delete9()" id="delete"></button></p>
+                <div id="ten">
+                    <label>10.{{ '{{ten}}' }}</label>
+                </div>
+                <p><button ng-click="edit10()" id="edit"></button> <button ng-click="delete10()" id="delete"></button></p>
+            </div>
+        </div>
+    </div>
+    <div style="background:wheat;" id="footer">
+        <span class="divider"></span>
+        <div class="area">
+            <div id="connect">
+                <a href="gegohcomp@gmail.com" target="_blank" class="googleplus"></a>
+                <a href="" target="_blank" class="mail"></a>
+                <a href="www.facebook.com/georgiegegoh" target="_blank" class="facebook"></a>
+                <a href="www.twitter.com/georgiegegoh" target="_blank" class="twitter"></a>
+            </div>
+            <p id="copyright">
+                © 2017 MyBucket List. All Rights Reserved.
+                <br> Proudly powered by <a href="http://tuklab.tk" target="_blank">TUKLAB.</a>
+            </p>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/vanilla.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/angular.js') }}"></script>
+        
+</body>
+
+</html>
