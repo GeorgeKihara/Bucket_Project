@@ -190,7 +190,7 @@ img {
 
 #content {
     min-height: auto;
-    height: 600px;
+    height: 650px;
     background-color: black;
     padding-top: 45px;
     overflow: hidden;
@@ -226,8 +226,6 @@ h3 {
 }
 
 p {
-    color: #9b8d84;
-    font: 12px/24px Arial, Helvetica, sans-serif;
     padding: 0 0 24px;
     margin: 0;
 }

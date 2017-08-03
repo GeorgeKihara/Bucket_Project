@@ -47,6 +47,12 @@ homeApp.controller('goalCtrl', function ($scope) {
 	$scope.homeName = function () {
 		$scope.user = localStorage.username;
 	};
+	//timer for flash message
+	$scope.timer = function(){
+		setTimeout(function() {
+			$scope.flash = true;
+		}, 3000);
+	};
 	//logging out
 	$scope.signOut = function () {
 		var answer = confirm("Oh no! Are you sure you want to leave this page?");

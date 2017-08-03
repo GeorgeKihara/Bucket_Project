@@ -1,4 +1,4 @@
-from flask import Flask, render_template, url_for, request, session, redirect
+from flask import Flask, render_template, url_for, request, session, redirect, flash
 from flask.ext.pymongo import PyMongo
 import bcrypt
 from flask import Markup
@@ -67,19 +67,29 @@ def about():
 #function on storing items in the bucket list
 @app.route('/store', methods=['POST', 'GET'])
 def store():
-	users = mongo.db.users
-	post = request.data['moja']
-	users.update({'name': request.data['welcome1']},{ '$push': {'items': post}})
-	message = Markup("<h1>Successfully updated</h1>")
-	flash(message)
-	return 'congrats'
-
-	#return 'something is wrong'
+    if request.method == 'POST':
+        users = mongo.db.users
+        post = request.form['details']
+        post1 = users.find_one({'items': post})
+        if post1 is None:
+            users.update({'name': request.form['bktName']},{ '$push': {'items': post}})
+            message = Markup("Successfully updated")
+            flash(message)
+            return redirect(url_for('home'))
+        else:
+            message = Markup("The item is already in your bucket list!")
+            flash(message)
+            return redirect(url_for('home'))
+    return 'something is wrong'
 
 
 @app.route('/forgot', methods=['POST','GET'])
 def forgot():
 	return render_template('forgot.html')
+
+@app.route('/profile', methods=['POST', 'GET'])
+def profile():
+    return render_template('profile.html')
 
 if  __name__ == '__main__':
 	app.secret_key='mysecret'

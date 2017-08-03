@@ -19,3 +19,6 @@ function blinker()
         }
         
     }
+
+var x = document.getElementById("flashes");
+setTimeout(function(){ x.value = true }, 2000);

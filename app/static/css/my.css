@@ -7,20 +7,20 @@ body #ent{
     left: 30%; 
     top: 30%;
 }
-body #welcome{
+#content #welcome{
     position: relative;
-    color: darkgreen;
-    font-family: arial;
+    color: limegreen;
+    font-family: cambria;
     font-size: 20px;
-    top: 0%;
-    left: -45%;
-    text-align: left;
+    top: -2%;
+    left: 1%;
+    
 }
 #welcome #welcome1{
     position: relative;
-    color: darkmagenta;
-    font-family: Cambria;
-    font-size: 22px;
+    color: wheat;
+    font-family: castellar;
+    font-size: 25px;
 }
 body #indexDiv{
     position: relative;
@@ -367,4 +367,16 @@ a {
     margin-bottom: 20px;
     font-family: Cambria;
     font-size: 18px;
+}
+
+#homieInput {
+    visibility: hidden;
+    position: relative;
+    display: none;
+}
+
+#flashes {
+    position: relative;
+    font-size: 10px;
+
 }
