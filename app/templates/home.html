@@ -50,8 +50,9 @@
             <form id="bucketForm" method="POST" name="goalie" action="{{ url_for('store') }}">
                 <input id="homieInput" type="label" ng-model="user" name="bktName" >
                 <input id="goal" name="details" ng-model="list" type="text" value="" placeholder="What do u wish to do?" required/>
-                <input type="submit" ng-click="submitForm(); {{ url_for('store') }}" value="" id="btn-tick">
-                <div id="flashes" ng-open="timer()" ng-model="flash" class="flashes">
+                <input type="submit" value="" id="btn-tick">
+                <input type="submit" ng-click="submitForm()" value="" id="btn-tick">
+                <div id="flashes" ng-show="!timer()" ng-model="flashes" class="flashes">
                     {% for message in get_flashed_messages()%} {{ message }} {% endfor %}
                 </div>
             </form>
@@ -61,43 +62,43 @@
 
             <div id="scroll">
                 <div id="one">
-                    <label id="moja"> 1.{{ '{{one}}' }}</label>
+                    <label> 1.{{data.post1}}</label>
                 </div>
                 <p><button ng-click="edit1()" id="edit"></button> <button ng-click="delete1()" id="delete"></button></p>
                 <div id="two">
-                    <label>2.{{ '{{two}}' }}</label>
+                    <label>2.{{ data.post2}}</label>
                 </div>
                 <p><button ng-click="edit2()" id="edit"></button> <button ng-click="delete2()" id="delete"></button></p>
                 <div id="three">
-                    <label>3.{{ '{{three}}' }}</label>
+                    <label>3.{{data.post3 }}</label>
                 </div>
                 <p><button ng-click="edit3()" id="edit"></button> <button ng-click="delete3()" id="delete"></button></p>
                 <div id="four">
-                    <label>4.{{ '{{four}}' }}</label>
+                    <label>4.{{data.post4 }}</label>
                 </div>
                 <p><button ng-click="edit4()" id="edit"></button> <button ng-click="delete4()" id="delete"></button></p>
                 <div id="five">
-                    <label>5.{{ '{{five}}' }}</label>
+                    <label>5.{{data.post5}}</label>
                 </div>
                 <p><button ng-click="edit5()" id="edit"></button> <button ng-click="delete5()" id="delete"></button></p>
                 <div id="six">
-                    <label>6.{{ '{{six}}' }}</label>
+                    <label>6.{{data.post6 }}</label>
                 </div>
                 <p><button ng-click="edit6()" id="edit"></button> <button ng-click="delete6()" id="delete"></button></p>
                 <div id="seven">
-                    <label>7.{{ '{{seven}}' }}</label>
+                    <label>7.{{data.post7}}</label>
                 </div>
                 <p><button ng-click="edit7()" id="edit"></button> <button ng-click="delete7()" id="delete"></button></p>
                 <div id="eight">
-                    <label>8.{{ '{{eight}}' }}</label>
+                    <label>8.{{data.post8}}</label>
                 </div>
                 <p><button ng-click="edit8()" id="edit"></button> <button ng-click="delete8()" id="delete"></button></p>
                 <div id="nine">
-                    <label>9.{{ '{{nine}}' }}</label>
+                    <label>9.{{data.post9}}</label>
                 </div>
                 <p><button ng-click="edit9()" id="edit"></button> <button ng-click="delete9()" id="delete"></button></p>
                 <div id="ten">
-                    <label>10.{{ '{{ten}}' }}</label>
+                    <label>10.{{data.post10}}</label>
                 </div>
                 <p><button ng-click="edit10()" id="edit"></button> <button ng-click="delete10()" id="delete"></button></p>
             </div>

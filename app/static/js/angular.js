@@ -27,7 +27,7 @@ valApp.controller('form1Ctrl', function ($scope) {
 	};
 	$scope.submitForm1 = function () {
 		localStorage.username = $scope.usr;
-		if ($scope.usr != localStorage.username){
+		if ($scope.usr != localStorage.username) {
 			alert("The username does not exist!");
 			return false;
 		}
@@ -42,16 +42,17 @@ valApp.controller('form1Ctrl', function ($scope) {
 
 var homeApp = angular.module('homeApp', []);
 // create angular controller
-homeApp.controller('goalCtrl', function ($scope) {
+homeApp.controller('goalCtrl', function ($scope, $http) {
+	
 	//appending username
 	$scope.homeName = function () {
 		$scope.user = localStorage.username;
 	};
 	//timer for flash message
-	$scope.timer = function(){
-		setTimeout(function() {
-			$scope.flash = true;
-		}, 3000);
+	$scope.timer = function () {
+		setTimeout(function () {
+			$scope.flashes = true;
+		}, 3000000);
 	};
 	//logging out
 	$scope.signOut = function () {
@@ -65,56 +66,57 @@ homeApp.controller('goalCtrl', function ($scope) {
 	};
 	//adding items to the list
 	$scope.submitForm = function () {
-		if ( $scope.list != null && $scope.one == null) {
+		
+		if ($scope.list != null && $scope.one == null) {
 			alert('Congrats, Item one has been updated');
 			localStorage.e1 = $scope.list;
 			$scope.one = localStorage.e1;
-			$scope.list = null;	
+			$scope.list = null;
 			$scope.actionURL = "/store";
 		}
-		if ( $scope.list != null && $scope.two == null) {
+		if ($scope.list != null && $scope.two == null) {
 			alert('Congrats, Item two has been updated');
 			localStorage.e2 = $scope.list;
 			alert('Item in localStorage');
 			$scope.two = localStorage.e2
 			$scope.list = null;
 		}
-		if ( $scope.list != null && $scope.three == null) {
+		if ($scope.list != null && $scope.three == null) {
 			alert('Congrats, Item three has been updated');
 			$scope.three = $scope.list;
 			$scope.list = null;
 		}
-		if ( $scope.list != null && $scope.four == null) {
+		if ($scope.list != null && $scope.four == null) {
 			alert('Congrats, Item four has been updated');
 			$scope.four = $scope.list;
 			$scope.list = null;
 		}
-		if ( $scope.list != null && $scope.five == null) {
+		if ($scope.list != null && $scope.five == null) {
 			alert('Congrats, item five has been updated');
 			$scope.five = $scope.list;
 			$scope.list = null;
 		}
-		if ( $scope.list != null && $scope.six == null) {
+		if ($scope.list != null && $scope.six == null) {
 			alert('Congrats, Item six has been updated');
 			$scope.six = $scope.list;
 			$scope.list = null;
 		}
-		if ( $scope.list != null && $scope.seven == null) {
+		if ($scope.list != null && $scope.seven == null) {
 			alert('Congrats, Item seven has been updated');
 			$scope.seven = $scope.list;
 			$scope.list = null;
 		}
-		if ( $scope.list != null && $scope.eight == null) {
+		if ($scope.list != null && $scope.eight == null) {
 			alert('Congrats, Item eight has been updated');
 			$scope.eight = $scope.list;
 			$scope.list = null;
 		}
-		if ( $scope.list != null && $scope.nine == null) {
+		if ($scope.list != null && $scope.nine == null) {
 			alert('Congrats, Item nine has been updated');
 			$scope.nine = $scope.list;
 			$scope.list = null;
 		}
-		if ( $scope.list != null && $scope.ten == null) {
+		if ($scope.list != null && $scope.ten == null) {
 			alert('Congrats, Item ten has been updated');
 			$scope.ten = $scope.list;
 			$scope.list = null;

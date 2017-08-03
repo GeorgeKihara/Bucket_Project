@@ -1,6 +1,9 @@
 from flask import Flask, render_template, url_for, request, session, redirect, flash
 from flask.ext.pymongo import PyMongo
 import bcrypt
+import json
+import requests
+import sys
 from flask import Markup
 from app import app
 
@@ -9,6 +12,7 @@ app.config['MONGO_DBNAME'] = 'bktlist'
 app.config['MONGO_URI'] = 'mongodb://kihara:kihara@ds151752.mlab.com:51752/bktlist'
 
 mongo = PyMongo(app)
+
 
 #index page
 @app.route('/')
@@ -23,8 +27,25 @@ def login():
 #the bucket list home page
 @app.route('/home')
 def home():
+    users = mongo.db.users
+    user = users.find_one({'name': session['username']})
+    
     if ('username' in session):
-        return render_template('home.html')
+        if 'items' in user:
+                try:
+                    posts = {
+                        'post1': user['items'][0],
+                        'post2': user['items'][1],
+                        'post3': user['items'][2],
+                        'post4': user['items'][3],
+                        'post5': user['items'][4],
+                        'post6': user['items'][5]
+                    }
+                    return render_template('home.html', data=posts)
+                except Exception:
+                    pass
+                    
+        return render_template('home.html', data=None)
 
     return redirect(url_for('login'))
 
@@ -70,9 +91,10 @@ def store():
     if request.method == 'POST':
         users = mongo.db.users
         post = request.form['details']
-        post1 = users.find_one({'items': post})
-        if post1 is None:
+        items = users.find_one({'items': post})
+        if items is None:
             users.update({'name': request.form['bktName']},{ '$push': {'items': post}})
+
             message = Markup("Successfully updated")
             flash(message)
             return redirect(url_for('home'))
