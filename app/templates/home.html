@@ -50,8 +50,7 @@
             <form id="bucketForm" method="POST" name="goalie" action="{{ url_for('store') }}">
                 <input id="homieInput" type="label" ng-model="user" name="bktName" >
                 <input id="goal" name="details" ng-model="list" type="text" value="" placeholder="What do u wish to do?" required/>
-                <input type="submit" value="" id="btn-tick">
-                <input type="submit" ng-click="submitForm()" value="" id="btn-tick">
+                <input type="submit" ng-click="{{ url_for('store') }}; submitForm()" value="" id="btn-tick">
                 <div id="flashes" ng-show="!timer()" ng-model="flashes" class="flashes">
                     {% for message in get_flashed_messages()%} {{ message }} {% endfor %}
                 </div>

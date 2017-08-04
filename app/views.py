@@ -3,7 +3,6 @@ from flask.ext.pymongo import PyMongo
 import bcrypt
 import json
 import requests
-import sys
 from flask import Markup
 from app import app
 
@@ -32,19 +31,68 @@ def home():
     
     if ('username' in session):
         if 'items' in user:
-                try:
-                    posts = {
-                        'post1': user['items'][0],
-                        'post2': user['items'][1],
-                        'post3': user['items'][2],
-                        'post4': user['items'][3],
-                        'post5': user['items'][4],
-                        'post6': user['items'][5]
-                    }
-                    return render_template('home.html', data=posts)
-                except Exception:
-                    pass
-                    
+            posts = {}
+            try:
+                if user['items'][0]:
+                    posts['post1'] = user['items'][0]
+            except Exception:
+                pass
+
+            try:
+                if user['items'][1]:
+                    posts['post2'] = user['items'][1]
+            except Exception:
+                pass
+
+            try:
+                if user['items'][2]:
+                    posts['post3'] = user['items'][2]
+            except Exception:
+                pass
+                
+            try:
+                if user['items'][3]:
+                    posts['post4'] = user['items'][3]
+            except Exception:
+                pass
+                
+            try:
+                if user['items'][4]:
+                    posts['post5'] = user['items'][4]
+            except Exception:
+                pass
+                
+            try:
+                if user['items'][5]:
+                    posts['post6'] = user['items'][5]
+            except Exception:
+                pass
+
+            try:
+                if user['items'][6]:
+                    posts['post7'] = user['items'][6]
+            except Exception:
+                pass
+
+            try:
+                if user['items'][7]:
+                    posts['post8'] = user['items'][7]
+            except Exception:
+                pass
+
+            try:
+                if user['items'][8]:
+                    posts['post9'] = user['items'][8]
+            except Exception:
+                pass
+
+            try:
+                if user['items'][9]:
+                    posts['post10'] = user['items'][9]
+            except Exception:
+                pass
+                
+            return render_template('home.html', data=posts)
         return render_template('home.html', data=None)
 
     return redirect(url_for('login'))
