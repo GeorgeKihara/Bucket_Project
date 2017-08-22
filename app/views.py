@@ -108,7 +108,9 @@ def login1():
             session['username'] = request.form['username']
             return redirect(url_for('home'))
 
-    return 'Invalid username or password'
+    message = Markup("Invalid username or password")
+    flash(message)
+    return redirect(url_for('login'))
 
 #register process
 @app.route('/register', methods=['POST', 'GET'])
@@ -152,10 +154,25 @@ def store():
             return redirect(url_for('home'))
     return 'something is wrong'
 
-
 @app.route('/forgot', methods=['POST','GET'])
 def forgot():
-	return render_template('forgot.html')
+    return render_template('forgot.html')
+
+@app.route('/sendPassword', methods=['POST','GET'])
+def sendPassword():
+    if request.method == 'POST':
+        users = mongo.db.users
+        emailUser = request.form['email']
+        user = users.find_one({'email': emailUser})
+        if user is not None:
+            emailito = user['password']
+            message = Markup(emailito)
+            flash('Your password is: ' + message)
+            return redirect(url_for('forgot'))
+        message = Markup('The email entered does not exist')
+        flash(message)
+        return redirect(url_for('forgot'))
+    return 'something wrong'
 
 @app.route('/profile', methods=['POST', 'GET'])
 def profile():

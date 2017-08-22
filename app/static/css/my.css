@@ -377,6 +377,7 @@ a {
 
 #flashes {
     position: relative;
-    font-size: 10px;
-
+    font-size: 13px;
+    color: palevioletred;
+    font-family: Tahoma;
 }

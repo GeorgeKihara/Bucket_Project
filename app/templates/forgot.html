@@ -45,10 +45,14 @@
         <!-- the Sign in and register forms -->
         <div  id="signIn" class="form">
             <img src="{{ url_for('static', filename='images/smiling.png') }}" />
-            <form name="bucket" method="POST" action="{{url_for('forgot') }}">
+            <form name="email" method="POST" action="{{url_for('sendPassword') }}">
                 <div ng-show="showInput=true" class="form-input">
-                    <b>Your Email: </b><input focus-me="focusInput=true" type="email" name="username" placeholder="e.g. georgie@gmail.com" ng-model="forgot" required/>
+                    <b>Your Email: </b><input focus-me="focusInput=true" type="email" name="email" placeholder="e.g. georgie@gmail.com" ng-model="forgot" required/>
                 </div>
+                <div id="flashes" ng-show="!timer()" ng-model="flashes" class="flashes">
+                    {% for message in get_flashed_messages()%} {{ message }} {% endfor %}
+                </div>
+                <p></p>
                 <input type="submit" name="submit" value="SEND" class="btn-sign">
                 <p></p>
                 <a href="{{ url_for('login')}}"><u>Remembered  password?</u></a>
