@@ -53,12 +53,16 @@
                     <b >Email: </b><input id="email" ng-model="regEmail" type="email" name="email" placeholder="e.g. georgie@gmail.com" required/>
                 </div>
                 <div class="form-input">
-                    <b>Password: </b><input type="password" ng-model="regPass" name="pass" placeholder="*******" required/>
+                    <b>Password: </b><input type="password" ng-model="regPass" name="password" placeholder="*******" required/>
                 </div>
                 <div class="form-input">
-                    <big>Confirm password: </big><input ng-model="regConfirm" type="password" name="password" placeholder="*******" required/>
+                    <big>Confirm password: </big><input ng-model="regConfirm" type="password" name="confirm" placeholder="*******" required/>
                 </div>
-                <input type="submit"   name="submit" value="SIGN UP" class="btn-sign">
+                <div id="flashes" ng-show="!timer()" ng-model="flashes" class="flashes">
+                    {% for message in get_flashed_messages()%} {{ message }} {% endfor %}
+                </div>
+                <p></p>
+                <input type="submit"   name="submit" value="SIGN UP" class="btn-sign"/>
                 <p></p>
                 <a href="{{ url_for('login')}}"><u>Already have an account?</u></a>
             </form>

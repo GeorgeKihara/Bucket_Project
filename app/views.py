@@ -115,20 +115,27 @@ def login1():
 #register process
 @app.route('/register', methods=['POST', 'GET'])
 def register():
+    error = None
     if request.method == 'POST':
         users = mongo.db.users
         existing_user = users.find_one({'name' : request.form['username']})
+        form = request.form['confirm']
 
         if request.form['username'] != "":
-            if existing_user is None:
-                hashpass = bcrypt.hashpw(request.form['pass'].encode('utf-8'), bcrypt.gensalt())
+            if form != request.form['password']:
+                message = Markup('Passwords have to match!')
+                flash(message)
+                return redirect(url_for('register'))
+            elif existing_user is None:
+                hashpass = bcrypt.hashpw(request.form['password'].encode('utf-8'), bcrypt.gensalt())
                 users.insert({'name':request.form['username'], 'email':request.form['email'], 'password': hashpass})
                 session['username'] =  request.form['username']
                 return redirect(url_for('login'))
 
-            return 'That username already exists!'
+            error = 'That username already exists!'
+            return render_template('register.html', error=error)
 
-    return render_template("register.html")
+    return render_template("register.html", error = error)
 
 #details about MyBucketList
 @app.route('/about')
@@ -140,9 +147,9 @@ def about():
 def store():
     if request.method == 'POST':
         users = mongo.db.users
+        user = users.find_one({'name': session['username']})
         post = request.form['details']
-        items = users.find_one({'items': post})
-        if items is None:
+        if post not in user['items']:
             users.update({'name': request.form['bktName']},{ '$push': {'items': post}})
 
             message = Markup("Successfully updated")
@@ -153,6 +160,15 @@ def store():
             flash(message)
             return redirect(url_for('home'))
     return 'something is wrong'
+
+@app.route('/edit', methods=['POST', 'GET'])
+def edit():
+    users = mongo.db.users
+    user = users.find_one({'name': session['username']})
+    data = user['items'][0]
+    request.form['details'] = data        
+    return redirect(url_for('home'))
+    #return 'not working'
 
 @app.route('/forgot', methods=['POST','GET'])
 def forgot():

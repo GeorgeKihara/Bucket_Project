@@ -49,7 +49,7 @@
                 <div ng-show="showInput=true" class="form-input">
                     <b>Your Email: </b><input focus-me="focusInput=true" type="email" name="email" placeholder="e.g. georgie@gmail.com" ng-model="forgot" required/>
                 </div>
-                <div id="flashes" ng-show="!timer()" ng-model="flashes" class="flashes">
+                <div id="flashes" ng-show!="timer()" ng-model="flashes" class="flashes">
                     {% for message in get_flashed_messages()%} {{ message }} {% endfor %}
                 </div>
                 <p></p>

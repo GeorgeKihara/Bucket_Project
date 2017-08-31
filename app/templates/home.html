@@ -63,9 +63,9 @@
                 <div id="one">
                     <label> 1.{{data.post1}}</label>
                 </div>
-                <p><button ng-click="edit1()" id="edit"></button> <button ng-click="delete1()" id="delete"></button></p>
+                <p><a href="{{ url_for('edit') }}"><button id="edit"></button></a> <button ng-click="delete1()" id="delete"></button></p>
                 <div id="two">
-                    <label>2.{{ data.post2}}</label>
+                    <label for="name1">2.{{ data.post2}}</label>
                 </div>
                 <p><button ng-click="edit2()" id="edit"></button> <button ng-click="delete2()" id="delete"></button></p>
                 <div id="three">

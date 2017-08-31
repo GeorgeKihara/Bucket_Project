@@ -133,11 +133,8 @@ homeApp.controller('goalCtrl', function ($scope, $http) {
 		}
 	};
 	$scope.edit2 = function () {
-		if ($scope.two != null) {
-			$scope.list = $scope.two;
-			alert('You can now edit item two');
-			$scope.two = null;
-		}
+		alert('You can edit item two');
+		$scope.list = $scope.name1;
 	};
 	$scope.edit3 = function () {
 		if ($scope.three != null) {
