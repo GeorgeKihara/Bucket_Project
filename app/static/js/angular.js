@@ -126,10 +126,13 @@ homeApp.controller('goalCtrl', function ($scope, $http) {
 
 	//editing the bucket list
 	$scope.edit1 = function () {
-		if ($scope.one != null) {
-			$scope.list = $scope.one;
-			alert('You can now edit item one');
-			$scope.one = null;
+		var answer = confirm("Do you want to edit item one?");
+		if (!answer) {
+			event.preventDefault;
+		}else {
+			alert("You may proceed");
+			
+			$scope.list = $scope.one
 		}
 	};
 	$scope.edit2 = function () {
@@ -193,64 +196,14 @@ homeApp.controller('goalCtrl', function ($scope, $http) {
 		}
 	};
 	//deleting items in the list
-	$scope.delete1 = function () {
-		if ($scope.one != null) {
-			$scope.one = null;
-			alert('Item one has been deleted');
+	$scope.delete = function () {
+		var answer = confirm("Are you sure you want to delete the item?");
+		if (!answer) {
+			alert("The item has not been deleted");
+			event.preventDefault();
+		} else {
+			alert("Deleted!");
 		}
 	};
-	$scope.delete2 = function () {
-		if ($scope.two != null) {
-			$scope.two = null;
-			alert('Item two has been deleted');
-		}
-	};
-	$scope.delete3 = function () {
-		if ($scope.three != null) {
-			$scope.three = null;
-			alert('Item three has been deleted');
-		}
-	};
-	$scope.delete4 = function () {
-		if ($scope.four != null) {
-			$scope.four = null;
-			alert('Item four has been deleted');
-		}
-	};
-	$scope.delete5 = function () {
-		if ($scope.five != null) {
-			$scope.five = null;
-			alert('Item five has been deleted');
-		}
-	};
-	$scope.delete6 = function () {
-		if ($scope.one != null) {
-			$scope.six = null;
-			alert('Item six has been deleted');
-		}
-	};
-	$scope.delete7 = function () {
-		if ($scope.seven != null) {
-			$scope.seven = null;
-			alert('Item seven has been deleted');
-		}
-	};
-	$scope.delete8 = function () {
-		if ($scope.eight != null) {
-			$scope.eight = null;
-			alert('Item eight has been deleted');
-		}
-	};
-	$scope.delete9 = function () {
-		if ($scope.nine != null) {
-			$scope.nine = null;
-			alert('Item nine has been deleted');
-		}
-	};
-	$scope.delete10 = function () {
-		if ($scope.ten != null) {
-			$scope.ten = null;
-			alert('Item ten has been deleted');
-		}
-	};
+	
 });

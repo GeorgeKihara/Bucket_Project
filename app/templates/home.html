@@ -61,45 +61,45 @@
 
             <div id="scroll">
                 <div id="one">
-                    <label> 1.{{data.post1}}</label>
+                    <label > 1.{{data.post1}} </label>
                 </div>
-                <p><a href="{{ url_for('edit') }}"><button id="edit"></button></a> <button ng-click="delete1()" id="delete"></button></p>
+                <p><a ng-click="edit1()" href=""><button id="edit"></button></a> <a ng-click="delete()" href="{{ url_for('delete1') }}"><button id="delete"></button></a></p>
                 <div id="two">
-                    <label for="name1">2.{{ data.post2}}</label>
+                    <label>2.{{ data.post2}}</label>
                 </div>
-                <p><button ng-click="edit2()" id="edit"></button> <button ng-click="delete2()" id="delete"></button></p>
+                <p><button ng-click="edit2()" id="edit"></button> <a ng-click="delete()" href="{{ url_for('delete2') }}"><button id="delete"></button></a></p>
                 <div id="three">
                     <label>3.{{data.post3 }}</label>
                 </div>
-                <p><button ng-click="edit3()" id="edit"></button> <button ng-click="delete3()" id="delete"></button></p>
+                <p><button ng-click="edit3()" id="edit"></button> <a ng-click="delete()" href="{{ url_for('delete3') }}"><button id="delete"></button></a></p>
                 <div id="four">
                     <label>4.{{data.post4 }}</label>
                 </div>
-                <p><button ng-click="edit4()" id="edit"></button> <button ng-click="delete4()" id="delete"></button></p>
+                <p><button ng-click="edit4()" id="edit"></button> <a ng-click="delete()" href="{{ url_for('delete4') }}"><button id="delete"></button></a></p>
                 <div id="five">
                     <label>5.{{data.post5}}</label>
                 </div>
-                <p><button ng-click="edit5()" id="edit"></button> <button ng-click="delete5()" id="delete"></button></p>
+                <p><button ng-click="edit5()" id="edit"></button> <a ng-click="delete()" href="{{ url_for('delete5') }}"><button id="delete"></button></a></p>
                 <div id="six">
                     <label>6.{{data.post6 }}</label>
                 </div>
-                <p><button ng-click="edit6()" id="edit"></button> <button ng-click="delete6()" id="delete"></button></p>
+                <p><button ng-click="edit6()" id="edit"></button> <a ng-click="delete()" href="{{ url_for('delete6') }}"><button id="delete"></button></a></p>
                 <div id="seven">
                     <label>7.{{data.post7}}</label>
                 </div>
-                <p><button ng-click="edit7()" id="edit"></button> <button ng-click="delete7()" id="delete"></button></p>
+                <p><button ng-click="edit7()" id="edit"></button> <a ng-click="delete()" href="{{ url_for('delete7') }}"><button id="delete"></button></a></p>
                 <div id="eight">
                     <label>8.{{data.post8}}</label>
                 </div>
-                <p><button ng-click="edit8()" id="edit"></button> <button ng-click="delete8()" id="delete"></button></p>
+                <p><button ng-click="edit8()" id="edit"></button> <a href="{{ url_for('delete8') }}"><button id="delete"></button></a></p>
                 <div id="nine">
                     <label>9.{{data.post9}}</label>
                 </div>
-                <p><button ng-click="edit9()" id="edit"></button> <button ng-click="delete9()" id="delete"></button></p>
+                <p><button ng-click="edit9()" id="edit"></button> <a ng-click="delete()" href="{{ url_for('delete9') }}"><button id="delete"></button></a></p>
                 <div id="ten">
                     <label>10.{{data.post10}}</label>
                 </div>
-                <p><button ng-click="edit10()" id="edit"></button> <button ng-click="delete10()" id="delete"></button></p>
+                <p><button ng-click="edit10()" id="edit"></button> <a ng-click="delete()" href="{{ url_for('delete10') }}"><button id="delete"></button></a></p>
             </div>
         </div>
     </div>

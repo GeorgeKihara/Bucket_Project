@@ -149,26 +149,175 @@ def store():
         users = mongo.db.users
         user = users.find_one({'name': session['username']})
         post = request.form['details']
+        if 'items' not in user:
+            user.update({'items' : []})
         if post not in user['items']:
             users.update({'name': request.form['bktName']},{ '$push': {'items': post}})
 
             message = Markup("Successfully updated")
-            flash(message)
+            flash(message, category = 'success')
             return redirect(url_for('home'))
         else:
             message = Markup("The item is already in your bucket list!")
-            flash(message)
+            flash(message, category = 'error')
             return redirect(url_for('home'))
     return 'something is wrong'
 
-@app.route('/edit', methods=['POST', 'GET'])
-def edit():
+@app.route('/edit1', methods=['POST', 'GET'])
+def edit1():
+    return redirect(url_for('home'))
+
+@app.route('/delete1', methods=['POST', 'GET'])
+def delete1():
     users = mongo.db.users
     user = users.find_one({'name': session['username']})
-    data = user['items'][0]
-    request.form['details'] = data        
+    try:
+        if user['items'][0] != 0:
+            users.update({'name': session['username']},{ '$pull': { 'items': user['items'][0] }})
+            message = Markup("Item one has been successfully deleted")
+            flash(message)
+            return redirect(url_for('home'))
+        
+    except Exception:
+        pass
+    message = Markup("There is no item to delete")
+    flash(message, category='error')
     return redirect(url_for('home'))
-    #return 'not working'
+
+@app.route('/delete2', methods=['POST', 'GET'])
+def delete2():
+    users = mongo.db.users
+    user = users.find_one({'name': session['username']})
+    try:
+        if user['items'][1]:
+            users.update({'name': session['username']},{ '$pull': { 'items': user['items'][1] }})
+            flash("Item two has been successfully deleted")
+            return redirect(url_for('home'))
+        
+    except Exception:
+        pass
+    flash("There is no item to delete", category='error')
+    return redirect(url_for('home'))
+
+@app.route('/delete3', methods=['POST', 'GET'])
+def delete3():
+    users = mongo.db.users
+    user = users.find_one({'name': session['username']})
+    try:
+        if user['items'][2]:
+            users.update({'name': session['username']},{ '$pull': { 'items': user['items'][2] }})
+            flash("Item three has been successfully deleted")
+            return redirect(url_for('home'))
+        
+    except Exception:
+        pass
+    flash("There is no item to delete", category='error')
+    return redirect(url_for('home'))
+
+@app.route('/delete4', methods=['POST', 'GET'])
+def delete4():
+    users = mongo.db.users
+    user = users.find_one({'name': session['username']})
+    try:
+        if user['items'][3]:
+            users.update({'name': session['username']},{ '$pull': { 'items': user['items'][3] }})
+            flash("Item four has been successfully deleted")
+            return redirect(url_for('home'))
+        
+    except Exception:
+        pass
+    flash("There is no item to delete", category='error')
+    return redirect(url_for('home'))
+
+@app.route('/delete5', methods=['POST', 'GET'])
+def delete5():
+    users = mongo.db.users
+    user = users.find_one({'name': session['username']})
+    try:
+        if user['items'][4]:
+            users.update({'name': session['username']},{ '$pull': { 'items': user['items'][4] }})
+            flash("Item five has been successfully deleted")
+            return redirect(url_for('home'))
+        
+    except Exception:
+        pass
+    flash("There is no item to delete", category='error')
+    return redirect(url_for('home'))
+
+@app.route('/delete6', methods=['POST', 'GET'])
+def delete6():
+    users = mongo.db.users
+    user = users.find_one({'name': session['username']})
+    try:
+        if user['items'][5]:
+            users.update({'name': session['username']},{ '$pull': { 'items': user['items'][5] }})
+            flash("Item six has been successfully deleted")
+            return redirect(url_for('home'))
+        
+    except Exception:
+        pass
+    flash("There is no item to delete", category='error')
+    return redirect(url_for('home'))
+
+@app.route('/delete7', methods=['POST', 'GET'])
+def delete7():
+    users = mongo.db.users
+    user = users.find_one({'name': session['username']})
+    try:
+        if user['items'][6]:
+            users.update({'name': session['username']},{ '$pull': { 'items': user['items'][6] }})
+            flash("Item seven has been successfully deleted")
+            return redirect(url_for('home'))
+        
+    except Exception:
+        pass
+    flash("There is no item to delete", category='error')
+    return redirect(url_for('home'))
+
+@app.route('/delete8', methods=['POST', 'GET'])
+def delete8():
+    users = mongo.db.users
+    user = users.find_one({'name': session['username']})
+    try:
+        if user['items'][7]:
+            users.update({'name': session['username']},{ '$pull': { 'items': user['items'][7] }})
+            flash("Item eight has been successfully deleted")
+            return redirect(url_for('home'))
+        
+    except Exception:
+        pass
+    flash("There is no item to delete", category='error')
+    return redirect(url_for('home'))
+
+@app.route('/delete9', methods=['POST', 'GET'])
+def delete9():
+    users = mongo.db.users
+    user = users.find_one({'name': session['username']})
+    try:
+        if user['items'][8]:
+            users.update({'name': session['username']},{ '$pull': { 'items': user['items'][8] }})
+            flash("Item nine has been successfully deleted")
+            return redirect(url_for('home'))
+        
+    except Exception:
+        pass
+    flash("There is no item to delete", category='error')
+    return redirect(url_for('home'))
+
+@app.route('/delete10', methods=['POST', 'GET'])
+def delete10():
+    users = mongo.db.users
+    user = users.find_one({'name': session['username']})
+    try:
+        if user['items'][9]:
+            users.update({'name': session['username']},{ '$pull': { 'items': user['items'][9] }})
+            flash("Item ten has been successfully deleted")
+            return redirect(url_for('home'))
+        
+    except Exception:
+        pass
+    flash("There is no item to delete", category='error')
+    return redirect(url_for('home'))
 
 @app.route('/forgot', methods=['POST','GET'])
 def forgot():
