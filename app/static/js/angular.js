@@ -205,5 +205,8 @@ homeApp.controller('goalCtrl', function ($scope, $http) {
 			alert("Deleted!");
 		}
 	};
+
+	//image uploader
+	
 	
 });

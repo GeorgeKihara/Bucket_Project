@@ -1,5 +1,8 @@
 from flask import Flask, render_template, url_for, request, session, redirect, flash
 from flask.ext.pymongo import PyMongo
+from flask_wtf import Form
+from flask_wtf.file import FileField
+from werkzeug import secure_filename
 import bcrypt
 import json
 import requests
@@ -12,6 +15,8 @@ app.config['MONGO_URI'] = 'mongodb://kihara:kihara@ds151752.mlab.com:51752/bktli
 
 mongo = PyMongo(app)
 
+class UploadForm(Form):
+    file = FileField()
 
 #index page
 @app.route('/')
@@ -107,8 +112,9 @@ def login1():
         if bcrypt.hashpw(request.form['pass'].encode('utf-8'), login_user['password']) == login_user['password']:
             session['username'] = request.form['username']
             return redirect(url_for('home'))
-
-    message = Markup("Invalid username or password")
+        flash(request.form['username'] + ", thats not your password!")
+        return redirect(url_for('login'))
+    message = Markup("Sorry, the username does not exist")
     flash(message)
     return redirect(url_for('login'))
 
@@ -339,9 +345,12 @@ def sendPassword():
         return redirect(url_for('forgot'))
     return 'something wrong'
 
-@app.route('/profile', methods=['POST', 'GET'])
+@app.route('/profile', methods=['POST'])
 def profile():
-    return render_template('profile.html')
+    f = request.files['uploaded_file']
+    print (f.read())
+
+    return redirect(url_for('home'))
 
 if  __name__ == '__main__':
 	app.secret_key='mysecret'

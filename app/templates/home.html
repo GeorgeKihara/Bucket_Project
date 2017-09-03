@@ -46,9 +46,19 @@
         <div ng-open="homeName()" id="welcome">
             <p>Welcome <b id="welcome1"><u>{{ '{{user | uppercase}}' }}</u></b> to your bucket list.</p>
         </div>
+        <div class="imageUpload">
+            <p>Profile</p>
+            <form action='/profile' method='post' enctype='multipart/form-data'>
+                <div class="user one">
+                </div>
+                <p></p>
+                <input id="imageSubmit" type='file' name='uploaded_file'>
+                <input id="imageSubmit" type='submit' value='Change'>
+            </form>
+        </div>
         <div class="bucket">
             <form id="bucketForm" method="POST" name="goalie" action="{{ url_for('store') }}">
-                <input id="homieInput" type="label" ng-model="user" name="bktName" >
+                <input id="homieInput" type="label" ng-model="user" name="bktName">
                 <input id="goal" name="details" ng-model="list" type="text" value="" placeholder="What do u wish to do?" required/>
                 <input type="submit" ng-click="{{ url_for('store') }}; submitForm()" value="" id="btn-tick">
                 <div id="flashes" ng-show="!timer()" ng-model="flashes" class="flashes">
@@ -61,7 +71,7 @@
 
             <div id="scroll">
                 <div id="one">
-                    <label > 1.{{data.post1}} </label>
+                    <label> 1.{{data.post1}} </label>
                 </div>
                 <p><a ng-click="edit1()" href=""><button id="edit"></button></a> <a ng-click="delete()" href="{{ url_for('delete1') }}"><button id="delete"></button></a></p>
                 <div id="two">

@@ -203,7 +203,7 @@ a {
     height: 500px;
     text-align: center;
     background-color: lightseagreen;
-    margin-top: 20px;
+    margin-top: -100px;
     margin: 0 auto;
     border-radius: 10px;
     overflow: hidden;
@@ -380,4 +380,44 @@ a {
     font-size: 13px;
     color: palevioletred;
     font-family: Tahoma;
+}
+
+.imageUpload{
+    position: relative;
+    float: center;
+    width: 150px;
+    height: 150px;
+    margin-top: -80px;
+    margin-bottom: -100px;
+    right: -84%;
+}
+
+.imageUpload p{
+    color: #E18022;
+    text-align: center;
+    font-size: 35px;
+    text-decoration: underline;
+    font-family: ar darling;
+}
+
+#imageSubmit{
+    position: relative;
+    width: 150px;
+    height: 30px;
+}
+
+.user {
+  position: relative;
+  display: inline-block;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+.one {
+  position: relative;
+  background-image: url('../images/minion.jpeg');
 }
