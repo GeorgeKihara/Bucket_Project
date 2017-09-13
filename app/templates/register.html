@@ -44,15 +44,16 @@
     <div id="contents">
         <!-- register form -->
         <div id="signUp" class="form1">
-            <img src="{{ url_for('static', filename='images/smiling.png') }}" />
+            <img src="{{ url_for('static', filename='images/phone.jpeg') }}" />
             <form method="POST" action="{{ url_for('register')}}" name="bucketUp" ng-submit="regUsr()">
                 <div class="form-input">
-                    <b>Username: </b><input ng-model="regUser"  type="text" name="username" placeholder="e.g. georgie" required/>
+                    <b>Username: </b><input ng-maxlength="10" ng-minlength="5" ng-model="regUser"  type="text" name="username" placeholder="e.g. georgie" required/>
                 </div>
+                    <span ng-show="bucketUp.username.$error.text">Username too short</span>
                 <div class="form-input">
                     <b >Email: </b><input id="email" ng-model="regEmail" type="email" name="email" placeholder="e.g. georgie@gmail.com" required/>
                 </div>
-                <span ng-show="bucketUp.email.$error.email">Not a valid e-mail address</span>
+                    <span ng-show="bucketUp.email.$error.email">Not a valid e-mail address</span>
                 <div class="form-input">
                     <b>Password: </b><input type="password" ng-model="regPass" name="password" placeholder="*******" required/>
                 </div>
@@ -62,9 +63,9 @@
                 <div id="flashes" ng-show="!timer()" ng-model="flashes" class="flashes">
                     {% for message in get_flashed_messages()%} {{ message }} {% endfor %}
                 </div>
-                <p></p>
+                <br>
                 <input type="submit"   name="submit" value="SIGN UP" class="btn-sign"/>
-                <p></p>
+                <br>
                 <a href="{{ url_for('login')}}"><u>Already have an account?</u></a>
             </form>
         </div>

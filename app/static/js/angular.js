@@ -131,8 +131,10 @@ homeApp.controller('goalCtrl', function ($scope, $http) {
 			event.preventDefault;
 		}else {
 			alert("You may proceed");
-			
-			$scope.list = $scope.one
+			$scope.list = $scope.data;
+			if (!$scope.data){
+				alert("not editing anything");
+			}
 		}
 	};
 	$scope.edit2 = function () {

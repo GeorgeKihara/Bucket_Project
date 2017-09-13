@@ -44,7 +44,7 @@
     <div id="contents">
         <!-- the Sign in and register forms -->
         <div  id="signIn" class="form">
-            <img src="{{ url_for('static', filename='images/smiling.png') }}" />
+            <img src="{{ url_for('static', filename='images/phone.jpeg') }}" />
             <form name="email" method="POST" action="{{url_for('sendPassword') }}">
                 <div ng-show="showInput=true" class="form-input">
                     <b>Your Email: </b><input focus-me="focusInput=true" type="email" name="email" placeholder="e.g. georgie@gmail.com" ng-model="forgot" required/>

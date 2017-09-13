@@ -44,7 +44,7 @@
     <div id="contents">
         <!-- the Sign in and register forms -->
         <div  id="signIn" class="form">
-            <img src="{{ url_for('static', filename='images/smiling.png') }}" />
+            <img src="{{ url_for('static', filename='images/phone.jpeg') }}" />
             <form name="bucket" method="POST" action="{{url_for('login1') }}">
                 <div ng-show="showInput=true" class="form-input">
                     <b>Username: </b><input focus-me="focusInput=true" ng-open="regShow()" ng-click="editLogin()" type="text" name="username" placeholder="e.g. georgie" ng-model="usr" required/>

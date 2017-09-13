@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/my.css') }}" type="text/css">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="/static/js/angular.min.js"></script>
 </head>
 
 <body ng-app="homeApp" ng-controller="goalCtrl">
@@ -52,7 +53,7 @@
                 <div class="user one">
                 </div>
                 <p></p>
-                <input id="imageSubmit" type='file' name='uploaded_file'>
+                <input id="imageSubmit" type='file' name='uploaded_file' value="choose">
                 <input id="imageSubmit" type='submit' value='Change'>
             </form>
         </div>
@@ -71,7 +72,7 @@
 
             <div id="scroll">
                 <div id="one">
-                    <label> 1.{{data.post1}} </label>
+                    <label> 1.{{ data.post1 }} </label>
                 </div>
                 <p><a ng-click="edit1()" href=""><button id="edit"></button></a> <a ng-click="delete()" href="{{ url_for('delete1') }}"><button id="delete"></button></a></p>
                 <div id="two">

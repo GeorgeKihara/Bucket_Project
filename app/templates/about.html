@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>MyBucket</title>
-    <link rel="shortcut icon" href="{{url_for('static', filename='images/lava.jpg')}}" >
+    <link rel="shortcut icon" href="{{url_for('static', filename='images/lava.jpg')}}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/my.css') }}" type="text/css">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
@@ -23,66 +23,59 @@
                 </a>
             </div>
             <div id="title">
-                    <u>MyBucket List</u>
-                </div>
+                <u>MyBucket List</u>
+            </div>
 
-                <ul id="navigation">
-                    <li class="selected">
-                        <a href="about.html">About</a>
-                    </li>
-                    <li>
-                        <a
-                            id="lSignIn" href="login.html"
-                        >
+            <ul id="navigation">
+                <li class="selected">
+                    <a href="{{ url_for('about')}}">About</a>
+                </li>
+                <li>
+                    <a id="lSignIn" href="{{ url_for('login')}}">
                             Sign in
                         </a>
-                    </li>
-                    <li>
-                        <a
-                            id="lSignUp"
-                            href="register.html"
-                        >
+                </li>
+                <li>
+                    <a id="lSignUp" href="{{ url_for('register')}}">
                             Sign up
                         </a>
-                    </li>
-                </ul>
+                </li>
+            </ul>
 
-            </div>
         </div>
+    </div>
 
-        <div id="contents">
-            <div class="about">
-                <br>
-                <b>
+    <div id="contents">
+        <div class="about">
+            <br>
+            <b>
                     MyBucketList is the simplest and powerful bucket list you will ever use.
                 </b>
-                <br>
-                <br>
-                <b>
+            <br>
+            <br>
+            <b>
                     It allows you  to record and share things they want to achieve or experience before reaching a certain age meeting the needs of keeping track of your dreams and goals.
                 </b>
-                <p><u>It lets you do the following</u>:</p>
-                <ul>
-                    <li>Create an account.</li>
-                    <li>
-                        Log in by inputting your username and password.
-                    </li>
-                    <li>Create and view your bucket list.</li>
-                    <li>Delete and update your bucket list.</li>
-                    <li>
-                        Add, update and view items in your bucket list.
-                    </li>
-                </ul>
+            <p>
+                <u>It lets you do the following</u>:</p>
+            <ul>
+                <li>Create an account.</li>
+                <li>
+                    Log in by inputting your username and password.
+                </li>
+                <li>Create and view your bucket list.</li>
+                <li>Delete and update your bucket list.</li>
+                <li>
+                    Add, update and view items in your bucket list.
+                </li>
+            </ul>
 
-            </div>
         </div>
-        <div
-            style="background:wheat;"
-            id="footer"
-        >
-            <span class="divider"></span>
-            <div class="area">
-                <div id="connect">
+    </div>
+    <div style="background:wheat;" id="footer">
+        <span class="divider"></span>
+        <div class="area">
+            <div id="connect">
                 <a href="gegohcomp@gmail.com" target="_blank" class="googleplus"></a>
                 <a href="" target="_blank" class="mail"></a>
                 <a href="www.facebook.com/georgiegegoh" target="_blank" class="facebook"></a>

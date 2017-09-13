@@ -8,6 +8,9 @@ import json
 import requests
 from flask import Markup
 from app import app
+import bson.binary
+from io import StringIO
+
 
 #connections to the mongo database
 app.config['MONGO_DBNAME'] = 'bktlist'
@@ -169,10 +172,6 @@ def store():
             return redirect(url_for('home'))
     return 'something is wrong'
 
-@app.route('/edit1', methods=['POST', 'GET'])
-def edit1():
-    return redirect(url_for('home'))
-
 @app.route('/delete1', methods=['POST', 'GET'])
 def delete1():
     users = mongo.db.users
@@ -325,6 +324,20 @@ def delete10():
     flash("There is no item to delete", category='error')
     return redirect(url_for('home'))
 
+@app.route('/edit1', methods=['POST', 'GET'])
+def edit1():
+    users = mongo.db.users
+    user = users.find_one({'name': session['username']})
+    request.form['details'] = user['items'][0]
+    return render_template('home.html')
+    try:
+        if user['items'][0]:
+            return 'oyaa'
+    except Exception:
+        pass
+    
+    return redirect(url_for('home'))
+
 @app.route('/forgot', methods=['POST','GET'])
 def forgot():
     return render_template('forgot.html')
@@ -345,12 +358,25 @@ def sendPassword():
         return redirect(url_for('forgot'))
     return 'something wrong'
 
+def save_file(f):
+    users = mongo.db.users
+    user = users.find_one({'name': session['username']})
+    f = request.files['uploaded_file']
+    content = (f.read())
+    users.files.save(dict(
+        content= content,
+        ))
+
+
 @app.route('/profile', methods=['POST'])
 def profile():
+    users = mongo.db.users
+    user = users.find_one({'name': session['username']})
     f = request.files['uploaded_file']
-    print (f.read())
+    fid = save_file(f)
+    f = users.files.find_one(bson.objectid.ObjectId(fid))
+    return f
 
-    return redirect(url_for('home'))
 
 if  __name__ == '__main__':
 	app.secret_key='mysecret'

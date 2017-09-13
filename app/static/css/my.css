@@ -4,7 +4,7 @@ body #ent{
     margin: 0 auto;
     font-size: 20px;
     color: black;
-    left: 30%; 
+    left: 40%; 
     top: 30%;
 }
 #content #welcome{
@@ -24,8 +24,8 @@ body #ent{
 }
 body #indexDiv{
     position: relative;
-    left: 25%;
-    top:10%;
+    left: 30%;
+    top:20%;
 }
 
 #book {
@@ -125,8 +125,8 @@ a {
 }
 
 .form1 {
-    width: 600px;
-    height: 450px;
+    width: 630px;
+    height: 470px;
     text-align: center;
     background-color: rgba(52, 73, 94, 0.7);
     margin-top: 200px;
@@ -179,6 +179,9 @@ input {
     font-size: 18px;
     position: relative;
     left: -3%;
+}
+.form1 form a {
+    margin-top: -20%;
 }
 
 .btn-sign {
@@ -341,7 +344,7 @@ a {
     border: none;
     text-align: left;
     position: relative;
-    left: 15%;
+    left: 26%;
     background-color: lightslategrey;
     font-size: 18px;
 }
@@ -419,5 +422,5 @@ a {
 
 .one {
   position: relative;
-  background-image: url('../images/minion.jpeg');
+  background-image: url('../images/penguin.jpeg');
 }
