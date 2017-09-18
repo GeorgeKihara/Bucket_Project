@@ -10,6 +10,7 @@ from flask import Markup
 from app import app
 import bson.binary
 from io import StringIO
+import logging
 
 
 #connections to the mongo database
@@ -328,14 +329,12 @@ def delete10():
 def edit1():
     users = mongo.db.users
     user = users.find_one({'name': session['username']})
-    request.form['details'] = user['items'][0]
-    return render_template('home.html')
     try:
         if user['items'][0]:
-            return 'oyaa'
+            users.update({'name': session['username']},{ '$pull': { 'items': user['items'][0] }})
+            flash("Item one has been deleted so that you can provide a new item")
     except Exception:
         pass
-    
     return redirect(url_for('home'))
 
 @app.route('/forgot', methods=['POST','GET'])

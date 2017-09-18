@@ -19,3 +19,8 @@ function blinker()
         }
         
     }
+
+function display() {
+    var dato = document.getElementById("dato").innerHTML;
+    alert(dato);
+}

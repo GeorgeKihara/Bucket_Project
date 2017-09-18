@@ -424,3 +424,9 @@ a {
   position: relative;
   background-image: url('../images/penguin.jpeg');
 }
+
+#scroll #one,#scroll #two,#scroll #three,
+#scroll #four,#scroll #five,#scroll #six,#scroll #seven,#scroll #eight,#scroll #nine,#scroll #ten {
+    overflow: scroll;
+    overflow-x: hidden;    
+}

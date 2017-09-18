@@ -43,7 +43,7 @@ valApp.controller('form1Ctrl', function ($scope) {
 var homeApp = angular.module('homeApp', []);
 // create angular controller
 homeApp.controller('goalCtrl', function ($scope, $http) {
-	
+
 	//appending username
 	$scope.homeName = function () {
 		$scope.user = localStorage.username;
@@ -66,7 +66,7 @@ homeApp.controller('goalCtrl', function ($scope, $http) {
 	};
 	//adding items to the list
 	$scope.submitForm = function () {
-		
+
 		if ($scope.list != null && $scope.one == null) {
 			alert('Congrats, Item one has been updated');
 			localStorage.e1 = $scope.list;
@@ -126,75 +126,144 @@ homeApp.controller('goalCtrl', function ($scope, $http) {
 
 	//editing the bucket list
 	$scope.edit1 = function () {
-		var answer = confirm("Do you want to edit item one?");
-		if (!answer) {
-			event.preventDefault;
-		}else {
-			alert("You may proceed");
-			$scope.list = $scope.data;
-			if (!$scope.data){
-				alert("not editing anything");
+		var item1 = document.getElementById("item1").innerHTML;
+		if (item1 != "") {
+			var answer = confirm("Are you sure you want edit item one?");
+			if (!answer) {
+				alert("Editing has been cancelled");
+				event.preventDefault();
+			} else {
+				alert("You may proceed");
+				localStorage.details = item1;
+				$scope.list = localStorage.details;
+				item1 = "deleted";
 			}
+		} else {
+			alert("Cannot edit an empty item!");
+			event.preventDefault();
 		}
 	};
 	$scope.edit2 = function () {
-		alert('You can edit item two');
-		$scope.list = $scope.name1;
+		var item2 = document.getElementById("item2").innerHTML;
+		if (item2 != ""){
+			var answer = confirm("Are you sure you want edit item two?");
+			if (!answer) {
+				alert("Editing has been cancelled");
+				event.preventDefault();
+			} else {
+				alert("You may proceed");
+				localStorage.details = item2;
+				$scope.list = localStorage.details;
+				item2 = "";
+			}
+		} else {
+			alert("Cannot edit an empty item!");
+			event.preventDefault();
+		}
+		
 	};
 	$scope.edit3 = function () {
-		if ($scope.three != null) {
-			$scope.list = $scope.three;
-			alert('You can now edit item three');
-			$scope.three = null;
+		var answer = confirm("Are you sure you want edit item three?");
+		var item3 = document.getElementById("item3").innerHTML;
+		if (!answer && item3 != "") {
+			alert("Editing has been cancelled");
+			event.preventDefault();
+		} else {
+			alert("You may proceed");
+			localStorage.details = item3;
+			$scope.list = localStorage.details;
+			item3 = "";
 		}
 	};
 	$scope.edit4 = function () {
-		if ($scope.four != null) {
-			$scope.list = $scope.four;
-			alert('You can now edit item one');
-			$scope.four = null;
+		var answer = confirm("Are you sure you want edit item four?");
+		if (!answer) {
+			alert("Editing has been cancelled");
+			event.preventDefault();
+		} else {
+			alert("You may proceed");
+			var item4 = document.getElementById("item4").innerHTML;
+			localStorage.details = item4;
+			$scope.list = localStorage.details;
+			item4 = "";
 		}
 	};
 	$scope.edit5 = function () {
-		if ($scope.five != null) {
-			$scope.list = $scope.fiv;
-			alert('You can now edit item five');
-			$scope.one = null;
+		var answer = confirm("Are you sure you want edit item five?");
+		if (!answer) {
+			alert("Editing has been cancelled");
+			event.preventDefault();
+		} else {
+			alert("You may proceed");
+			var item5 = document.getElementById("item5").innerHTML;
+			localStorage.details = item5;
+			$scope.list = localStorage.details;
+			item5 = "";
 		}
 	};
 	$scope.edit6 = function () {
-		if ($scope.six != null) {
-			$scope.list = $scope.six;
-			alert('You can now edit item six');
-			$scope.one = null;
+		var answer = confirm("Are you sure you want edit item six?");
+		if (!answer) {
+			alert("Editing has been cancelled");
+			event.preventDefault();
+		} else {
+			alert("You may proceed");
+			var item6 = document.getElementById("item6").innerHTML;
+			localStorage.details = item6;
+			$scope.list = localStorage.details;
+			item6 = "";
 		}
 	};
 	$scope.edit7 = function () {
-		if ($scope.seven != null) {
-			$scope.list = $scope.seven;
-			alert('You can now edit item seven');
-			$scope.seven = null;
+		var answer = confirm("Are you sure you want edit item seven?");
+		if (!answer) {
+			alert("Editing has been cancelled");
+			event.preventDefault();
+		} else {
+			alert("You may proceed");
+			var item7 = document.getElementById("item7").innerHTML;
+			localStorage.details = item7;
+			$scope.list = localStorage.details;
+			item7 = "";
 		}
 	};
 	$scope.edit8 = function () {
-		if ($scope.eight != null) {
-			$scope.list = $scope.eight;
-			alert('You can now edit item eight');
-			$scope.eight = null;
+		var answer = confirm("Are you sure you want edit item eight?");
+		if (!answer) {
+			alert("Editing has been cancelled");
+			event.preventDefault();
+		} else {
+			alert("You may proceed");
+			var item8 = document.getElementById("item8").innerHTML;
+			localStorage.details = item8;
+			$scope.list = localStorage.details;
+			item8 = "";
 		}
 	};
 	$scope.edit9 = function () {
-		if ($scope.nine != null) {
-			$scope.list = $scope.nine;
-			alert('You can now edit item nine');
-			$scope.nine = null;
+		var answer = confirm("Are you sure you want edit item nine?");
+		if (!answer) {
+			alert("Editing has been cancelled");
+			event.preventDefault();
+		} else {
+			alert("You may proceed");
+			var item9 = document.getElementById("item9").innerHTML;
+			localStorage.details = item9;
+			$scope.list = localStorage.details;
+			item9 = "";
 		}
 	};
 	$scope.edit10 = function () {
-		if ($scope.ten != null) {
-			$scope.list = $scope.ten;
-			alert('You can now edit item ten');
-			$scope.ten = null;
+		var answer = confirm("Are you sure you want edit item ten?");
+		if (!answer) {
+			alert("Editing has been cancelled");
+			event.preventDefault();
+		} else {
+			alert("You may proceed");
+			var item10 = document.getElementById("item10").innerHTML;
+			localStorage.details = item10;
+			$scope.list = localStorage.details;
+			item10 = "";
 		}
 	};
 	//deleting items in the list
@@ -209,6 +278,6 @@ homeApp.controller('goalCtrl', function ($scope, $http) {
 	};
 
 	//image uploader
-	
-	
+
+
 });
