@@ -439,14 +439,24 @@ a {
     background-size: 28px;
     background-repeat: no-repeat;
     position: relative; 
-    left: -0.5%;
+    left: -6.9%;
     margin-bottom: -1%;
     width: 96px;  
     height: 30px;
     cursor: pointer;
     text-indent: 21%;
     font-size: 13px;
-    border: 0px solid black;
+    border: 0.1px solid #795708;
     border-radius: 4px;
 
+}
+#choice{
+    position: relative;
+    left: 12.4%;
+    margin-bottom: -1%;
+    width: 40px;  
+    height: 30px;
+    cursor: pointer;
+    border: 0.2px solid #795708;
+    border-radius: 6px;
 }
