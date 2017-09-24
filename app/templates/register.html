@@ -53,7 +53,7 @@
                 <div class="form-input">
                     <b >Email: </b><input id="email" ng-model="regEmail" type="email" name="email" placeholder="e.g. georgie@gmail.com" required/>
                 </div>
-                    <span ng-show="bucketUp.email.$error.email">Not a valid e-mail address</span>
+                    <span style="color:red;" ng-show="bucketUp.email.$error.email">Not a valid e-mail address</span>
                 <div class="form-input">
                     <b>Password: </b><input type="password" ng-model="regPass" name="password" placeholder="*******" required/>
                 </div>

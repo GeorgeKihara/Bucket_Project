@@ -50,10 +50,9 @@
         <div class="imageUpload">
             <p>Profile</p>
             <form action='/profile' method='post' enctype='multipart/form-data'>
-                <div class="user one">
-                </div>
+                <div class="user one">{{data.image1}}</div>
                 <p></p>
-                <input id="imageSubmit" type='file' name='uploaded_file' value="choose">
+                <input id="imageSubmit" type='file' name='uploaded_file' value="choose" accept="image/" multiples>
                 <input id="imageSubmit" type='submit' value='Change'>
             </form>
         </div>

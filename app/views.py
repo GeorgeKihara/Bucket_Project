@@ -1,16 +1,13 @@
-from flask import Flask, render_template, url_for, request, session, redirect, flash
+from flask import Flask, render_template, url_for, request, session, redirect, flash, make_response
 from flask.ext.pymongo import PyMongo
 from flask_wtf import Form
 from flask_wtf.file import FileField
 from werkzeug import secure_filename
-import bcrypt
-import json
-import requests
+import bcrypt, json, requests, bson.binary, logging, time, threading, gridfs
 from flask import Markup
 from app import app
-import bson.binary
 from io import StringIO
-import logging
+from time import sleep
 
 
 #connections to the mongo database
@@ -115,7 +112,7 @@ def login1():
     if login_user:
         if bcrypt.hashpw(request.form['pass'].encode('utf-8'), login_user['password']) == login_user['password']:
             session['username'] = request.form['username']
-            return redirect(url_for('home'))
+            return redirect(url_for('home'))()
         flash(request.form['username'] + ", thats not your password!")
         return redirect(url_for('login'))
     message = Markup("Sorry, the username does not exist")
@@ -163,7 +160,6 @@ def store():
             user.update({'items' : []})
         if post not in user['items']:
             users.update({'name': request.form['bktName']},{ '$push': {'items': post}})
-
             message = Markup("Successfully updated")
             flash(message, category = 'success')
             return redirect(url_for('home'))
@@ -329,12 +325,16 @@ def delete10():
 def edit1():
     users = mongo.db.users
     user = users.find_one({'name': session['username']})
+    edited = {}
     try:
         if user['items'][0]:
+            request.form['details'].value = user['items'][0]
             users.update({'name': session['username']},{ '$pull': { 'items': user['items'][0] }})
             flash("Item one has been deleted so that you can provide a new item")
     except Exception:
         pass
+    
+    sleep(5)
     return redirect(url_for('home'))
 
 @app.route('/forgot', methods=['POST','GET'])
@@ -357,24 +357,6 @@ def sendPassword():
         return redirect(url_for('forgot'))
     return 'something wrong'
 
-def save_file(f):
-    users = mongo.db.users
-    user = users.find_one({'name': session['username']})
-    f = request.files['uploaded_file']
-    content = (f.read())
-    users.files.save(dict(
-        content= content,
-        ))
-
-
-@app.route('/profile', methods=['POST'])
-def profile():
-    users = mongo.db.users
-    user = users.find_one({'name': session['username']})
-    f = request.files['uploaded_file']
-    fid = save_file(f)
-    f = users.files.find_one(bson.objectid.ObjectId(fid))
-    return f
 
 
 if  __name__ == '__main__':

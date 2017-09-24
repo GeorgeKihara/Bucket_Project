@@ -163,108 +163,150 @@ homeApp.controller('goalCtrl', function ($scope, $http) {
 		
 	};
 	$scope.edit3 = function () {
-		var answer = confirm("Are you sure you want edit item three?");
 		var item3 = document.getElementById("item3").innerHTML;
-		if (!answer && item3 != "") {
-			alert("Editing has been cancelled");
+		if (item3 != "") {
+			var answer = confirm("Are you sure you want edit item three?");
+			if (!answer) {
+				alert("Editing has been cancelled");
+				event.preventDefault();
+			} else {
+				alert("You may proceed");
+				localStorage.details = item3;
+				$scope.list = localStorage.details;
+				item3 = "";
+			}
+		}else {
+			alert("Cannot edit an empty item!");
 			event.preventDefault();
-		} else {
-			alert("You may proceed");
-			localStorage.details = item3;
-			$scope.list = localStorage.details;
-			item3 = "";
 		}
+		
 	};
 	$scope.edit4 = function () {
-		var answer = confirm("Are you sure you want edit item four?");
-		if (!answer) {
-			alert("Editing has been cancelled");
-			event.preventDefault();
-		} else {
-			alert("You may proceed");
-			var item4 = document.getElementById("item4").innerHTML;
-			localStorage.details = item4;
-			$scope.list = localStorage.details;
-			item4 = "";
+		var item4 = document.getElementById("item4").innerHTML;
+		if (item4 != "") {
+			var answer = confirm("Are you sure you want edit item four?");
+			if (!answer) {
+				alert("Editing has been cancelled");
+				event.preventDefault();
+			} else {
+				alert("You may proceed");
+				localStorage.details = item4;
+				$scope.list = localStorage.details;
+				item4 = "";
+			}
 		}
+		
 	};
 	$scope.edit5 = function () {
-		var answer = confirm("Are you sure you want edit item five?");
-		if (!answer) {
-			alert("Editing has been cancelled");
-			event.preventDefault();
-		} else {
-			alert("You may proceed");
-			var item5 = document.getElementById("item5").innerHTML;
-			localStorage.details = item5;
-			$scope.list = localStorage.details;
-			item5 = "";
+		var item5 = document.getElementById("item5").innerHTML;
+		if (item5 != "") {
+			var answer = confirm("Are you sure you want edit item five?");
+			if (!answer) {
+				alert("Editing has been cancelled");
+				event.preventDefault();
+			} else {
+				alert("You may proceed");
+				localStorage.details = item5;
+				$scope.list = localStorage.details;
+				item5 = "";
+			}
 		}
+		
 	};
 	$scope.edit6 = function () {
-		var answer = confirm("Are you sure you want edit item six?");
-		if (!answer) {
-			alert("Editing has been cancelled");
+		var item6 = document.getElementById("item6").innerHTML;
+		if (item6 != "") {
+			var answer = confirm("Are you sure you want edit item six?");
+			if (!answer) {
+				alert("Editing has been cancelled");
+				event.preventDefault();
+			} else {
+				alert("You may proceed");
+				localStorage.details = item6;
+				$scope.list = localStorage.details;
+				item6 = "";
+			}
+		}else {
+			alert("Cannot edit an empty item!");
 			event.preventDefault();
-		} else {
-			alert("You may proceed");
-			var item6 = document.getElementById("item6").innerHTML;
-			localStorage.details = item6;
-			$scope.list = localStorage.details;
-			item6 = "";
 		}
+		
 	};
 	$scope.edit7 = function () {
-		var answer = confirm("Are you sure you want edit item seven?");
-		if (!answer) {
-			alert("Editing has been cancelled");
+		var item7 = document.getElementById("item7").innerHTML;
+		if (item7 != "") {
+			var answer = confirm("Are you sure you want edit item seven?");
+			if (!answer) {
+				alert("Editing has been cancelled");
+				event.preventDefault();
+			} else {
+				alert("You may proceed");
+				localStorage.details = item7;
+				$scope.list = localStorage.details;
+				item7 = "";
+			}
+		}else {
+			alert("Cannot edit an empty item!");
 			event.preventDefault();
-		} else {
-			alert("You may proceed");
-			var item7 = document.getElementById("item7").innerHTML;
-			localStorage.details = item7;
-			$scope.list = localStorage.details;
-			item7 = "";
 		}
+		
 	};
 	$scope.edit8 = function () {
-		var answer = confirm("Are you sure you want edit item eight?");
-		if (!answer) {
-			alert("Editing has been cancelled");
+		var item8 = document.getElementById("item8").innerHTML;
+		if (item8 != "") {
+			var answer = confirm("Are you sure you want edit item eight?");
+			if (!answer) {
+				alert("Editing has been cancelled");
+				event.preventDefault();
+			} else {
+				alert("You may proceed");
+				localStorage.details = item8;
+				$scope.list = localStorage.details;
+				item8 = "";
+			}
+		}else {
+			alert("Cannot edit an empty item!");
 			event.preventDefault();
-		} else {
-			alert("You may proceed");
-			var item8 = document.getElementById("item8").innerHTML;
-			localStorage.details = item8;
-			$scope.list = localStorage.details;
-			item8 = "";
 		}
+		
 	};
 	$scope.edit9 = function () {
-		var answer = confirm("Are you sure you want edit item nine?");
-		if (!answer) {
-			alert("Editing has been cancelled");
+		var item9 = document.getElementById("item9").innerHTML;
+		if (item9 != "") {
+			var answer = confirm("Are you sure you want edit item nine?");
+			if (!answer) {
+				alert("Editing has been cancelled");
+				event.preventDefault();
+			} else {
+				alert("You may proceed");
+				localStorage.details = item9;
+				$scope.list = localStorage.details;
+				item9 = "";
+			}
+		}else {
+			alert("Cannot edit an empty item!");
 			event.preventDefault();
-		} else {
-			alert("You may proceed");
-			var item9 = document.getElementById("item9").innerHTML;
-			localStorage.details = item9;
-			$scope.list = localStorage.details;
-			item9 = "";
 		}
+		
 	};
 	$scope.edit10 = function () {
-		var answer = confirm("Are you sure you want edit item ten?");
-		if (!answer) {
-			alert("Editing has been cancelled");
+		var item10 = document.getElementById("item10").innerHTML;
+		if (item10 != ""){
+			var answer = confirm("Are you sure you want edit item ten?");
+			if (!answer) {
+				alert("Editing has been cancelled");
+				event.preventDefault();
+			} else {
+				alert("You may proceed");
+				localStorage.details = item10;
+				$scope.list = localStorage.details;
+				item10 = "";
+			}
+		}else {
+			alert("Cannot edit an empty item!");
 			event.preventDefault();
-		} else {
-			alert("You may proceed");
-			var item10 = document.getElementById("item10").innerHTML;
-			localStorage.details = item10;
-			$scope.list = localStorage.details;
-			item10 = "";
 		}
+		
 	};
 	//deleting items in the list
 	$scope.delete = function () {
