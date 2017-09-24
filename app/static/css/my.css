@@ -1,4 +1,4 @@
-
+@import url(https://fonts.googleapis.com/css?family=Ubuntu:400,500);
 body #ent{
     position: relative;
     margin: 0 auto;
@@ -340,13 +340,15 @@ a {
 /*about page*/
 .about{
     width: 1000px;
-    height: 400px;
+    height: 440px;
     border: none;
     text-align: left;
     position: relative;
-    left: 26%;
+    left: 15%;
     background-color: lightslategrey;
     font-size: 18px;
+    border: #CCC solid #CCC;
+    border-radius: 4px;
 }
 .about b{
     position: relative;
@@ -458,4 +460,20 @@ a {
     cursor: pointer;
     border: 0.2px solid #795708;
     border-radius: 6px;
+}
+
+.wrap{
+	max-width: 600px;
+	margin:50px auto;
+}
+
+.type-wrap{
+    position: relative;
+    max-width: 600px;
+    max-height: 240px;
+    margin-left: 2%;
+    margin-bottom: 2%;
+	background:#f0f0f0;
+	border-radius:5px;
+	border:#CCC 1px solid;
 }
