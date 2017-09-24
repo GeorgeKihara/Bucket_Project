@@ -8,6 +8,10 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/my.css') }}" type="text/css">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
     <script src="/static/js/angular.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js" type="text/javascript"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js" type="text/javascript"></script>
+    <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="Stylesheet" type="text/css"
+    />
 </head>
 
 <body ng-app="homeApp" ng-controller="goalCtrl">
@@ -59,8 +63,9 @@
         <div class="bucket">
             <form id="bucketForm" method="POST" name="goalie" action="{{ url_for('store') }}">
                 <input id="homieInput" type="label" ng-model="user" name="bktName">
+                <input id="datepicker">
                 <input id="goal" name="details" ng-model="list" type="text" value="" placeholder="What do u wish to do?" required/>
-                <input type="submit" ng-click="{{ url_for('store') }}; submitForm()" value="" id="btn-tick">
+                <input id="btn-tick" type="submit" ng-click="{{ url_for('store') }}; submitForm()" value="" >
                 <div style="color: brown;" id="flashes" ng-show="!timer()" ng-model="flashes" class="flashes">
                     {% for message in get_flashed_messages()%} {{ message }} {% endfor %}
                 </div>
@@ -72,7 +77,8 @@
                 <div id="one">
                     <label> 1.<big id="item1">{{data.post1}}</big></label>
                 </div>
-                <p><a ng-click="edit1()" href="{{ url_for('edit1') }}"><button id="edit"></button></a> <a ng-click="delete()" href="{{ url_for('delete1') }}"><button id="delete"></button></a></p>
+                <p><a ng-click="edit1()" href="{{ url_for('edit1') }}"><button id="edit"></button></a> <a ng-click="delete()"
+                        href="{{ url_for('delete1') }}"><button id="delete"></button></a></p>
                 <div id="two">
                     <label>2.<big id="item2">{{ data.post2}}</big></label>
                 </div>

@@ -24,3 +24,12 @@ function display() {
     var dato = document.getElementById("dato").innerHTML;
     alert(dato);
 }
+
+$(function () {
+    $('#datepicker').datepicker({
+        dateFormat: "dd/MM/yy",
+        changeMonth: true,
+        changeYear: true,
+        changeDay: true
+    });
+});
