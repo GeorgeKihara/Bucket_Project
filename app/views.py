@@ -155,7 +155,8 @@ def store():
     if request.method == 'POST':
         users = mongo.db.users
         user = users.find_one({'name': session['username']})
-        post = request.form['details']
+        calendar = request.form['calendar']
+        post = (request.form['details'] + " by " + calendar + ".")
         if 'items' not in user:
             user.update({'items' : []})
         if post not in user['items']:
