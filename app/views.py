@@ -112,7 +112,7 @@ def login1():
     if login_user:
         if bcrypt.hashpw(request.form['pass'].encode('utf-8'), login_user['password']) == login_user['password']:
             session['username'] = request.form['username']
-            return redirect(url_for('home'))()
+            return redirect(url_for('home'))
         flash(request.form['username'] + ", thats not your password!")
         return redirect(url_for('login'))
     message = Markup("Sorry, the username does not exist")
