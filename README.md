@@ -8,7 +8,7 @@ $ pip install flask
 ```
 Then install pymongo:
 ``` python
-$ pip install flask
+$ pip install pymongo
 ``` 
 
 ## Development server
