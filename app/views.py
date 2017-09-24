@@ -156,7 +156,8 @@ def store():
         users = mongo.db.users
         user = users.find_one({'name': session['username']})
         calendar = request.form['calendar']
-        post = (request.form['details'] + " by " + calendar + ".")
+        choice = request.form['choice']
+        post = (request.form['details'] + " " +choice+ " " +calendar+ ".")
         if 'items' not in user:
             user.update({'items' : []})
         if post not in user['items']:
