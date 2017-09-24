@@ -225,9 +225,11 @@ a {
     margin-left: -10px;
     margin-top: 5px;
     left: 5px;
+    border: 2px solid black;
+    border-radius: 4px;
 }
 
-.bucket #btn-tick {
+#btn-tick {
     position: relative;
     height: 30px;
     width: 30px;
@@ -238,7 +240,7 @@ a {
     background-size: 30px;
     border-radius: 4px;
     border: none;
-    right: -1%;
+    left: 2%;
     margin-top: 5px;
     top: 7px;
 }
@@ -422,7 +424,7 @@ a {
 
 .one {
   position: relative;
-  background-image: url('../images/penguin.jpeg');
+  background-image: url('../images/profileboy.jpeg');
 }
 
 #scroll #one,#scroll #two,#scroll #three,
@@ -434,16 +436,17 @@ a {
 
 #datepicker{
     background-image: url('../images/calendar.png');
-    background-size: 30px;
+    background-size: 28px;
+    background-repeat: no-repeat;
     position: relative; 
     left: -0.5%;
     margin-bottom: -1%;
-    width: 30px;  
+    width: 96px;  
     height: 30px;
     cursor: pointer;
-}
+    text-indent: 21%;
+    font-size: 13px;
+    border: 0px solid black;
+    border-radius: 4px;
 
-#btn-tick {
-    right:-10%;
-    position: relative;
 }

@@ -27,7 +27,7 @@ function display() {
 
 $(function () {
     $('#datepicker').datepicker({
-        dateFormat: "dd/MM/yy",
+        dateFormat: "dd-mm-yy",
         changeMonth: true,
         changeYear: true,
         changeDay: true
