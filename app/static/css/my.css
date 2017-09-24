@@ -431,7 +431,8 @@ a {
 #scroll #four,#scroll #five,#scroll #six,#scroll #seven,#scroll #eight,#scroll #nine,#scroll #ten {
     overflow: scroll;
     overflow-x: hidden;
-    overflow-wrap: unset;    
+    overflow-wrap: unset;
+    font-size: 14.5px;    
 }
 
 #datepicker{
@@ -441,7 +442,7 @@ a {
     position: relative; 
     left: -6.9%;
     margin-bottom: -1%;
-    width: 96px;  
+    width: 98px;  
     height: 30px;
     cursor: pointer;
     text-indent: 21%;
