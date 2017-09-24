@@ -1,15 +1,15 @@
 # Bucket_Project
 Bucket List project using python Flask, Angular Js and Pymongo
 
-#Prerequisites
+## Prerequisites
 You need to have flask installed in your local machine:
 ``` python
-$pip install flask
+$ pip install flask
 ```
 Then install pymongo:
 ``` python
-$pip install flask
-```
+$ pip install flask
+``` 
 
 ## Development server
 
