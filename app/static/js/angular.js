@@ -133,7 +133,6 @@ homeApp.controller('goalCtrl', function ($scope, $http) {
 				alert("Editing has been cancelled");
 				event.preventDefault();
 			} else {
-				alert("You may proceed");
 				localStorage.details = item1;
 				$scope.list = localStorage.details;
 				item1 = "deleted";
@@ -151,7 +150,6 @@ homeApp.controller('goalCtrl', function ($scope, $http) {
 				alert("Editing has been cancelled");
 				event.preventDefault();
 			} else {
-				alert("You may proceed");
 				localStorage.details = item2;
 				$scope.list = localStorage.details;
 				item2 = "";
@@ -170,7 +168,6 @@ homeApp.controller('goalCtrl', function ($scope, $http) {
 				alert("Editing has been cancelled");
 				event.preventDefault();
 			} else {
-				alert("You may proceed");
 				localStorage.details = item3;
 				$scope.list = localStorage.details;
 				item3 = "";
@@ -189,7 +186,6 @@ homeApp.controller('goalCtrl', function ($scope, $http) {
 				alert("Editing has been cancelled");
 				event.preventDefault();
 			} else {
-				alert("You may proceed");
 				localStorage.details = item4;
 				$scope.list = localStorage.details;
 				item4 = "";
@@ -208,7 +204,6 @@ homeApp.controller('goalCtrl', function ($scope, $http) {
 				alert("Editing has been cancelled");
 				event.preventDefault();
 			} else {
-				alert("You may proceed");
 				localStorage.details = item5;
 				$scope.list = localStorage.details;
 				item5 = "";
@@ -227,7 +222,6 @@ homeApp.controller('goalCtrl', function ($scope, $http) {
 				alert("Editing has been cancelled");
 				event.preventDefault();
 			} else {
-				alert("You may proceed");
 				localStorage.details = item6;
 				$scope.list = localStorage.details;
 				item6 = "";
@@ -246,7 +240,6 @@ homeApp.controller('goalCtrl', function ($scope, $http) {
 				alert("Editing has been cancelled");
 				event.preventDefault();
 			} else {
-				alert("You may proceed");
 				localStorage.details = item7;
 				$scope.list = localStorage.details;
 				item7 = "";
@@ -265,7 +258,6 @@ homeApp.controller('goalCtrl', function ($scope, $http) {
 				alert("Editing has been cancelled");
 				event.preventDefault();
 			} else {
-				alert("You may proceed");
 				localStorage.details = item8;
 				$scope.list = localStorage.details;
 				item8 = "";
@@ -284,7 +276,6 @@ homeApp.controller('goalCtrl', function ($scope, $http) {
 				alert("Editing has been cancelled");
 				event.preventDefault();
 			} else {
-				alert("You may proceed");
 				localStorage.details = item9;
 				$scope.list = localStorage.details;
 				item9 = "";
@@ -303,7 +294,6 @@ homeApp.controller('goalCtrl', function ($scope, $http) {
 				alert("Editing has been cancelled");
 				event.preventDefault();
 			} else {
-				alert("You may proceed");
 				localStorage.details = item10;
 				$scope.list = localStorage.details;
 				item10 = "";
