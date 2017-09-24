@@ -194,6 +194,9 @@ homeApp.controller('goalCtrl', function ($scope, $http) {
 				$scope.list = localStorage.details;
 				item4 = "";
 			}
+		}else {
+			alert("Cannot edit an empty item!");
+			event.preventDefault();
 		}
 		
 	};
@@ -210,6 +213,9 @@ homeApp.controller('goalCtrl', function ($scope, $http) {
 				$scope.list = localStorage.details;
 				item5 = "";
 			}
+		}else {
+			alert("Cannot edit an empty item!");
+			event.preventDefault();
 		}
 		
 	};
