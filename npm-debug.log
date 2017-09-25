@@ -1,0 +1,1084 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files\\nodejs\\node.exe',
+1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install',
+1 verbose cli   'typedjs' ]
+2 info using npm@3.10.10
+3 info using node@v6.11.0
+4 silly loadCurrentTree Starting
+5 silly install loadCurrentTree
+6 silly install readLocalPackageData
+7 silly fetchPackageMetaData typedjs
+8 silly fetchNamedPackageData typedjs
+9 silly mapToRegistry name typedjs
+10 silly mapToRegistry using default registry
+11 silly mapToRegistry registry https://registry.npmjs.org/
+12 silly mapToRegistry data Result {
+12 silly mapToRegistry   raw: 'typedjs',
+12 silly mapToRegistry   scope: null,
+12 silly mapToRegistry   escapedName: 'typedjs',
+12 silly mapToRegistry   name: 'typedjs',
+12 silly mapToRegistry   rawSpec: '',
+12 silly mapToRegistry   spec: 'latest',
+12 silly mapToRegistry   type: 'tag' }
+13 silly mapToRegistry uri https://registry.npmjs.org/typedjs
+14 verbose request uri https://registry.npmjs.org/typedjs
+15 verbose request no auth needed
+16 info attempt registry request try #1 at 4:09:28 PM
+17 verbose request id c3e4133353b45a2d
+18 http request GET https://registry.npmjs.org/typedjs
+19 http 200 https://registry.npmjs.org/typedjs
+20 verbose headers { server: 'nginx/1.10.3',
+20 verbose headers   'content-type': 'application/json',
+20 verbose headers   'last-modified': 'Thu, 11 Jul 2013 07:16:26 GMT',
+20 verbose headers   etag: 'W/"51de5bca-2e10"',
+20 verbose headers   'content-encoding': 'gzip',
+20 verbose headers   'cache-control': 'max-age=300',
+20 verbose headers   'content-length': '2317',
+20 verbose headers   'accept-ranges': 'bytes',
+20 verbose headers   date: 'Mon, 25 Sep 2017 13:09:31 GMT',
+20 verbose headers   via: '1.1 varnish',
+20 verbose headers   age: '0',
+20 verbose headers   connection: 'keep-alive',
+20 verbose headers   'x-served-by': 'cache-sin18028-SIN',
+20 verbose headers   'x-cache': 'MISS',
+20 verbose headers   'x-cache-hits': '0',
+20 verbose headers   'x-timer': 'S1506344971.040941,VS0,VE270',
+20 verbose headers   vary: 'Accept-Encoding, Accept' }
+21 silly get cb [ 200,
+21 silly get   { server: 'nginx/1.10.3',
+21 silly get     'content-type': 'application/json',
+21 silly get     'last-modified': 'Thu, 11 Jul 2013 07:16:26 GMT',
+21 silly get     etag: 'W/"51de5bca-2e10"',
+21 silly get     'content-encoding': 'gzip',
+21 silly get     'cache-control': 'max-age=300',
+21 silly get     'content-length': '2317',
+21 silly get     'accept-ranges': 'bytes',
+21 silly get     date: 'Mon, 25 Sep 2017 13:09:31 GMT',
+21 silly get     via: '1.1 varnish',
+21 silly get     age: '0',
+21 silly get     connection: 'keep-alive',
+21 silly get     'x-served-by': 'cache-sin18028-SIN',
+21 silly get     'x-cache': 'MISS',
+21 silly get     'x-cache-hits': '0',
+21 silly get     'x-timer': 'S1506344971.040941,VS0,VE270',
+21 silly get     vary: 'Accept-Encoding, Accept' } ]
+22 verbose get saving typedjs to C:\Users\STUDIES\AppData\Roaming\npm-cache\registry.npmjs.org\typedjs\.cache.json
+23 verbose correctMkdir C:\Users\STUDIES\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+24 silly install normalizeTree
+25 silly loadCurrentTree Finishing
+26 silly loadIdealTree Starting
+27 silly install loadIdealTree
+28 silly cloneCurrentTree Starting
+29 silly install cloneCurrentTreeToIdealTree
+30 silly cloneCurrentTree Finishing
+31 silly loadShrinkwrap Starting
+32 silly install loadShrinkwrap
+33 silly loadShrinkwrap Finishing
+34 silly loadAllDepsIntoIdealTree Starting
+35 silly install loadAllDepsIntoIdealTree
+36 silly resolveWithNewModule typedjs@0.2.2 checking installable status
+37 silly cache add args [ 'typedjs', null ]
+38 verbose cache add spec typedjs
+39 silly cache add parsed spec Result {
+39 silly cache add   raw: 'typedjs',
+39 silly cache add   scope: null,
+39 silly cache add   escapedName: 'typedjs',
+39 silly cache add   name: 'typedjs',
+39 silly cache add   rawSpec: '',
+39 silly cache add   spec: 'latest',
+39 silly cache add   type: 'tag' }
+40 silly addNamed typedjs@latest
+41 verbose addNamed "latest" is being treated as a dist-tag for typedjs
+42 info addNameTag [ 'typedjs', 'latest' ]
+43 silly mapToRegistry name typedjs
+44 silly mapToRegistry using default registry
+45 silly mapToRegistry registry https://registry.npmjs.org/
+46 silly mapToRegistry data Result {
+46 silly mapToRegistry   raw: 'typedjs',
+46 silly mapToRegistry   scope: null,
+46 silly mapToRegistry   escapedName: 'typedjs',
+46 silly mapToRegistry   name: 'typedjs',
+46 silly mapToRegistry   rawSpec: '',
+46 silly mapToRegistry   spec: 'latest',
+46 silly mapToRegistry   type: 'tag' }
+47 silly mapToRegistry uri https://registry.npmjs.org/typedjs
+48 verbose addNameTag registry:https://registry.npmjs.org/typedjs not in flight; fetching
+49 verbose get https://registry.npmjs.org/typedjs not expired, no request
+50 silly addNameTag next cb for typedjs with tag latest
+51 silly addNamed typedjs@0.2.2
+52 verbose addNamed "0.2.2" is a plain semver version for typedjs
+53 silly mapToRegistry name typedjs
+54 silly mapToRegistry using default registry
+55 silly mapToRegistry registry https://registry.npmjs.org/
+56 silly mapToRegistry data Result {
+56 silly mapToRegistry   raw: 'typedjs',
+56 silly mapToRegistry   scope: null,
+56 silly mapToRegistry   escapedName: 'typedjs',
+56 silly mapToRegistry   name: 'typedjs',
+56 silly mapToRegistry   rawSpec: '',
+56 silly mapToRegistry   spec: 'latest',
+56 silly mapToRegistry   type: 'tag' }
+57 silly mapToRegistry uri https://registry.npmjs.org/typedjs
+58 verbose addRemoteTarball https://registry.npmjs.org/typedjs/-/typedjs-0.2.2.tgz not in flight; adding
+59 verbose addRemoteTarball [ 'https://registry.npmjs.org/typedjs/-/typedjs-0.2.2.tgz',
+59 verbose addRemoteTarball   '7502ccc9e533e285d30a8e292c2ef697e1670f0f' ]
+60 info retry fetch attempt 1 at 4:09:30 PM
+61 info attempt registry request try #1 at 4:09:30 PM
+62 http fetch GET https://registry.npmjs.org/typedjs/-/typedjs-0.2.2.tgz
+63 http fetch 200 https://registry.npmjs.org/typedjs/-/typedjs-0.2.2.tgz
+64 silly fetchAndShaCheck shasum 7502ccc9e533e285d30a8e292c2ef697e1670f0f
+65 verbose addTmpTarball C:\Users\STUDIES\AppData\Local\Temp\npm-4736-e61b8c8b\registry.npmjs.org\typedjs\-\typedjs-0.2.2.tgz not in flight; adding
+66 verbose addTmpTarball already have metadata; skipping unpack for typedjs@0.2.2
+67 verbose correctMkdir C:\Users\STUDIES\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+68 silly cache afterAdd typedjs@0.2.2
+69 verbose afterAdd C:\Users\STUDIES\AppData\Roaming\npm-cache\typedjs\0.2.2\package\package.json not in flight; writing
+70 verbose correctMkdir C:\Users\STUDIES\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+71 verbose afterAdd C:\Users\STUDIES\AppData\Roaming\npm-cache\typedjs\0.2.2\package\package.json written
+72 verbose correctMkdir C:\Users\STUDIES\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+73 verbose addBundled extract C:\Users\STUDIES\AppData\Roaming\npm-cache\typedjs\0.2.2\package.tgz
+74 verbose tar unpack C:\Users\STUDIES\AppData\Roaming\npm-cache\typedjs\0.2.2\package.tgz
+75 verbose tar unpacking to C:\Users\STUDIES\AppData\Local\Temp\npm-4736-e61b8c8b\unpack-8ccdc621
+76 silly gentlyRm C:\Users\STUDIES\AppData\Local\Temp\npm-4736-e61b8c8b\unpack-8ccdc621 is being purged
+77 verbose gentlyRm don't care about contents; nuking C:\Users\STUDIES\AppData\Local\Temp\npm-4736-e61b8c8b\unpack-8ccdc621
+78 silly gunzTarPerm modes [ '777', '666' ]
+79 silly gunzTarPerm extractEntry package.json
+80 silly gunzTarPerm modified mode [ 'package.json', 420, 438 ]
+81 silly gunzTarPerm extractEntry .npmignore
+82 silly gunzTarPerm modified mode [ '.npmignore', 420, 438 ]
+83 silly gunzTarPerm extractEntry README.md
+84 silly gunzTarPerm modified mode [ 'README.md', 420, 438 ]
+85 silly gunzTarPerm extractEntry .travis.yml
+86 silly gunzTarPerm modified mode [ '.travis.yml', 420, 438 ]
+87 silly gunzTarPerm extractEntry bin/typedjs
+88 silly gunzTarPerm modified mode [ 'bin/typedjs', 493, 511 ]
+89 silly gunzTarPerm extractEntry lib/cli.js
+90 silly gunzTarPerm modified mode [ 'lib/cli.js', 420, 438 ]
+91 silly gunzTarPerm extractEntry lib/index.js
+92 silly gunzTarPerm modified mode [ 'lib/index.js', 420, 438 ]
+93 silly gunzTarPerm extractEntry lib/parser.js
+94 silly gunzTarPerm modified mode [ 'lib/parser.js', 420, 438 ]
+95 silly gunzTarPerm extractEntry lib/quickcheck.js
+96 silly gunzTarPerm modified mode [ 'lib/quickcheck.js', 420, 438 ]
+97 silly gunzTarPerm extractEntry lib/generate.js
+98 silly gunzTarPerm modified mode [ 'lib/generate.js', 420, 438 ]
+99 silly gunzTarPerm extractEntry lib/signatures.js
+100 silly gunzTarPerm modified mode [ 'lib/signatures.js', 420, 438 ]
+101 silly gunzTarPerm extractEntry lib/transform.js
+102 silly gunzTarPerm modified mode [ 'lib/transform.js', 420, 438 ]
+103 silly gunzTarPerm extractEntry lib/traverse.js
+104 silly gunzTarPerm modified mode [ 'lib/traverse.js', 420, 438 ]
+105 silly gunzTarPerm extractEntry lib/traverseObject.js
+106 silly gunzTarPerm modified mode [ 'lib/traverseObject.js', 420, 438 ]
+107 silly gunzTarPerm extractEntry lib/traverseSignature.js
+108 silly gunzTarPerm modified mode [ 'lib/traverseSignature.js', 420, 438 ]
+109 silly gunzTarPerm extractEntry lib/convert.js
+110 silly gunzTarPerm modified mode [ 'lib/convert.js', 420, 438 ]
+111 silly gunzTarPerm extractEntry lib/utils.js
+112 silly gunzTarPerm modified mode [ 'lib/utils.js', 420, 438 ]
+113 silly gunzTarPerm extractEntry lib/require.js
+114 silly gunzTarPerm modified mode [ 'lib/require.js', 420, 438 ]
+115 silly gunzTarPerm extractEntry test/dependencies.js
+116 silly gunzTarPerm modified mode [ 'test/dependencies.js', 420, 438 ]
+117 silly gunzTarPerm extractEntry test/quickcheck-test.js
+118 silly gunzTarPerm modified mode [ 'test/quickcheck-test.js', 420, 438 ]
+119 silly gunzTarPerm extractEntry test/require-test.js
+120 silly gunzTarPerm modified mode [ 'test/require-test.js', 420, 438 ]
+121 silly gunzTarPerm extractEntry test/transform-test.js
+122 silly gunzTarPerm modified mode [ 'test/transform-test.js', 420, 438 ]
+123 silly gunzTarPerm extractEntry test/fixtures/multiple-returns.js
+124 silly gunzTarPerm modified mode [ 'test/fixtures/multiple-returns.js', 420, 438 ]
+125 silly gunzTarPerm extractEntry test/fixtures/plusone.js
+126 silly gunzTarPerm modified mode [ 'test/fixtures/plusone.js', 420, 438 ]
+127 silly gunzTarPerm extractEntry test/fixtures/static.js
+128 silly gunzTarPerm modified mode [ 'test/fixtures/static.js', 420, 438 ]
+129 silly gunzTarPerm extractEntry test/fixtures/transform.js
+130 silly gunzTarPerm modified mode [ 'test/fixtures/transform.js', 420, 438 ]
+131 silly gunzTarPerm extractEntry test/fixtures/type-transforms.js
+132 silly gunzTarPerm modified mode [ 'test/fixtures/type-transforms.js', 420, 438 ]
+133 silly gunzTarPerm extractEntry node_modules/parser.js
+134 silly gunzTarPerm modified mode [ 'node_modules/parser.js', 420, 438 ]
+135 silly addBundled read tarball
+136 silly cleanup remove extracted module
+137 silly fetchNamedPackageData fu
+138 silly mapToRegistry name fu
+139 silly mapToRegistry using default registry
+140 silly mapToRegistry registry https://registry.npmjs.org/
+141 silly mapToRegistry data Result {
+141 silly mapToRegistry   raw: 'fu',
+141 silly mapToRegistry   scope: null,
+141 silly mapToRegistry   escapedName: 'fu',
+141 silly mapToRegistry   name: 'fu',
+141 silly mapToRegistry   rawSpec: '',
+141 silly mapToRegistry   spec: 'latest',
+141 silly mapToRegistry   type: 'tag' }
+142 silly mapToRegistry uri https://registry.npmjs.org/fu
+143 silly fetchNamedPackageData esprima
+144 silly mapToRegistry name esprima
+145 silly mapToRegistry using default registry
+146 silly mapToRegistry registry https://registry.npmjs.org/
+147 silly mapToRegistry data Result {
+147 silly mapToRegistry   raw: 'esprima',
+147 silly mapToRegistry   scope: null,
+147 silly mapToRegistry   escapedName: 'esprima',
+147 silly mapToRegistry   name: 'esprima',
+147 silly mapToRegistry   rawSpec: '',
+147 silly mapToRegistry   spec: 'latest',
+147 silly mapToRegistry   type: 'tag' }
+148 silly mapToRegistry uri https://registry.npmjs.org/esprima
+149 silly fetchNamedPackageData dune
+150 silly mapToRegistry name dune
+151 silly mapToRegistry using default registry
+152 silly mapToRegistry registry https://registry.npmjs.org/
+153 silly mapToRegistry data Result {
+153 silly mapToRegistry   raw: 'dune',
+153 silly mapToRegistry   scope: null,
+153 silly mapToRegistry   escapedName: 'dune',
+153 silly mapToRegistry   name: 'dune',
+153 silly mapToRegistry   rawSpec: '',
+153 silly mapToRegistry   spec: 'latest',
+153 silly mapToRegistry   type: 'tag' }
+154 silly mapToRegistry uri https://registry.npmjs.org/dune
+155 silly fetchNamedPackageData tg
+156 silly mapToRegistry name tg
+157 silly mapToRegistry using default registry
+158 silly mapToRegistry registry https://registry.npmjs.org/
+159 silly mapToRegistry data Result {
+159 silly mapToRegistry   raw: 'tg',
+159 silly mapToRegistry   scope: null,
+159 silly mapToRegistry   escapedName: 'tg',
+159 silly mapToRegistry   name: 'tg',
+159 silly mapToRegistry   rawSpec: '',
+159 silly mapToRegistry   spec: 'latest',
+159 silly mapToRegistry   type: 'tag' }
+160 silly mapToRegistry uri https://registry.npmjs.org/tg
+161 verbose request uri https://registry.npmjs.org/fu
+162 verbose request no auth needed
+163 info attempt registry request try #1 at 4:09:32 PM
+164 http request GET https://registry.npmjs.org/fu
+165 verbose request uri https://registry.npmjs.org/dune
+166 verbose request no auth needed
+167 info attempt registry request try #1 at 4:09:32 PM
+168 http request GET https://registry.npmjs.org/dune
+169 verbose request uri https://registry.npmjs.org/tg
+170 verbose request no auth needed
+171 info attempt registry request try #1 at 4:09:32 PM
+172 http request GET https://registry.npmjs.org/tg
+173 verbose request uri https://registry.npmjs.org/esprima
+174 verbose request no auth needed
+175 info attempt registry request try #1 at 4:09:32 PM
+176 verbose etag W/"595a24bf-184be"
+177 verbose lastModified Mon, 03 Jul 2017 11:04:31 GMT
+178 http request GET https://registry.npmjs.org/esprima
+179 http 200 https://registry.npmjs.org/fu
+180 verbose headers { server: 'nginx/1.10.3',
+180 verbose headers   'content-type': 'application/json',
+180 verbose headers   'last-modified': 'Wed, 31 Jul 2013 08:19:45 GMT',
+180 verbose headers   etag: 'W/"51f8c8a1-296e"',
+180 verbose headers   'content-encoding': 'gzip',
+180 verbose headers   'cache-control': 'max-age=300',
+180 verbose headers   'content-length': '1277',
+180 verbose headers   'accept-ranges': 'bytes',
+180 verbose headers   date: 'Mon, 25 Sep 2017 13:09:34 GMT',
+180 verbose headers   via: '1.1 varnish',
+180 verbose headers   age: '0',
+180 verbose headers   connection: 'keep-alive',
+180 verbose headers   'x-served-by': 'cache-sin18028-SIN',
+180 verbose headers   'x-cache': 'MISS',
+180 verbose headers   'x-cache-hits': '0',
+180 verbose headers   'x-timer': 'S1506344974.900511,VS0,VE247',
+180 verbose headers   vary: 'Accept-Encoding, Accept' }
+181 silly get cb [ 200,
+181 silly get   { server: 'nginx/1.10.3',
+181 silly get     'content-type': 'application/json',
+181 silly get     'last-modified': 'Wed, 31 Jul 2013 08:19:45 GMT',
+181 silly get     etag: 'W/"51f8c8a1-296e"',
+181 silly get     'content-encoding': 'gzip',
+181 silly get     'cache-control': 'max-age=300',
+181 silly get     'content-length': '1277',
+181 silly get     'accept-ranges': 'bytes',
+181 silly get     date: 'Mon, 25 Sep 2017 13:09:34 GMT',
+181 silly get     via: '1.1 varnish',
+181 silly get     age: '0',
+181 silly get     connection: 'keep-alive',
+181 silly get     'x-served-by': 'cache-sin18028-SIN',
+181 silly get     'x-cache': 'MISS',
+181 silly get     'x-cache-hits': '0',
+181 silly get     'x-timer': 'S1506344974.900511,VS0,VE247',
+181 silly get     vary: 'Accept-Encoding, Accept' } ]
+182 verbose get saving fu to C:\Users\STUDIES\AppData\Roaming\npm-cache\registry.npmjs.org\fu\.cache.json
+183 verbose correctMkdir C:\Users\STUDIES\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+184 silly resolveWithNewModule fu@0.1.0 checking installable status
+185 silly cache add args [ 'fu@*', null ]
+186 verbose cache add spec fu@*
+187 silly cache add parsed spec Result {
+187 silly cache add   raw: 'fu@*',
+187 silly cache add   scope: null,
+187 silly cache add   escapedName: 'fu',
+187 silly cache add   name: 'fu',
+187 silly cache add   rawSpec: '*',
+187 silly cache add   spec: '*',
+187 silly cache add   type: 'range' }
+188 silly addNamed fu@*
+189 verbose addNamed "*" is a valid semver range for fu
+190 silly addNameRange { name: 'fu', range: '*', hasData: false }
+191 silly mapToRegistry name fu
+192 silly mapToRegistry using default registry
+193 silly mapToRegistry registry https://registry.npmjs.org/
+194 silly mapToRegistry data Result {
+194 silly mapToRegistry   raw: 'fu',
+194 silly mapToRegistry   scope: null,
+194 silly mapToRegistry   escapedName: 'fu',
+194 silly mapToRegistry   name: 'fu',
+194 silly mapToRegistry   rawSpec: '',
+194 silly mapToRegistry   spec: 'latest',
+194 silly mapToRegistry   type: 'tag' }
+195 silly mapToRegistry uri https://registry.npmjs.org/fu
+196 verbose addNameRange registry:https://registry.npmjs.org/fu not in flight; fetching
+197 verbose get https://registry.npmjs.org/fu not expired, no request
+198 silly addNameRange number 2 { name: 'fu', range: '*', hasData: true }
+199 silly addNameRange versions [ 'fu',
+199 silly addNameRange   [ '0.0.0', '0.0.1', '0.0.2', '0.0.3', '0.0.4', '0.0.5', '0.1.0' ] ]
+200 silly addNamed fu@0.1.0
+201 verbose addNamed "0.1.0" is a plain semver version for fu
+202 silly mapToRegistry name fu
+203 silly mapToRegistry using default registry
+204 silly mapToRegistry registry https://registry.npmjs.org/
+205 silly mapToRegistry data Result {
+205 silly mapToRegistry   raw: 'fu',
+205 silly mapToRegistry   scope: null,
+205 silly mapToRegistry   escapedName: 'fu',
+205 silly mapToRegistry   name: 'fu',
+205 silly mapToRegistry   rawSpec: '',
+205 silly mapToRegistry   spec: 'latest',
+205 silly mapToRegistry   type: 'tag' }
+206 silly mapToRegistry uri https://registry.npmjs.org/fu
+207 verbose addRemoteTarball https://registry.npmjs.org/fu/-/fu-0.1.0.tgz not in flight; adding
+208 verbose addRemoteTarball [ 'https://registry.npmjs.org/fu/-/fu-0.1.0.tgz',
+208 verbose addRemoteTarball   '94e01db417ccc3b86b49a3cc03c319bf5d2acb3a' ]
+209 info retry fetch attempt 1 at 4:09:32 PM
+210 info attempt registry request try #1 at 4:09:32 PM
+211 http fetch GET https://registry.npmjs.org/fu/-/fu-0.1.0.tgz
+212 http 200 https://registry.npmjs.org/esprima
+213 verbose headers { server: 'nginx/1.10.3',
+213 verbose headers   'content-type': 'application/json',
+213 verbose headers   'last-modified': 'Fri, 15 Sep 2017 20:24:39 GMT',
+213 verbose headers   etag: 'W/"59bc3707-184e1"',
+213 verbose headers   'content-encoding': 'gzip',
+213 verbose headers   'cache-control': 'max-age=300',
+213 verbose headers   'content-length': '8609',
+213 verbose headers   'accept-ranges': 'bytes',
+213 verbose headers   date: 'Mon, 25 Sep 2017 13:09:34 GMT',
+213 verbose headers   via: '1.1 varnish',
+213 verbose headers   age: '138',
+213 verbose headers   connection: 'keep-alive',
+213 verbose headers   'x-served-by': 'cache-sin18031-SIN',
+213 verbose headers   'x-cache': 'HIT',
+213 verbose headers   'x-cache-hits': '3',
+213 verbose headers   'x-timer': 'S1506344975.652483,VS0,VE0',
+213 verbose headers   vary: 'Accept-Encoding, Accept' }
+214 silly get cb [ 200,
+214 silly get   { server: 'nginx/1.10.3',
+214 silly get     'content-type': 'application/json',
+214 silly get     'last-modified': 'Fri, 15 Sep 2017 20:24:39 GMT',
+214 silly get     etag: 'W/"59bc3707-184e1"',
+214 silly get     'content-encoding': 'gzip',
+214 silly get     'cache-control': 'max-age=300',
+214 silly get     'content-length': '8609',
+214 silly get     'accept-ranges': 'bytes',
+214 silly get     date: 'Mon, 25 Sep 2017 13:09:34 GMT',
+214 silly get     via: '1.1 varnish',
+214 silly get     age: '138',
+214 silly get     connection: 'keep-alive',
+214 silly get     'x-served-by': 'cache-sin18031-SIN',
+214 silly get     'x-cache': 'HIT',
+214 silly get     'x-cache-hits': '3',
+214 silly get     'x-timer': 'S1506344975.652483,VS0,VE0',
+214 silly get     vary: 'Accept-Encoding, Accept' } ]
+215 verbose get saving esprima to C:\Users\STUDIES\AppData\Roaming\npm-cache\registry.npmjs.org\esprima\.cache.json
+216 verbose correctMkdir C:\Users\STUDIES\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+217 silly resolveWithNewModule esprima@4.0.0 checking installable status
+218 silly cache add args [ 'esprima@*', null ]
+219 verbose cache add spec esprima@*
+220 silly cache add parsed spec Result {
+220 silly cache add   raw: 'esprima@*',
+220 silly cache add   scope: null,
+220 silly cache add   escapedName: 'esprima',
+220 silly cache add   name: 'esprima',
+220 silly cache add   rawSpec: '*',
+220 silly cache add   spec: '*',
+220 silly cache add   type: 'range' }
+221 silly addNamed esprima@*
+222 verbose addNamed "*" is a valid semver range for esprima
+223 silly addNameRange { name: 'esprima', range: '*', hasData: false }
+224 silly mapToRegistry name esprima
+225 silly mapToRegistry using default registry
+226 silly mapToRegistry registry https://registry.npmjs.org/
+227 silly mapToRegistry data Result {
+227 silly mapToRegistry   raw: 'esprima',
+227 silly mapToRegistry   scope: null,
+227 silly mapToRegistry   escapedName: 'esprima',
+227 silly mapToRegistry   name: 'esprima',
+227 silly mapToRegistry   rawSpec: '',
+227 silly mapToRegistry   spec: 'latest',
+227 silly mapToRegistry   type: 'tag' }
+228 silly mapToRegistry uri https://registry.npmjs.org/esprima
+229 verbose addNameRange registry:https://registry.npmjs.org/esprima not in flight; fetching
+230 verbose get https://registry.npmjs.org/esprima not expired, no request
+231 silly addNameRange number 2 { name: 'esprima', range: '*', hasData: true }
+232 silly addNameRange versions [ 'esprima',
+232 silly addNameRange   [ '0.7.0',
+232 silly addNameRange     '0.8.0',
+232 silly addNameRange     '0.8.1',
+232 silly addNameRange     '0.8.2',
+232 silly addNameRange     '0.9.0',
+232 silly addNameRange     '0.9.1',
+232 silly addNameRange     '0.9.2',
+232 silly addNameRange     '0.9.3',
+232 silly addNameRange     '0.9.4',
+232 silly addNameRange     '0.9.5',
+232 silly addNameRange     '0.9.6',
+232 silly addNameRange     '0.9.7',
+232 silly addNameRange     '0.9.8',
+232 silly addNameRange     '0.9.9',
+232 silly addNameRange     '1.0.0',
+232 silly addNameRange     '1.0.1',
+232 silly addNameRange     '1.0.2',
+232 silly addNameRange     '1.0.3',
+232 silly addNameRange     '1.0.4',
+232 silly addNameRange     '1.1.0',
+232 silly addNameRange     '1.1.1',
+232 silly addNameRange     '1.2.0',
+232 silly addNameRange     '1.2.1',
+232 silly addNameRange     '1.2.2',
+232 silly addNameRange     '1.2.3',
+232 silly addNameRange     '1.2.4',
+232 silly addNameRange     '2.0.0',
+232 silly addNameRange     '1.2.5',
+232 silly addNameRange     '2.1.0',
+232 silly addNameRange     '2.2.0',
+232 silly addNameRange     '2.3.0',
+232 silly addNameRange     '2.4.0',
+232 silly addNameRange     '2.4.1',
+232 silly addNameRange     '2.5.0',
+232 silly addNameRange     '2.6.0',
+232 silly addNameRange     '2.7.0',
+232 silly addNameRange     '2.7.1',
+232 silly addNameRange     '2.7.2',
+232 silly addNameRange     '2.7.3',
+232 silly addNameRange     '3.0.0',
+232 silly addNameRange     '3.1.0',
+232 silly addNameRange     '3.1.1',
+232 silly addNameRange     '3.1.2',
+232 silly addNameRange     '3.1.3',
+232 silly addNameRange     '4.0.0' ] ]
+233 silly addNamed esprima@4.0.0
+234 verbose addNamed "4.0.0" is a plain semver version for esprima
+235 silly mapToRegistry name esprima
+236 silly mapToRegistry using default registry
+237 silly mapToRegistry registry https://registry.npmjs.org/
+238 silly mapToRegistry data Result {
+238 silly mapToRegistry   raw: 'esprima',
+238 silly mapToRegistry   scope: null,
+238 silly mapToRegistry   escapedName: 'esprima',
+238 silly mapToRegistry   name: 'esprima',
+238 silly mapToRegistry   rawSpec: '',
+238 silly mapToRegistry   spec: 'latest',
+238 silly mapToRegistry   type: 'tag' }
+239 silly mapToRegistry uri https://registry.npmjs.org/esprima
+240 verbose addRemoteTarball https://registry.npmjs.org/esprima/-/esprima-4.0.0.tgz not in flight; adding
+241 verbose addRemoteTarball [ 'https://registry.npmjs.org/esprima/-/esprima-4.0.0.tgz',
+241 verbose addRemoteTarball   '4499eddcd1110e0b218bacf2fa7f7f59f55ca804' ]
+242 info retry fetch attempt 1 at 4:09:33 PM
+243 info attempt registry request try #1 at 4:09:33 PM
+244 http fetch GET https://registry.npmjs.org/esprima/-/esprima-4.0.0.tgz
+245 http fetch 200 https://registry.npmjs.org/fu/-/fu-0.1.0.tgz
+246 silly fetchAndShaCheck shasum 94e01db417ccc3b86b49a3cc03c319bf5d2acb3a
+247 verbose addTmpTarball C:\Users\STUDIES\AppData\Local\Temp\npm-4736-e61b8c8b\registry.npmjs.org\fu\-\fu-0.1.0.tgz not in flight; adding
+248 verbose addTmpTarball already have metadata; skipping unpack for fu@0.1.0
+249 verbose correctMkdir C:\Users\STUDIES\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+250 silly cache afterAdd fu@0.1.0
+251 verbose afterAdd C:\Users\STUDIES\AppData\Roaming\npm-cache\fu\0.1.0\package\package.json not in flight; writing
+252 verbose correctMkdir C:\Users\STUDIES\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+253 verbose afterAdd C:\Users\STUDIES\AppData\Roaming\npm-cache\fu\0.1.0\package\package.json written
+254 http 200 https://registry.npmjs.org/tg
+255 verbose headers { server: 'nginx/1.10.3',
+255 verbose headers   'content-type': 'application/json',
+255 verbose headers   'last-modified': 'Sat, 08 Aug 2015 05:45:47 GMT',
+255 verbose headers   etag: 'W/"55c5978b-139e"',
+255 verbose headers   'content-encoding': 'gzip',
+255 verbose headers   'cache-control': 'max-age=300',
+255 verbose headers   'content-length': '1159',
+255 verbose headers   'accept-ranges': 'bytes',
+255 verbose headers   date: 'Mon, 25 Sep 2017 13:09:34 GMT',
+255 verbose headers   via: '1.1 varnish',
+255 verbose headers   age: '0',
+255 verbose headers   connection: 'keep-alive',
+255 verbose headers   'x-served-by': 'cache-sin18033-SIN',
+255 verbose headers   'x-cache': 'MISS',
+255 verbose headers   'x-cache-hits': '0',
+255 verbose headers   'x-timer': 'S1506344975.629439,VS0,VE273',
+255 verbose headers   vary: 'Accept-Encoding, Accept' }
+256 silly get cb [ 200,
+256 silly get   { server: 'nginx/1.10.3',
+256 silly get     'content-type': 'application/json',
+256 silly get     'last-modified': 'Sat, 08 Aug 2015 05:45:47 GMT',
+256 silly get     etag: 'W/"55c5978b-139e"',
+256 silly get     'content-encoding': 'gzip',
+256 silly get     'cache-control': 'max-age=300',
+256 silly get     'content-length': '1159',
+256 silly get     'accept-ranges': 'bytes',
+256 silly get     date: 'Mon, 25 Sep 2017 13:09:34 GMT',
+256 silly get     via: '1.1 varnish',
+256 silly get     age: '0',
+256 silly get     connection: 'keep-alive',
+256 silly get     'x-served-by': 'cache-sin18033-SIN',
+256 silly get     'x-cache': 'MISS',
+256 silly get     'x-cache-hits': '0',
+256 silly get     'x-timer': 'S1506344975.629439,VS0,VE273',
+256 silly get     vary: 'Accept-Encoding, Accept' } ]
+257 verbose get saving tg to C:\Users\STUDIES\AppData\Roaming\npm-cache\registry.npmjs.org\tg\.cache.json
+258 verbose correctMkdir C:\Users\STUDIES\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+259 http 200 https://registry.npmjs.org/dune
+260 verbose headers { server: 'nginx/1.10.3',
+260 verbose headers   'content-type': 'application/json',
+260 verbose headers   'last-modified': 'Sun, 15 Feb 2015 06:10:55 GMT',
+260 verbose headers   etag: 'W/"54e0386f-1fe5"',
+260 verbose headers   'content-encoding': 'gzip',
+260 verbose headers   'cache-control': 'max-age=300',
+260 verbose headers   'content-length': '1717',
+260 verbose headers   'accept-ranges': 'bytes',
+260 verbose headers   date: 'Mon, 25 Sep 2017 13:09:34 GMT',
+260 verbose headers   via: '1.1 varnish',
+260 verbose headers   age: '0',
+260 verbose headers   connection: 'keep-alive',
+260 verbose headers   'x-served-by': 'cache-sin18024-SIN',
+260 verbose headers   'x-cache': 'MISS',
+260 verbose headers   'x-cache-hits': '0',
+260 verbose headers   'x-timer': 'S1506344975.631354,VS0,VE297',
+260 verbose headers   vary: 'Accept-Encoding, Accept' }
+261 silly get cb [ 200,
+261 silly get   { server: 'nginx/1.10.3',
+261 silly get     'content-type': 'application/json',
+261 silly get     'last-modified': 'Sun, 15 Feb 2015 06:10:55 GMT',
+261 silly get     etag: 'W/"54e0386f-1fe5"',
+261 silly get     'content-encoding': 'gzip',
+261 silly get     'cache-control': 'max-age=300',
+261 silly get     'content-length': '1717',
+261 silly get     'accept-ranges': 'bytes',
+261 silly get     date: 'Mon, 25 Sep 2017 13:09:34 GMT',
+261 silly get     via: '1.1 varnish',
+261 silly get     age: '0',
+261 silly get     connection: 'keep-alive',
+261 silly get     'x-served-by': 'cache-sin18024-SIN',
+261 silly get     'x-cache': 'MISS',
+261 silly get     'x-cache-hits': '0',
+261 silly get     'x-timer': 'S1506344975.631354,VS0,VE297',
+261 silly get     vary: 'Accept-Encoding, Accept' } ]
+262 verbose get saving dune to C:\Users\STUDIES\AppData\Roaming\npm-cache\registry.npmjs.org\dune\.cache.json
+263 verbose correctMkdir C:\Users\STUDIES\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+264 silly resolveWithNewModule tg@0.0.7 checking installable status
+265 silly cache add args [ 'tg@*', null ]
+266 verbose cache add spec tg@*
+267 silly cache add parsed spec Result {
+267 silly cache add   raw: 'tg@*',
+267 silly cache add   scope: null,
+267 silly cache add   escapedName: 'tg',
+267 silly cache add   name: 'tg',
+267 silly cache add   rawSpec: '*',
+267 silly cache add   spec: '*',
+267 silly cache add   type: 'range' }
+268 silly addNamed tg@*
+269 verbose addNamed "*" is a valid semver range for tg
+270 silly addNameRange { name: 'tg', range: '*', hasData: false }
+271 silly mapToRegistry name tg
+272 silly mapToRegistry using default registry
+273 silly mapToRegistry registry https://registry.npmjs.org/
+274 silly mapToRegistry data Result {
+274 silly mapToRegistry   raw: 'tg',
+274 silly mapToRegistry   scope: null,
+274 silly mapToRegistry   escapedName: 'tg',
+274 silly mapToRegistry   name: 'tg',
+274 silly mapToRegistry   rawSpec: '',
+274 silly mapToRegistry   spec: 'latest',
+274 silly mapToRegistry   type: 'tag' }
+275 silly mapToRegistry uri https://registry.npmjs.org/tg
+276 verbose addNameRange registry:https://registry.npmjs.org/tg not in flight; fetching
+277 silly resolveWithNewModule dune@0.2.1 checking installable status
+278 silly cache add args [ 'dune@*', null ]
+279 verbose cache add spec dune@*
+280 silly cache add parsed spec Result {
+280 silly cache add   raw: 'dune@*',
+280 silly cache add   scope: null,
+280 silly cache add   escapedName: 'dune',
+280 silly cache add   name: 'dune',
+280 silly cache add   rawSpec: '*',
+280 silly cache add   spec: '*',
+280 silly cache add   type: 'range' }
+281 silly addNamed dune@*
+282 verbose addNamed "*" is a valid semver range for dune
+283 silly addNameRange { name: 'dune', range: '*', hasData: false }
+284 silly mapToRegistry name dune
+285 silly mapToRegistry using default registry
+286 silly mapToRegistry registry https://registry.npmjs.org/
+287 silly mapToRegistry data Result {
+287 silly mapToRegistry   raw: 'dune',
+287 silly mapToRegistry   scope: null,
+287 silly mapToRegistry   escapedName: 'dune',
+287 silly mapToRegistry   name: 'dune',
+287 silly mapToRegistry   rawSpec: '',
+287 silly mapToRegistry   spec: 'latest',
+287 silly mapToRegistry   type: 'tag' }
+288 silly mapToRegistry uri https://registry.npmjs.org/dune
+289 verbose addNameRange registry:https://registry.npmjs.org/dune not in flight; fetching
+290 verbose get https://registry.npmjs.org/tg not expired, no request
+291 silly addNameRange number 2 { name: 'tg', range: '*', hasData: true }
+292 silly addNameRange versions [ 'tg',
+292 silly addNameRange   [ '0.0.1', '0.0.2', '0.0.4', '0.0.5', '0.0.6', '0.0.7' ] ]
+293 silly addNamed tg@0.0.7
+294 verbose addNamed "0.0.7" is a plain semver version for tg
+295 silly mapToRegistry name tg
+296 silly mapToRegistry using default registry
+297 silly mapToRegistry registry https://registry.npmjs.org/
+298 silly mapToRegistry data Result {
+298 silly mapToRegistry   raw: 'tg',
+298 silly mapToRegistry   scope: null,
+298 silly mapToRegistry   escapedName: 'tg',
+298 silly mapToRegistry   name: 'tg',
+298 silly mapToRegistry   rawSpec: '',
+298 silly mapToRegistry   spec: 'latest',
+298 silly mapToRegistry   type: 'tag' }
+299 silly mapToRegistry uri https://registry.npmjs.org/tg
+300 verbose addRemoteTarball https://registry.npmjs.org/tg/-/tg-0.0.7.tgz not in flight; adding
+301 verbose addRemoteTarball [ 'https://registry.npmjs.org/tg/-/tg-0.0.7.tgz',
+301 verbose addRemoteTarball   '940a94dedada05dff97b9f5b7ab4b21ff6f4f57c' ]
+302 verbose get https://registry.npmjs.org/dune not expired, no request
+303 silly addNameRange number 2 { name: 'dune', range: '*', hasData: true }
+304 silly addNameRange versions [ 'dune',
+304 silly addNameRange   [ '0.0.1', '0.0.2', '0.0.6', '0.0.7', '0.1.0', '0.2.0', '0.2.1' ] ]
+305 silly addNamed dune@0.2.1
+306 verbose addNamed "0.2.1" is a plain semver version for dune
+307 silly mapToRegistry name dune
+308 silly mapToRegistry using default registry
+309 silly mapToRegistry registry https://registry.npmjs.org/
+310 silly mapToRegistry data Result {
+310 silly mapToRegistry   raw: 'dune',
+310 silly mapToRegistry   scope: null,
+310 silly mapToRegistry   escapedName: 'dune',
+310 silly mapToRegistry   name: 'dune',
+310 silly mapToRegistry   rawSpec: '',
+310 silly mapToRegistry   spec: 'latest',
+310 silly mapToRegistry   type: 'tag' }
+311 silly mapToRegistry uri https://registry.npmjs.org/dune
+312 verbose addRemoteTarball https://registry.npmjs.org/dune/-/dune-0.2.1.tgz not in flight; adding
+313 verbose addRemoteTarball [ 'https://registry.npmjs.org/dune/-/dune-0.2.1.tgz',
+313 verbose addRemoteTarball   'e70fc7b0802f16fcd7cd2b248926a3653eef07e2' ]
+314 info retry fetch attempt 1 at 4:09:33 PM
+315 info attempt registry request try #1 at 4:09:33 PM
+316 http fetch GET https://registry.npmjs.org/tg/-/tg-0.0.7.tgz
+317 info retry fetch attempt 1 at 4:09:33 PM
+318 info attempt registry request try #1 at 4:09:33 PM
+319 http fetch GET https://registry.npmjs.org/dune/-/dune-0.2.1.tgz
+320 http fetch 200 https://registry.npmjs.org/esprima/-/esprima-4.0.0.tgz
+321 silly fetchAndShaCheck shasum 4499eddcd1110e0b218bacf2fa7f7f59f55ca804
+322 verbose addTmpTarball C:\Users\STUDIES\AppData\Local\Temp\npm-4736-e61b8c8b\registry.npmjs.org\esprima\-\esprima-4.0.0.tgz not in flight; adding
+323 verbose addTmpTarball already have metadata; skipping unpack for esprima@4.0.0
+324 verbose correctMkdir C:\Users\STUDIES\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+325 silly cache afterAdd esprima@4.0.0
+326 verbose afterAdd C:\Users\STUDIES\AppData\Roaming\npm-cache\esprima\4.0.0\package\package.json not in flight; writing
+327 verbose correctMkdir C:\Users\STUDIES\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+328 verbose afterAdd C:\Users\STUDIES\AppData\Roaming\npm-cache\esprima\4.0.0\package\package.json written
+329 http fetch 200 https://registry.npmjs.org/dune/-/dune-0.2.1.tgz
+330 silly fetchAndShaCheck shasum e70fc7b0802f16fcd7cd2b248926a3653eef07e2
+331 verbose addTmpTarball C:\Users\STUDIES\AppData\Local\Temp\npm-4736-e61b8c8b\registry.npmjs.org\dune\-\dune-0.2.1.tgz not in flight; adding
+332 verbose addTmpTarball already have metadata; skipping unpack for dune@0.2.1
+333 verbose correctMkdir C:\Users\STUDIES\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+334 silly cache afterAdd dune@0.2.1
+335 verbose afterAdd C:\Users\STUDIES\AppData\Roaming\npm-cache\dune\0.2.1\package\package.json not in flight; writing
+336 verbose correctMkdir C:\Users\STUDIES\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+337 verbose afterAdd C:\Users\STUDIES\AppData\Roaming\npm-cache\dune\0.2.1\package\package.json written
+338 http fetch 200 https://registry.npmjs.org/tg/-/tg-0.0.7.tgz
+339 silly fetchAndShaCheck shasum 940a94dedada05dff97b9f5b7ab4b21ff6f4f57c
+340 verbose addTmpTarball C:\Users\STUDIES\AppData\Local\Temp\npm-4736-e61b8c8b\registry.npmjs.org\tg\-\tg-0.0.7.tgz not in flight; adding
+341 verbose addTmpTarball already have metadata; skipping unpack for tg@0.0.7
+342 verbose correctMkdir C:\Users\STUDIES\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+343 silly cache afterAdd tg@0.0.7
+344 verbose afterAdd C:\Users\STUDIES\AppData\Roaming\npm-cache\tg\0.0.7\package\package.json not in flight; writing
+345 verbose correctMkdir C:\Users\STUDIES\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+346 verbose afterAdd C:\Users\STUDIES\AppData\Roaming\npm-cache\tg\0.0.7\package\package.json written
+347 silly loadAllDepsIntoIdealTree Finishing
+348 silly loadIdealTree Finishing
+349 silly currentTree Bucket_Project
+349 silly currentTree +-- angular2-image-upload@0.6.6
+349 silly currentTree `-- bootstrap@3.3.7
+350 silly idealTree Bucket_Project
+350 silly idealTree +-- angular2-image-upload@0.6.6
+350 silly idealTree +-- bootstrap@3.3.7
+350 silly idealTree +-- dune@0.2.1
+350 silly idealTree +-- esprima@4.0.0
+350 silly idealTree +-- fu@0.1.0
+350 silly idealTree +-- tg@0.0.7
+350 silly idealTree `-- typedjs@0.2.2
+350 silly idealTree   `-- parser.js
+351 silly generateActionsToTake Starting
+352 silly install generateActionsToTake
+353 silly generateActionsToTake Finishing
+354 silly diffTrees action count 6
+355 silly diffTrees add dune@0.2.1
+356 silly diffTrees add esprima@4.0.0
+357 silly diffTrees add fu@0.1.0
+358 silly diffTrees add tg@0.0.7
+359 silly diffTrees add parser.js
+360 silly diffTrees add typedjs@0.2.2
+361 silly decomposeActions action count 45
+362 silly decomposeActions fetch dune@0.2.1
+363 silly decomposeActions extract dune@0.2.1
+364 silly decomposeActions test dune@0.2.1
+365 silly decomposeActions preinstall dune@0.2.1
+366 silly decomposeActions build dune@0.2.1
+367 silly decomposeActions install dune@0.2.1
+368 silly decomposeActions postinstall dune@0.2.1
+369 silly decomposeActions finalize dune@0.2.1
+370 silly decomposeActions fetch esprima@4.0.0
+371 silly decomposeActions extract esprima@4.0.0
+372 silly decomposeActions test esprima@4.0.0
+373 silly decomposeActions preinstall esprima@4.0.0
+374 silly decomposeActions build esprima@4.0.0
+375 silly decomposeActions install esprima@4.0.0
+376 silly decomposeActions postinstall esprima@4.0.0
+377 silly decomposeActions finalize esprima@4.0.0
+378 silly decomposeActions fetch fu@0.1.0
+379 silly decomposeActions extract fu@0.1.0
+380 silly decomposeActions test fu@0.1.0
+381 silly decomposeActions preinstall fu@0.1.0
+382 silly decomposeActions build fu@0.1.0
+383 silly decomposeActions install fu@0.1.0
+384 silly decomposeActions postinstall fu@0.1.0
+385 silly decomposeActions finalize fu@0.1.0
+386 silly decomposeActions fetch tg@0.0.7
+387 silly decomposeActions extract tg@0.0.7
+388 silly decomposeActions test tg@0.0.7
+389 silly decomposeActions preinstall tg@0.0.7
+390 silly decomposeActions build tg@0.0.7
+391 silly decomposeActions install tg@0.0.7
+392 silly decomposeActions postinstall tg@0.0.7
+393 silly decomposeActions finalize tg@0.0.7
+394 silly decomposeActions preinstall parser.js
+395 silly decomposeActions build parser.js
+396 silly decomposeActions install parser.js
+397 silly decomposeActions postinstall parser.js
+398 silly decomposeActions finalize parser.js
+399 silly decomposeActions fetch typedjs@0.2.2
+400 silly decomposeActions extract typedjs@0.2.2
+401 silly decomposeActions test typedjs@0.2.2
+402 silly decomposeActions preinstall typedjs@0.2.2
+403 silly decomposeActions build typedjs@0.2.2
+404 silly decomposeActions install typedjs@0.2.2
+405 silly decomposeActions postinstall typedjs@0.2.2
+406 silly decomposeActions finalize typedjs@0.2.2
+407 silly runTopLevelLifecycles Starting
+408 silly executeActions Starting
+409 silly install executeActions
+410 silly doSerial global-install 0
+411 silly doParallel fetch 5
+412 verbose correctMkdir C:\Users\STUDIES\AppData\Roaming\npm-cache\_locks correctMkdir not in flight; initializing
+413 verbose lock using C:\Users\STUDIES\AppData\Roaming\npm-cache\_locks\staging-550a07ec2e193960.lock for G:\Bucket_Project\node_modules\.staging
+414 silly doParallel extract 5
+415 silly extract dune@0.2.1
+416 silly extract esprima@4.0.0
+417 silly extract fu@0.1.0
+418 silly extract tg@0.0.7
+419 silly extract typedjs@0.2.2
+420 verbose unbuild node_modules\.staging\dune-5ff5a446
+421 verbose unbuild node_modules\.staging\fu-39157415
+422 verbose unbuild node_modules\.staging\tg-585791fa
+423 verbose unbuild node_modules\.staging\esprima-81a29876
+424 silly gentlyRm G:\Bucket_Project\node_modules\.staging\dune-5ff5a446 is being purged from base G:\Bucket_Project
+425 verbose gentlyRm don't care about contents; nuking G:\Bucket_Project\node_modules\.staging\dune-5ff5a446
+426 silly gentlyRm G:\Bucket_Project\node_modules\.staging\fu-39157415 is being purged from base G:\Bucket_Project
+427 verbose gentlyRm don't care about contents; nuking G:\Bucket_Project\node_modules\.staging\fu-39157415
+428 silly gentlyRm G:\Bucket_Project\node_modules\.staging\tg-585791fa is being purged from base G:\Bucket_Project
+429 verbose gentlyRm don't care about contents; nuking G:\Bucket_Project\node_modules\.staging\tg-585791fa
+430 verbose unbuild node_modules\.staging\typedjs-35253a5e
+431 verbose tar unpack C:\Users\STUDIES\AppData\Roaming\npm-cache\dune\0.2.1\package.tgz
+432 verbose tar unpacking to G:\Bucket_Project\node_modules\.staging\dune-5ff5a446
+433 silly gentlyRm G:\Bucket_Project\node_modules\.staging\dune-5ff5a446 is being purged
+434 verbose gentlyRm don't care about contents; nuking G:\Bucket_Project\node_modules\.staging\dune-5ff5a446
+435 silly gentlyRm G:\Bucket_Project\node_modules\.staging\esprima-81a29876 is being purged from base G:\Bucket_Project
+436 verbose gentlyRm don't care about contents; nuking G:\Bucket_Project\node_modules\.staging\esprima-81a29876
+437 verbose tar unpack C:\Users\STUDIES\AppData\Roaming\npm-cache\fu\0.1.0\package.tgz
+438 verbose tar unpacking to G:\Bucket_Project\node_modules\.staging\fu-39157415
+439 silly gentlyRm G:\Bucket_Project\node_modules\.staging\fu-39157415 is being purged
+440 verbose gentlyRm don't care about contents; nuking G:\Bucket_Project\node_modules\.staging\fu-39157415
+441 verbose tar unpack C:\Users\STUDIES\AppData\Roaming\npm-cache\tg\0.0.7\package.tgz
+442 verbose tar unpacking to G:\Bucket_Project\node_modules\.staging\tg-585791fa
+443 silly gentlyRm G:\Bucket_Project\node_modules\.staging\tg-585791fa is being purged
+444 verbose gentlyRm don't care about contents; nuking G:\Bucket_Project\node_modules\.staging\tg-585791fa
+445 silly gunzTarPerm modes [ '777', '666' ]
+446 verbose tar unpack C:\Users\STUDIES\AppData\Roaming\npm-cache\esprima\4.0.0\package.tgz
+447 verbose tar unpacking to G:\Bucket_Project\node_modules\.staging\esprima-81a29876
+448 silly gentlyRm G:\Bucket_Project\node_modules\.staging\esprima-81a29876 is being purged
+449 verbose gentlyRm don't care about contents; nuking G:\Bucket_Project\node_modules\.staging\esprima-81a29876
+450 silly gunzTarPerm modes [ '777', '666' ]
+451 silly gunzTarPerm modes [ '777', '666' ]
+452 silly gunzTarPerm modes [ '777', '666' ]
+453 silly gentlyRm G:\Bucket_Project\node_modules\.staging\typedjs-35253a5e is being purged from base G:\Bucket_Project
+454 verbose gentlyRm don't care about contents; nuking G:\Bucket_Project\node_modules\.staging\typedjs-35253a5e
+455 verbose tar unpack C:\Users\STUDIES\AppData\Roaming\npm-cache\typedjs\0.2.2\package.tgz
+456 verbose tar unpacking to G:\Bucket_Project\node_modules\.staging\typedjs-35253a5e
+457 silly gentlyRm G:\Bucket_Project\node_modules\.staging\typedjs-35253a5e is being purged
+458 verbose gentlyRm don't care about contents; nuking G:\Bucket_Project\node_modules\.staging\typedjs-35253a5e
+459 silly gunzTarPerm modes [ '777', '666' ]
+460 silly gunzTarPerm extractEntry package.json
+461 silly gunzTarPerm modified mode [ 'package.json', 420, 438 ]
+462 silly gunzTarPerm extractEntry package.json
+463 silly gunzTarPerm modified mode [ 'package.json', 420, 438 ]
+464 silly gunzTarPerm extractEntry package.json
+465 silly gunzTarPerm modified mode [ 'package.json', 420, 438 ]
+466 silly gunzTarPerm extractEntry package.json
+467 silly gunzTarPerm extractEntry package.json
+468 silly gunzTarPerm modified mode [ 'package.json', 420, 438 ]
+469 silly gunzTarPerm extractEntry .npmignore
+470 silly gunzTarPerm modified mode [ '.npmignore', 420, 438 ]
+471 silly gunzTarPerm extractEntry README.md
+472 silly gunzTarPerm modified mode [ 'README.md', 420, 438 ]
+473 silly gunzTarPerm extractEntry .npmignore
+474 silly gunzTarPerm modified mode [ '.npmignore', 420, 438 ]
+475 silly gunzTarPerm extractEntry README.md
+476 silly gunzTarPerm modified mode [ 'README.md', 420, 438 ]
+477 silly gunzTarPerm extractEntry README.md
+478 silly gunzTarPerm modified mode [ 'README.md', 420, 438 ]
+479 silly gunzTarPerm extractEntry tg.js
+480 silly gunzTarPerm modified mode [ 'tg.js', 420, 438 ]
+481 silly gunzTarPerm extractEntry README.md
+482 silly gunzTarPerm extractEntry ChangeLog
+483 silly gunzTarPerm extractEntry .npmignore
+484 silly gunzTarPerm modified mode [ '.npmignore', 420, 438 ]
+485 silly gunzTarPerm extractEntry README.md
+486 silly gunzTarPerm modified mode [ 'README.md', 420, 438 ]
+487 silly gunzTarPerm extractEntry .travis.yml
+488 silly gunzTarPerm modified mode [ '.travis.yml', 420, 438 ]
+489 silly gunzTarPerm extractEntry lib/dune2.js
+490 silly gunzTarPerm modified mode [ 'lib/dune2.js', 420, 438 ]
+491 silly gunzTarPerm extractEntry fu.js
+492 silly gunzTarPerm modified mode [ 'fu.js', 420, 438 ]
+493 silly gunzTarPerm extractEntry fu.min.js
+494 silly gunzTarPerm modified mode [ 'fu.min.js', 420, 438 ]
+495 silly gunzTarPerm extractEntry .travis.yml
+496 silly gunzTarPerm modified mode [ '.travis.yml', 420, 438 ]
+497 silly gunzTarPerm extractEntry TODO
+498 silly gunzTarPerm modified mode [ 'TODO', 420, 438 ]
+499 silly gunzTarPerm extractEntry bench/_data.js
+500 silly gunzTarPerm modified mode [ 'bench/_data.js', 420, 438 ]
+501 silly gunzTarPerm extractEntry bench/filter.js
+502 silly gunzTarPerm modified mode [ 'bench/filter.js', 420, 438 ]
+503 silly gunzTarPerm extractEntry bench/foldl.js
+504 silly gunzTarPerm modified mode [ 'bench/foldl.js', 420, 438 ]
+505 silly gunzTarPerm extractEntry bench/head.js
+506 silly gunzTarPerm modified mode [ 'bench/head.js', 420, 438 ]
+507 silly gunzTarPerm extractEntry bench/elem.js
+508 silly gunzTarPerm modified mode [ 'bench/elem.js', 420, 438 ]
+509 silly gunzTarPerm extractEntry bench/init.js
+510 silly gunzTarPerm modified mode [ 'bench/init.js', 420, 438 ]
+511 silly gunzTarPerm extractEntry bench/last.js
+512 silly gunzTarPerm modified mode [ 'bench/last.js', 420, 438 ]
+513 silly gunzTarPerm extractEntry bench/map.js
+514 silly gunzTarPerm modified mode [ 'bench/map.js', 420, 438 ]
+515 silly gunzTarPerm extractEntry bench/maxmin.js
+516 silly gunzTarPerm modified mode [ 'bench/maxmin.js', 420, 438 ]
+517 silly gunzTarPerm extractEntry bench/tail.js
+518 silly gunzTarPerm modified mode [ 'bench/tail.js', 420, 438 ]
+519 silly gunzTarPerm extractEntry bench/concat.js
+520 silly gunzTarPerm modified mode [ 'bench/concat.js', 420, 438 ]
+521 silly gunzTarPerm extractEntry bench/zipWith.js
+522 silly gunzTarPerm modified mode [ 'bench/zipWith.js', 420, 438 ]
+523 silly gunzTarPerm extractEntry bench/index.js
+524 silly gunzTarPerm modified mode [ 'bench/index.js', 420, 438 ]
+525 silly gunzTarPerm extractEntry index.html
+526 silly gunzTarPerm modified mode [ 'index.html', 420, 438 ]
+527 silly gunzTarPerm extractEntry test/all-test.js
+528 silly gunzTarPerm modified mode [ 'test/all-test.js', 420, 438 ]
+529 silly gunzTarPerm extractEntry test/elem-test.js
+530 silly gunzTarPerm modified mode [ 'test/elem-test.js', 420, 438 ]
+531 silly gunzTarPerm extractEntry test/filter-test.js
+532 silly gunzTarPerm modified mode [ 'test/filter-test.js', 420, 438 ]
+533 silly gunzTarPerm extractEntry test/flip-test.js
+534 silly gunzTarPerm modified mode [ 'test/flip-test.js', 420, 438 ]
+535 silly gunzTarPerm extractEntry test/dropWhile-test.js
+536 silly gunzTarPerm modified mode [ 'test/dropWhile-test.js', 420, 438 ]
+537 silly gunzTarPerm extractEntry test/intoObject-test.js
+538 silly gunzTarPerm modified mode [ 'test/intoObject-test.js', 420, 438 ]
+539 silly gunzTarPerm extractEntry test/map-test.js
+540 silly gunzTarPerm modified mode [ 'test/map-test.js', 420, 438 ]
+541 silly gunzTarPerm extractEntry test/maxmin-test.js
+542 silly gunzTarPerm modified mode [ 'test/maxmin-test.js', 420, 438 ]
+543 silly gunzTarPerm extractEntry test/maybe-test.js
+544 silly gunzTarPerm modified mode [ 'test/maybe-test.js', 420, 438 ]
+545 silly gunzTarPerm extractEntry test/merge-test.js
+546 silly gunzTarPerm modified mode [ 'test/merge-test.js', 420, 438 ]
+547 silly gunzTarPerm extractEntry test/drop-test.js
+548 silly gunzTarPerm modified mode [ 'test/drop-test.js', 420, 438 ]
+549 silly gunzTarPerm extractEntry test/not-test.js
+550 silly gunzTarPerm modified mode [ 'test/not-test.js', 420, 438 ]
+551 silly gunzTarPerm extractEntry test/dependencies.js
+552 silly gunzTarPerm modified mode [ 'test/dependencies.js', 420, 438 ]
+553 silly gunzTarPerm extractEntry test/or-test.js
+554 silly gunzTarPerm modified mode [ 'test/or-test.js', 420, 438 ]
+555 silly gunzTarPerm extractEntry test/curry-test.js
+556 silly gunzTarPerm modified mode [ 'test/curry-test.js', 420, 438 ]
+557 silly gunzTarPerm extractEntry test/property-test.js
+558 silly gunzTarPerm modified mode [ 'test/property-test.js', 420, 438 ]
+559 silly gunzTarPerm extractEntry test/concatMap-test.js
+560 silly gunzTarPerm modified mode [ 'test/concatMap-test.js', 420, 438 ]
+561 silly gunzTarPerm extractEntry test/range-test.js
+562 silly gunzTarPerm modified mode [ 'test/range-test.js', 420, 438 ]
+563 silly gunzTarPerm extractEntry test/concat-test.js
+564 silly gunzTarPerm modified mode [ 'test/concat-test.js', 420, 438 ]
+565 silly gunzTarPerm extractEntry test/seq-test.js
+566 silly gunzTarPerm modified mode [ 'test/seq-test.js', 420, 438 ]
+567 silly gunzTarPerm extractEntry test/compact-test.js
+568 silly gunzTarPerm modified mode [ 'test/compact-test.js', 420, 438 ]
+569 silly gunzTarPerm extractEntry test/splitAt-test.js
+570 silly gunzTarPerm modified mode [ 'test/splitAt-test.js', 420, 438 ]
+571 silly gunzTarPerm extractEntry test/comp-test.js
+572 silly gunzTarPerm modified mode [ 'test/comp-test.js', 420, 438 ]
+573 silly gunzTarPerm extractEntry test/take-test.js
+574 silly gunzTarPerm modified mode [ 'test/take-test.js', 420, 438 ]
+575 silly gunzTarPerm extractEntry test/apply-test.js
+576 silly gunzTarPerm modified mode [ 'test/apply-test.js', 420, 438 ]
+577 silly gunzTarPerm extractEntry test/takeWhile-test.js
+578 silly gunzTarPerm modified mode [ 'test/takeWhile-test.js', 420, 438 ]
+579 silly gunzTarPerm extractEntry test/any-test.js
+580 silly gunzTarPerm modified mode [ 'test/any-test.js', 420, 438 ]
+581 silly gunzTarPerm extractEntry test/value-test.js
+582 silly gunzTarPerm modified mode [ 'test/value-test.js', 420, 438 ]
+583 silly gunzTarPerm extractEntry test/and-test.js
+584 silly gunzTarPerm modified mode [ 'test/and-test.js', 420, 438 ]
+585 silly gunzTarPerm extractEntry test/zipWith-test.js
+586 silly gunzTarPerm modified mode [ 'test/zipWith-test.js', 420, 438 ]
+587 silly gunzTarPerm extractEntry test/foldl-test.js
+588 silly gunzTarPerm modified mode [ 'test/foldl-test.js', 420, 438 ]
+589 silly gunzTarPerm extractEntry tg.min.js
+590 silly gunzTarPerm modified mode [ 'tg.min.js', 420, 438 ]
+591 silly gunzTarPerm extractEntry .travis.yml
+592 silly gunzTarPerm modified mode [ '.travis.yml', 420, 438 ]
+593 silly gunzTarPerm extractEntry LICENSE.BSD
+594 silly gunzTarPerm extractEntry .travis.yml
+595 silly gunzTarPerm modified mode [ '.travis.yml', 420, 438 ]
+596 silly gunzTarPerm extractEntry bin/typedjs
+597 silly gunzTarPerm modified mode [ 'bin/typedjs', 493, 511 ]
+598 silly gunzTarPerm extractEntry test/dune-test.js
+599 silly gunzTarPerm modified mode [ 'test/dune-test.js', 420, 438 ]
+600 silly gunzTarPerm extractEntry test/index.js
+601 silly gunzTarPerm modified mode [ 'test/index.js', 420, 438 ]
+602 silly gunzTarPerm extractEntry bin/esparse.js
+603 silly gunzTarPerm extractEntry bin/esvalidate.js
+604 silly gunzTarPerm extractEntry lib/cli.js
+605 silly gunzTarPerm modified mode [ 'lib/cli.js', 420, 438 ]
+606 silly gunzTarPerm extractEntry test/fixtures/file1.js
+607 silly gunzTarPerm modified mode [ 'test/fixtures/file1.js', 420, 438 ]
+608 silly gunzTarPerm extractEntry test/fixtures/file2.js
+609 silly gunzTarPerm modified mode [ 'test/fixtures/file2.js', 420, 438 ]
+610 silly gunzTarPerm extractEntry dist/esprima.js
+611 silly gunzTarPerm extractEntry lib/index.js
+612 silly gunzTarPerm modified mode [ 'lib/index.js', 420, 438 ]
+613 silly gunzTarPerm extractEntry lib/parser.js
+614 silly gunzTarPerm modified mode [ 'lib/parser.js', 420, 438 ]
+615 silly gunzTarPerm extractEntry test/fixtures/file3.js
+616 silly gunzTarPerm modified mode [ 'test/fixtures/file3.js', 420, 438 ]
+617 silly gunzTarPerm extractEntry lib/quickcheck.js
+618 silly gunzTarPerm modified mode [ 'lib/quickcheck.js', 420, 438 ]
+619 silly gunzTarPerm extractEntry lib/generate.js
+620 silly gunzTarPerm modified mode [ 'lib/generate.js', 420, 438 ]
+621 silly gunzTarPerm extractEntry lib/signatures.js
+622 silly gunzTarPerm modified mode [ 'lib/signatures.js', 420, 438 ]
+623 silly gunzTarPerm extractEntry lib/transform.js
+624 silly gunzTarPerm modified mode [ 'lib/transform.js', 420, 438 ]
+625 silly gunzTarPerm extractEntry lib/traverse.js
+626 silly gunzTarPerm modified mode [ 'lib/traverse.js', 420, 438 ]
+627 silly gunzTarPerm extractEntry lib/traverseObject.js
+628 silly gunzTarPerm modified mode [ 'lib/traverseObject.js', 420, 438 ]
+629 silly gentlyRm G:\Bucket_Project\node_modules\.staging\tg-585791fa\node_modules is being purged
+630 verbose gentlyRm don't care about contents; nuking G:\Bucket_Project\node_modules\.staging\tg-585791fa\node_modules
+631 silly gunzTarPerm extractEntry lib/traverseSignature.js
+632 silly gunzTarPerm modified mode [ 'lib/traverseSignature.js', 420, 438 ]
+633 silly gunzTarPerm extractEntry lib/convert.js
+634 silly gunzTarPerm modified mode [ 'lib/convert.js', 420, 438 ]
+635 silly gunzTarPerm extractEntry lib/utils.js
+636 silly gunzTarPerm modified mode [ 'lib/utils.js', 420, 438 ]
+637 silly gunzTarPerm extractEntry lib/require.js
+638 silly gunzTarPerm modified mode [ 'lib/require.js', 420, 438 ]
+639 silly gentlyRm G:\Bucket_Project\node_modules\.staging\dune-5ff5a446\node_modules is being purged
+640 verbose gentlyRm don't care about contents; nuking G:\Bucket_Project\node_modules\.staging\dune-5ff5a446\node_modules
+641 silly gunzTarPerm extractEntry test/dependencies.js
+642 silly gunzTarPerm modified mode [ 'test/dependencies.js', 420, 438 ]
+643 silly gunzTarPerm extractEntry test/quickcheck-test.js
+644 silly gunzTarPerm modified mode [ 'test/quickcheck-test.js', 420, 438 ]
+645 silly gunzTarPerm extractEntry test/require-test.js
+646 silly gunzTarPerm modified mode [ 'test/require-test.js', 420, 438 ]
+647 silly gunzTarPerm extractEntry test/transform-test.js
+648 silly gunzTarPerm modified mode [ 'test/transform-test.js', 420, 438 ]
+649 silly gunzTarPerm extractEntry test/fixtures/multiple-returns.js
+650 silly gunzTarPerm modified mode [ 'test/fixtures/multiple-returns.js', 420, 438 ]
+651 silly gunzTarPerm extractEntry test/fixtures/plusone.js
+652 silly gunzTarPerm modified mode [ 'test/fixtures/plusone.js', 420, 438 ]
+653 silly gentlyRm G:\Bucket_Project\node_modules\.staging\esprima-81a29876\node_modules is being purged
+654 verbose gentlyRm don't care about contents; nuking G:\Bucket_Project\node_modules\.staging\esprima-81a29876\node_modules
+655 silly gunzTarPerm extractEntry test/fixtures/static.js
+656 silly gunzTarPerm modified mode [ 'test/fixtures/static.js', 420, 438 ]
+657 silly gunzTarPerm extractEntry test/fixtures/transform.js
+658 silly gunzTarPerm modified mode [ 'test/fixtures/transform.js', 420, 438 ]
+659 silly gunzTarPerm extractEntry test/fixtures/type-transforms.js
+660 silly gunzTarPerm modified mode [ 'test/fixtures/type-transforms.js', 420, 438 ]
+661 silly gunzTarPerm extractEntry node_modules/parser.js
+662 silly gunzTarPerm modified mode [ 'node_modules/parser.js', 420, 438 ]
+663 silly gentlyRm G:\Bucket_Project\node_modules\.staging\fu-39157415\node_modules is being purged
+664 verbose gentlyRm don't care about contents; nuking G:\Bucket_Project\node_modules\.staging\fu-39157415\node_modules
+665 verbose unlock done using C:\Users\STUDIES\AppData\Roaming\npm-cache\_locks\staging-550a07ec2e193960.lock for G:\Bucket_Project\node_modules\.staging
+666 silly rollbackFailedOptional Starting
+667 silly rollbackFailedOptional Finishing
+668 silly runTopLevelLifecycles Finishing
+669 silly install printInstalled
+670 warn enoent ENOENT: no such file or directory, open 'G:\Bucket_Project\package.json'
+671 verbose enoent ENOENT: no such file or directory, open 'G:\Bucket_Project\package.json'
+671 verbose enoent This is most likely not a problem with npm itself
+671 verbose enoent and is related to npm not being able to find a file.
+672 warn angular2-image-upload@0.6.6 requires a peer of @angular/common@^2.4.9 || ^4.0.0 but none was installed.
+673 verbose If you need help, you may report this error at:
+673 verbose     <https://github.com/npm/npm/issues>
+674 warn angular2-image-upload@0.6.6 requires a peer of @angular/core@^2.4.9 || ^4.0.0 but none was installed.
+675 verbose If you need help, you may report this error at:
+675 verbose     <https://github.com/npm/npm/issues>
+676 warn angular2-image-upload@0.6.6 requires a peer of @angular/http@^2.4.9 || ^4.0.0 but none was installed.
+677 verbose If you need help, you may report this error at:
+677 verbose     <https://github.com/npm/npm/issues>
+678 warn angular2-image-upload@0.6.6 requires a peer of rxjs@^5.0.0-rc.2 but none was installed.
+679 verbose If you need help, you may report this error at:
+679 verbose     <https://github.com/npm/npm/issues>
+680 warn Bucket_Project No description
+681 verbose If you need help, you may report this error at:
+681 verbose     <https://github.com/npm/npm/issues>
+682 warn Bucket_Project No repository field.
+683 verbose If you need help, you may report this error at:
+683 verbose     <https://github.com/npm/npm/issues>
+684 warn Bucket_Project No README data
+685 verbose If you need help, you may report this error at:
+685 verbose     <https://github.com/npm/npm/issues>
+686 warn Bucket_Project No license field.
+687 verbose If you need help, you may report this error at:
+687 verbose     <https://github.com/npm/npm/issues>
+688 verbose stack Error: ENOENT: no such file or directory, open 'C:\Users\STUDIES\AppData\Local\Temp\npm-4736-e61b8c8b\unpack-8ccdc621\node_modules\parser.js\package.json'
+688 verbose stack     at Error (native)
+689 verbose cwd G:\Bucket_Project
+690 error Windows_NT 10.0.14393
+691 error argv "C:\\Program Files\\nodejs\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install" "typedjs"
+692 error node v6.11.0
+693 error npm  v3.10.10
+694 error path C:\Users\STUDIES\AppData\Local\Temp\npm-4736-e61b8c8b\unpack-8ccdc621\node_modules\parser.js\package.json
+695 error code ENOTDIR
+696 error errno -4058
+697 error syscall open
+698 error ENOENT: no such file or directory, open 'C:\Users\STUDIES\AppData\Local\Temp\npm-4736-e61b8c8b\unpack-8ccdc621\node_modules\parser.js\package.json'
+699 error If you need help, you may report this error at:
+699 error     <https://github.com/npm/npm/issues>
+700 verbose exit [ -4058, true ]

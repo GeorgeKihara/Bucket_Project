@@ -411,6 +411,12 @@ a {
     height: 30px;
 }
 
+#imageSubmit1{
+    position: relative;
+    width: 150px;
+    height: 30px;
+}
+
 .user {
   position: relative;
   display: inline-block;

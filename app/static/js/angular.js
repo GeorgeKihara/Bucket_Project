@@ -316,6 +316,9 @@ homeApp.controller('goalCtrl', function ($scope, $http) {
 	};
 
 	//image uploader
-
+	$scope.profile = function () {
+		var filename = document.getElementById("imageSubmit").value;
+		alert(filename);
+	};
 
 });
