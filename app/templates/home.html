@@ -56,7 +56,7 @@
             <form method='post' enctype='multipart/form-data'>
                 <img class="user one" id="image1" src="{{ url_for('static', filename='images/profileboy.jpeg')}}" alt="your image" />
                 <p></p>
-                <input class="custom1" id="imageSubmit" type='file' accept="image/" />
+                <input ng-click="{{ url_for('profile') }}" class="custom1" id="imageSubmit" type='file' accept="image/" />
             </form>
         </div>
         <div class="bucket">
