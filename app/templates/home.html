@@ -54,10 +54,9 @@
         <div class="imageUpload">
             <p>Profile</p>
             <form method='post' enctype='multipart/form-data'>
-                <div class="user one">{{ '{{image1}}' }}</div>
+                <img class="user one" id="blah" src="{{ url_for('static', filename='images/profileboy.jpeg')}}" alt="your image" />
                 <p></p>
                 <input id="imageSubmit" ng-value="filename" type='file' name='uploaded_file' value="choose" accept="image/" multiples>
-                <input id="imageSubmit1" ng-click="profile()" type='submit' value='Change'>
             </form>
         </div>
         <div class="bucket">
