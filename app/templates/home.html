@@ -54,19 +54,19 @@
         <div class="imageUpload">
             <p>Profile</p>
             <form method='post' enctype='multipart/form-data'>
-                <img class="user one" id="blah" src="{{ url_for('static', filename='images/profileboy.jpeg')}}" alt="your image" />
+                <img class="user one" id="image1" src="{{ url_for('static', filename='images/profileboy.jpeg')}}" alt="your image" />
                 <p></p>
-                <input id="imageSubmit" ng-value="filename" type='file' name='uploaded_file' value="choose" accept="image/" multiples>
+                <input class="custom1" id="imageSubmit" type='file' accept="image/" multiples>
             </form>
         </div>
         <div class="bucket">
             <form id="bucketForm" method="POST" name="goalie" action="{{ url_for('store') }}">
                 <input id="homieInput" type="label" ng-model="user" name="bktName">
-                <select name="choice" title="time" id="choice" required>
+                <select style="font-weight:bold;" name="choice" title="time" id="choice" required>
                     <option value="on">on</option>
                     <option value="by">by</option>
                   </select>
-                <input id="datepicker" title="calendar" ng-model="date" name="calendar" required/>
+                <input style="font-weight:bold;" id="datepicker" title="calendar" ng-model="date" name="calendar" required/>
                 <input id="goal" name="details" ng-model="list" type="text" value="" placeholder="What do u wish to do?" required/>
                 <input id="btn-tick" type="submit" ng-click="{{ url_for('store') }};" value="" />
                 <div style="color: brown;" id="flashes" ng-show="!timer()" ng-model="flashes" class="flashes">
@@ -80,8 +80,7 @@
                 <div id="one">
                     <label> 1.<big id="item1">{{data.post1}}</big></label>
                 </div>
-                <p><a ng-click="edit1()"><button id="edit"></button></a> <a ng-click="delete()"
-                        href="{{ url_for('delete1') }}"><button id="delete"></button></a></p>
+                <p><button ng-click="edit1()" id="edit"></button> <a ng-click="delete()" href="{{ url_for('delete1') }}"><button id="delete"></button></a></p>
                 <div id="two">
                     <label>2.<big id="item2">{{ data.post2}}</big></label>
                 </div>
