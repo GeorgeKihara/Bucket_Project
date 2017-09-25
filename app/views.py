@@ -329,9 +329,12 @@ def delete10():
 def profile():
     users = mongo.db.users
     user = users.find_one({'name': session['username']})
-    fs = gridfs.GridFS(user)
+    images = gridfs.GridFS(mongo.db)
+    default1 = images.put(b"a")
+    image1 = images.put(images.get(default1), filename=request.files['display'], bar="baz")
+    retrieved = images.get(image1).read()
 
-    return 'displayed'
+    return (retrieved)
 
 #displaying forgot password page
 @app.route('/forgot', methods=['POST','GET'])
