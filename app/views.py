@@ -331,7 +331,7 @@ def profile():
     user = users.find_one({'name': session['username']})
     images = gridfs.GridFS(mongo.db)
     default1 = images.put(b"a")
-    image1 = images.put(default1, filename=request.files['display'])
+    image1 = images.put(default1, filename=bson(request.files['display']))
     retrieved = images.get(image1).read()
 
     return (retrieved)
