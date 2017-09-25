@@ -171,6 +171,7 @@ def store():
             return redirect(url_for('home'))
     return 'something is wrong'
 
+#deleting items from the bucketlist
 @app.route('/delete1', methods=['POST', 'GET'])
 def delete1():
     users = mongo.db.users
@@ -323,26 +324,21 @@ def delete10():
     flash("There is no item to delete", category='error')
     return redirect(url_for('home'))
 
-@app.route('/edit1', methods=['POST', 'GET'])
-def edit1():
+#storing profile image
+@app.route('/profile', methods=['POST', 'GET'])
+def profile():
     users = mongo.db.users
     user = users.find_one({'name': session['username']})
-    edited = {}
-    try:
-        if user['items'][0]:
-            request.form['details'].value = user['items'][0]
-            users.update({'name': session['username']},{ '$pull': { 'items': user['items'][0] }})
-            flash("Item one has been deleted so that you can provide a new item")
-    except Exception:
-        pass
-    
-    sleep(5)
-    return redirect(url_for('home'))
+    fs = gridfs.GridFS(user)
 
+    return 'displayed'
+
+#displaying forgot password page
 @app.route('/forgot', methods=['POST','GET'])
 def forgot():
     return render_template('forgot.html')
 
+#retrieving password from the database
 @app.route('/sendPassword', methods=['POST','GET'])
 def sendPassword():
     if request.method == 'POST':
