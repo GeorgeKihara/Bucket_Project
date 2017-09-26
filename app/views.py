@@ -9,7 +9,7 @@ from app import app
 from io import StringIO
 from time import sleep
 from PIL import Image
-from flask.ext.uploads import UploadSet
+from flask.ext.uploads import UploadSet, IMAGES
 
 def serve_pil_image(pil_img):
     img_io = StringIO() 
@@ -351,13 +351,11 @@ def delete10():
 def profile():
     users = mongo.db.users
     user = users.find_one({'name': session['username']})
-    photos = UploadSet('photos', IMAGES)
-    image1 = photos.save(request.files['display'])
     """add an image to mongo's gridfs"""
         
     # gridfs filename
     gridfs_filename = secure_filename(request.files['display'].filename)
-    image_url = photos.url(photo.image1)
+    image_url = request.values.get('mapper_url','display')
    
     # guess the mimetype and request the image resource
     mime_type = mimetypes.guess_type(image_url)[0]        
