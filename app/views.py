@@ -352,14 +352,17 @@ def profile():
     user = users.find_one({'name': session['username']})
     grid_fs = gridfs.GridFS(db)
 
-@app.route('/image/<path:filename>')
-def get_image(filename):        
+@app.route('/image', methods=['POST', 'GET'])
+def get_image():
+    users = mongo.db.users
+    user = users.find_one({'name': session['username']})        
     """retrieve an image from mongodb gridfs"""
+    grid_fs = gridfs.GridFS(mongo.db) 
+    if not grid_fs.exists():
+        raise Exception("mongo file does not exist! {0}")
+        return 'kdsfhdskfjhdjfhsdkjfkhdjfh'
         
-    if not grid_fs.exists(filename=filename):
-        raise Exception("mongo file does not exist! {0}".format(filename))
-        
-    im_stream = grid_fs.get_last_version(filename)
+    im_stream = grid_fs.get_last_version()
     im = Image.open(im_stream)
     return serve_pil_image(im)
 
