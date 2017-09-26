@@ -325,16 +325,12 @@ def delete10():
     return redirect(url_for('home'))
 
 #storing profile image
-@app.route('/profile', methods=['POST', 'GET'])
-def profile():
+@app.route('/profile/<path:filename>', methods=['POST', 'GET'])
+def profile(filename):
     users = mongo.db.users
     user = users.find_one({'name': session['username']})
-    images = gridfs.GridFS(mongo.db)
-    default1 = images.put(b"a")
-    image1 = images.put(default1, filename=request.files['display'], content_type='text/plain')
-    retrieved = images.get(image1).read()
-
-    return (retrieved)
+    mongo.save_file(filename, request.files['display'])
+    return redirect(url_for('home', filename=filename))
 
 #displaying forgot password page
 @app.route('/forgot', methods=['POST','GET'])
