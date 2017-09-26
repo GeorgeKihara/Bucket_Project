@@ -347,10 +347,21 @@ def delete10():
 
 #storing profile image
 @app.route('/profile', methods=['POST', 'GET'])
-def profile():
+def add_image(image_url):
     users = mongo.db.users
     user = users.find_one({'name': session['username']})
-    grid_fs = gridfs.GridFS(db)
+    """add an image to mongo's gridfs"""
+        
+    # gridfs filename
+    gridfs_filename = 'example_image.jpg'        
+   
+    # guess the mimetype and request the image resource
+    mime_type = mimetypes.guess_type(image_url)[0]        
+    r = requests.get(image_url, stream=True)
+ 
+    # insert the resource into gridfs using the raw stream
+    _id = grid_fs.put(r.raw, contentType=mime_type, filename=gridfs_filename)
+    print ("created new gridfs file {0} with id {1}".format(gridfs_filename, _id))
 
 @app.route('/image', methods=['POST', 'GET'])
 def get_image():
@@ -359,7 +370,7 @@ def get_image():
     """retrieve an image from mongodb gridfs"""
     grid_fs = gridfs.GridFS(mongo.db) 
     if not grid_fs.exists():
-        raise Exception("mongo file does not exist! {0}")
+        raise Exception("mongo file does not exist! ")
         return 'kdsfhdskfjhdjfhsdkjfkhdjfh'
         
     im_stream = grid_fs.get_last_version()
