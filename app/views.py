@@ -354,7 +354,7 @@ def add_image():
         
     # gridfs filename
     gridfs_filename = 'example_image.jpg'
-    image_url = request.files['display']
+    image_url = secure_filename(request.files['display'].filename)
    
     # guess the mimetype and request the image resource
     mime_type = mimetypes.guess_type(image_url)[0]        
