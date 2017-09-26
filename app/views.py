@@ -3,11 +3,12 @@ from flask.ext.pymongo import PyMongo
 from flask_wtf import Form
 from flask_wtf.file import FileField
 from werkzeug import secure_filename
-import bcrypt, json, requests, bson.binary, logging, time, threading, gridfs
+import bcrypt, json, requests, bson.binary, logging, time, threading, gridfs,argparse,mimetypes
 from flask import Markup
 from app import app
 from io import StringIO
 from time import sleep
+from PIL import Image
 
 
 #connections to the mongo database
@@ -325,12 +326,11 @@ def delete10():
     return redirect(url_for('home'))
 
 #storing profile image
-@app.route('/profile/<path:filename>', methods=['POST', 'GET'])
-def profile(filename):
+@app.route('/profile', methods=['POST', 'GET'])
+def profile():
     users = mongo.db.users
     user = users.find_one({'name': session['username']})
-    mongo.save_file(filename, request.files['display'])
-    return redirect(url_for('home', filename=filename))
+    grid_fs = gridfs.GridFS(db)
 
 #displaying forgot password page
 @app.route('/forgot', methods=['POST','GET'])
