@@ -10,6 +10,26 @@ from io import StringIO
 from time import sleep
 from PIL import Image
 
+def serve_pil_image(pil_img):
+    img_io = StringIO() 
+    pil_img.save(img_io, 'JPEG', quality=70)
+    img_io.seek(0)
+    return send_file(img_io, mimetype='image/jpeg')
+
+def add_image(image_url):
+    """add an image to mongo's gridfs"""
+        
+    # gridfs filename
+    gridfs_filename = 'example_image.jpg'        
+   
+    # guess the mimetype and request the image resource
+    mime_type = mimetypes.guess_type(image_url)[0]        
+    r = requests.get(image_url, stream=True)
+ 
+    # insert the resource into gridfs using the raw stream
+    _id = grid_fs.put(r.raw, contentType=mime_type, filename=gridfs_filename)
+    print ("created new gridfs file {0} with id {1}".format(gridfs_filename, _id))
+
 
 #connections to the mongo database
 app.config['MONGO_DBNAME'] = 'bktlist'
@@ -331,6 +351,17 @@ def profile():
     users = mongo.db.users
     user = users.find_one({'name': session['username']})
     grid_fs = gridfs.GridFS(db)
+
+@app.route('/image/<path:filename>')
+def get_image(filename):        
+    """retrieve an image from mongodb gridfs"""
+        
+    if not grid_fs.exists(filename=filename):
+        raise Exception("mongo file does not exist! {0}".format(filename))
+        
+    im_stream = grid_fs.get_last_version(filename)
+    im = Image.open(im_stream)
+    return serve_pil_image(im)
 
 #displaying forgot password page
 @app.route('/forgot', methods=['POST','GET'])
