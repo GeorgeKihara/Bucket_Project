@@ -40,7 +40,12 @@ function readURL(input) {
         var reader = new FileReader();
 
         reader.onload = function (e) {
-            $('#image1').attr('src', e.target.result);
+            var fileExtension = ['jpeg', 'jpg', 'png', 'gif', 'bmp'];
+            if ($.inArray($(image1).val().split('.').pop().toLowerCase(), fileExtension) == -1) {
+                alert("Only formats are allowed : "+fileExtension.join(', '));
+            } else {
+                $('#image1').attr('src', e.target.result);                
+            }
         }
 
         reader.readAsDataURL(input.files[0]);
