@@ -11,26 +11,6 @@ from time import sleep
 from PIL import Image
 from flask.ext.uploads import UploadSet, IMAGES
 
-def serve_pil_image(pil_img):
-    img_io = StringIO() 
-    pil_img.save(img_io, 'JPEG', quality=70)
-    img_io.seek(0)
-    return send_file(img_io, mimetype='image/jpeg')
-
-def add_image(image_url):
-    """add an image to mongo's gridfs"""
-        
-    # gridfs filename
-    gridfs_filename = 'example_image.jpg'        
-   
-    # guess the mimetype and request the image resource
-    mime_type = mimetypes.guess_type(image_url)[0]        
-    r = requests.get(image_url, stream=True)
- 
-    # insert the resource into gridfs using the raw stream
-    _id = grid_fs.put(r.raw, contentType=mime_type, filename=gridfs_filename)
-    print ("created new gridfs file {0} with id {1}".format(gridfs_filename, _id))
-
 
 #connections to the mongo database
 app.config['MONGO_DBNAME'] = 'bktlist'
@@ -369,13 +349,14 @@ def get_image():
     users = mongo.db.users
     user = users.find_one({'name': session['username']})        
     """retrieve an image from mongodb gridfs"""
-    grid_fs = gridfs.GridFS(mongo.db) 
-    if not grid_fs.exists():
-        return 'kdsfhdskfjhdjfhsdkjfkhdjfh'
-        
-    im_stream = grid_fs.get_last_version()
-    im = Image.open(im_stream)
-    return serve_pil_image(im)
+    grid_fs = gridfs.GridFS(mongo.db)
+    file_name = secure_filename(request.files['display'].filename)
+    grid_fs_file = grid_fs.find_one({'filename': file_name})
+    response = make_response(grid_fs_file.read())
+    response.headers['Content-Type'] = 'application/octet-stream'
+    response.headers["Content-Disposition"] = "attachment; filename={}".format(file_name)
+    return response
+    
 
 #displaying forgot password page
 @app.route('/forgot', methods=['POST','GET'])
