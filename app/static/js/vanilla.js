@@ -1,6 +1,7 @@
 function show() {
     //on the index page
     alert("Welcome to MyBucketList");
+    $(".close").show = false;
 }
 
 function notShow() {
@@ -56,8 +57,8 @@ $("#imageSubmit").change(function(){
 $("#imageSubmit1").click(function(){
     if ($("#imageSubmit").val() == ""){       
         alert("please select an image");
+        $('#flasher').html('<div class="alert alert-success alert-dismissible"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Error!</strong> Please select an image</div>');
         event.preventDefault();
-        $.alert("Please select an image", "Error");
     }
 });
 

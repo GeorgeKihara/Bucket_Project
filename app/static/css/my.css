@@ -518,4 +518,9 @@ a {
   .custom1:active::before {
     background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
   }
+
+  #imageUpload #flasher {
+    position: relative;
+    width: 150px;
+  }
   
