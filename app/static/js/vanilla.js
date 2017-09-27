@@ -1,7 +1,6 @@
 function show() {
     //on the index page
     alert("Welcome to MyBucketList");
-    $(".close").show = false;
 }
 
 function notShow() {
@@ -39,9 +38,9 @@ function readURL(input) {
         reader.onload = function (e) {            
                 $('#image1').attr('src', e.target.result);                
         }
-        var fileExtension = ['jpeg', 'jpg', 'png', 'gif', 'bmp', 'ico'];
+        var fileExtension = ['jpeg', 'jpg', 'png', 'ico'];
         if ($.inArray($(imageSubmit).val().split('.').pop().toLowerCase(), fileExtension) == -1) {
-            alert("The only formats allowed are : "+fileExtension.join(', '));
+            $('#flasher').html('<div class="alert alert-success alert-dismissible"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Error!</strong> The only formats allowed are : <b>jpeg, jpg, png, ico</b></div>');
         } else {
             reader.readAsDataURL(input.files[0]);
         }
@@ -55,8 +54,7 @@ $("#imageSubmit").change(function(){
 
 //validation on imageSubmitbutton
 $("#imageSubmit1").click(function(){
-    if ($("#imageSubmit").val() == ""){       
-        alert("please select an image");
+    if ($("#imageSubmit").val() == ""){
         $('#flasher').html('<div class="alert alert-success alert-dismissible"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Error!</strong> Please select an image</div>');
         event.preventDefault();
     }

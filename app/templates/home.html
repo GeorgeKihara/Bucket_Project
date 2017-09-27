@@ -14,7 +14,9 @@
     <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="Stylesheet" type="text/css"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>    
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>  
 </head>
 
 <body ng-app="homeApp" ng-controller="goalCtrl">
@@ -57,10 +59,11 @@
         <div class="imageUpload">
             <p>Profile</p>
             <form action="/profile1" method='post' enctype='multipart/form-data'>
-                <img class="user one" id="image1" src="{{ url_for('static', filename='images/profileboy.jpeg')}}" alt="your image" />
+                <img class="user one" id="image1" src="{{ url_for('static', filename=image_profile.pic1 )}}" alt="your image" />
                 <p></p>
                 <input name="display" onclick="{{ url_for('profile') }};" class="custom1" id="imageSubmit" type='file' accept="image/*" />
                 <input id="imageSubmit1" type="submit" value="save image"/>
+                <b style="color:white;">Profile:{{image_profile.pic1}}</b>
                 <div id="flasher"></div>
             </form>
         </div>
@@ -78,48 +81,48 @@
                     {% for message in get_flashed_messages()%} {{ message }} {% endfor %}
                 </div>
             </form>
-            <header>
+            <header >
                 Your Bucket List
             </header>
             <div id="scroll">
                 <div id="one">
-                    <label> 1.<small id="item1">{{data.post1}}</small></label>
+                    <label> 1.<big id="item1">{{data.post1}}</big></label>
                 </div>
                 <p><button ng-click="edit1()" id="edit"></button> <a ng-click="delete()" href="{{ url_for('delete1') }}"><button id="delete"></button></a></p>
                 <div id="two">
-                    <label>2.<small id="item2">{{ data.post2}}</small></label>
+                    <label>2.<big id="item2">{{ data.post2}}</big></label>
                 </div>
                 <p><button ng-click="edit2()" id="edit"></button> <a ng-click="delete()" href="{{ url_for('delete2') }}"><button id="delete"></button></a></p>
                 <div id="three">
-                    <label>3.<small id="item3">{{data.post3 }}</small></label>
+                    <label>3.<big id="item3">{{data.post3 }}</big></label>
                 </div>
                 <p><button ng-click="edit3()" id="edit"></button> <a ng-click="delete()" href="{{ url_for('delete3') }}"><button id="delete"></button></a></p>
                 <div id="four">
-                    <label>4.<small id="item4">{{data.post4 }}</small></label>
+                    <label>4.<big id="item4">{{data.post4 }}</big></label>
                 </div>
                 <p><button ng-click="edit4()" id="edit"></button> <a ng-click="delete()" href="{{ url_for('delete4') }}"><button id="delete"></button></a></p>
                 <div id="five">
-                    <label>5.<small id="item5">{{data.post5}}</small></label>
+                    <label>5.<big id="item5">{{data.post5}}</big></label>
                 </div>
                 <p><button ng-click="edit5()" id="edit"></button> <a ng-click="delete()" href="{{ url_for('delete5') }}"><button id="delete"></button></a></p>
                 <div id="six">
-                    <label>6.<small id="item6">{{data.post6 }}</small></label>
+                    <label>6.<big id="item6">{{data.post6 }}</big></label>
                 </div>
                 <p><button ng-click="edit6()" id="edit"></button> <a ng-click="delete()" href="{{ url_for('delete6') }}"><button id="delete"></button></a></p>
                 <div id="seven">
-                    <label>7.<small id="item7">{{data.post7}}</small></label>
+                    <label>7.<big id="item7">{{data.post7}}</big></label>
                 </div>
                 <p><button ng-click="edit7()" id="edit"></button> <a ng-click="delete()" href="{{ url_for('delete7') }}"><button id="delete"></button></a></p>
                 <div id="eight">
-                    <label>8.<small id="item8">{{data.post8}}</b></label>
+                    <label>8.<big id="item8">{{data.post8}}</b></label>
                 </div>
                 <p><button ng-click="edit8()" id="edit"></button> <a href="{{ url_for('delete8') }}"><button id="delete"></button></a></p>
                 <div id="nine">
-                    <label>9.<small id="item9">{{data.post9}}</small></label>
+                    <label>9.<big id="item9">{{data.post9}}</big></label>
                 </div>
                 <p><button ng-click="edit9()" id="edit"></button> <a ng-click="delete()" href="{{ url_for('delete9') }}"><button id="delete"></button></a></p>
                 <div id="ten">
-                    <label>10.<small id="item10">{{data.post10}}</small></label>
+                    <label>10.<big id="item10">{{data.post10}}</big></label>
                 </div>
                 <p><button ng-click="edit10()" id="edit"></button> <a ng-click="delete()" href="{{ url_for('delete10') }}"><button id="delete"></button></a></p>
             </div>

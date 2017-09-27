@@ -100,9 +100,13 @@ def home():
                     posts['post10'] = user['items'][9]
             except Exception:
                 pass
+            if 'images' in user:
+                image_profile = {}
+                image_profile['pic1'] = user['images']
                 
-            return render_template('home.html', data=posts)
-        return render_template('home.html', data=None)
+            return render_template('home.html', data=posts, image_profile = image_profile)
+        
+        return render_template('home.html', data=None, image_profile = image_profile)
 
     return redirect(url_for('login'))
 
@@ -353,11 +357,10 @@ def profile1():
     if request.method == 'POST':
         users = mongo.db.users
         user = users.find_one({'name': session['username']})
-        """add an image to mongo's gridfs"""
-        grid_fs = gridfs.GridFS(mongo.db)   
-        # gridfs filename
         file_name = secure_filename(request.files['display'].filename)
         image_path = os.path.abspath(file_name)
+        image_profile = {}
+        image_profile['pic1'] = image_path
         ALLOWED_EXTENSIONS = set(['pdf', 'png', 'jpg', 'jpeg', 'ico', 'gif'])
         if(image_path.rsplit('.',1)[1].lower()) not in ALLOWED_EXTENSIONS:
             flash('The file extension is not allowed')
@@ -365,11 +368,11 @@ def profile1():
         if file_name != '':
             users.update({"name": session['username']}, {"$set": {"images": image_path}})
             flash('Image has been saved successfully')
-            return redirect(url_for('home'))
+            return redirect(url_for('home')) 
         else:
             flash("No image has been selected")
             return redirect(url_for('home')) 
-    return redirect(url_for('home'))
+    return redirect(url_for('home')) 
 
 @app.route('/image', methods=['POST', 'GET'])
 def get_image():

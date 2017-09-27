@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Ubuntu:400,500);
+@import url(https://fonts.googleapis.com/css?family=Sofia);
 body #ent{
     position: relative;
     margin: 0 auto;
@@ -248,6 +248,7 @@ a {
     text-decoration: underline;
     font-family: script Mt;
     font-size: 25px;
+    color: black
 }
 
 #scroll div {
@@ -317,6 +318,10 @@ a {
     margin-top: 1px;
     margin-bottom: 1px;
     cursor: pointer;
+}
+#scroll big{
+    font-size: 15px;
+    font-weight: normal;
 }
 
 .bucket #scroll {
@@ -409,7 +414,8 @@ a {
 #imageSubmit{
     position: relative;
     width: 150px;
-    height: 40px;    
+    height: 40px;
+    margin-bottom: 4px;    
 }
 #imageSubmit1{
     position: relative;
@@ -519,8 +525,11 @@ a {
     background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
   }
 
-  #imageUpload #flasher {
-    position: relative;
-    width: 150px;
+  #flasher {
+    position: fixed;
+    width: 280px;
+    color: red;
+    margin-left: -6%;
+    margin-top: 2px;
   }
   
