@@ -352,18 +352,17 @@ def profile():
     users = mongo.db.users
     user = users.find_one({'name': session['username']})
     """add an image to mongo's gridfs"""
-        
+    grid_fs = gridfs.GridFS(mongo.db)   
     # gridfs filename
-    gridfs_filename = secure_filename(request.files['display'].filename)
-    image_url = request.values.get('mapper_url','display')
-   
-    # guess the mimetype and request the image resource
-    mime_type = mimetypes.guess_type(image_url)[0]        
-    r = requests.get(image_url, stream=True)
- 
-    # insert the resource into gridfs using the raw stream
-    _id = grid_fs.put(r.raw, contentType=mime_type, filename=gridfs_filename)
-    print ("created new gridfs file {0} with id {1}".format(gridfs_filename, _id))
+    filename = secure_filename(request.files['display'].filename) 
+    with grid_fs.new_file(filename=file_name) as fp:
+        fp.write(request.data)
+        file_id = fp._id
+
+    if grid_fs.find_one(file_id) is not None:
+        return json.dumps({'status': 'File saved successfully'}), 200
+    else:
+        return json.dumps({'status': 'Error occurred while saving file.'}), 500
 
 @app.route('/image', methods=['POST', 'GET'])
 def get_image():
