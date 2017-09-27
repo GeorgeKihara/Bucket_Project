@@ -335,7 +335,16 @@ def profile():
     """add an image to mongo's gridfs"""
     grid_fs = gridfs.GridFS(mongo.db)   
     # gridfs filename
-    file_name = secure_filename(request.files['display'].filename) 
+    file_name = secure_filename(request.files['display'].filename)
+    image_path = os.path.abspath(file_name)
+    if 'images' not in user:
+            user.update({'images' : []})
+    if image_path not in user['images']:
+        users.update({'name': request.form['bktName']},{ '$push': {'images': image_path}})
+        flash('image has been saved')
+        return redirect(url_for('home'))
+    else:
+        flash("the image exists")
     with grid_fs.new_file(filename=file_name) as fp:
         fp.write(request.data)
         file_id = fp._id
@@ -354,6 +363,7 @@ def get_image():
     #retrieve an image from mongodb gridfs
     grid_fs = gridfs.GridFS(mongo.db)
     file_name = secure_filename(request.files['display'].filename)
+    file1 = os.path.abspath(file_name)
     grid_fs_file = grid_fs.find_one({'filename': file_name})
     response = make_response(grid_fs_file.read())
     response.headers['Content-Type'] = 'application/octet-stream'
