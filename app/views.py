@@ -352,10 +352,9 @@ def get_image():
     user = users.find_one({'name': session['username']})        
     """retrieve an image from mongodb gridfs"""
     grid_fs = gridfs.GridFS(mongo.db)
-    file_name = secure_filename(request.files['display'].filename)
+    file_name = 'https://stackoverflow.com/questions/42879727/attributeerror-str-object-has-no-attribute-read-python'
     grid_fs_file = grid_fs.find_one({'filename': file_name})
-    with open(grid_fs_file, 'r') as file_to_read:
-        response = make_response(grid_fs_file.read(), "rb")
+    response = make_response(file_name.read())
     response.headers['Content-Type'] = 'application/octet-stream'
     response.headers["Content-Disposition"] = "attachment; filename={}".format(file_name)
     return response
