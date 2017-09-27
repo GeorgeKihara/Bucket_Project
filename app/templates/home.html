@@ -10,8 +10,11 @@
     <script src="/static/js/angular.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js" type="text/javascript"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js" type="text/javascript"></script>
-    <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="Stylesheet" type="text/css"
-    />
+    <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="Stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='/path/to/bootstrap.min.css') }}">
+    <script src="{{ url_for('static', filename='/path/to/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='/path/to/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='bootstrap-flash-alert.js') }}"></script>    
 </head>
 
 <body ng-app="homeApp" ng-controller="goalCtrl">
