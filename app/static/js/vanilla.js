@@ -36,7 +36,7 @@ function readURL(input) {
         var reader = new FileReader();
 
         reader.onload = function (e) {            
-                $('#image1').attr('src', e.target.result);                
+                $('#image1').attr('src', e.target.result);
         }
         var fileExtension = ['jpeg', 'jpg', 'png', 'ico'];
         if ($.inArray($(imageSubmit).val().split('.').pop().toLowerCase(), fileExtension) == -1) {

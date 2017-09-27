@@ -360,15 +360,20 @@ def profile1():
         file_name = secure_filename(request.files['display'].filename)
         image_path = os.path.abspath(file_name)
         image_profile = {}
-        image_profile['pic1'] = image_path
         ALLOWED_EXTENSIONS = set(['pdf', 'png', 'jpg', 'jpeg', 'ico', 'gif'])
         if(image_path.rsplit('.',1)[1].lower()) not in ALLOWED_EXTENSIONS:
             flash('The file extension is not allowed')
-            return redirect(url_for('home'))        
-        if file_name != '':
+            return redirect(url_for('home'))
+        if 'images' not in user:
             users.update({"name": session['username']}, {"$set": {"images": image_path}})
+            image_profile['pic1'] = image_path
             flash('Image has been saved successfully')
-            return redirect(url_for('home')) 
+            return redirect(url_for('home',image_profile = image_profile))  
+        if file_name != '':
+            users.insert({"name": session['username']},{"images": image_path})
+            image_profile['pic1'] = user['images']
+            flash('Image updated successfully')
+            return redirect(url_for('home',image_profile = image_profile)) 
         else:
             flash("No image has been selected")
             return redirect(url_for('home')) 
