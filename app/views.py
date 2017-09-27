@@ -3,7 +3,7 @@ from flask.ext.pymongo import PyMongo
 from flask_wtf import Form
 from flask_wtf.file import FileField
 from werkzeug import secure_filename
-import bcrypt, json, requests, bson.binary, logging, time, threading, gridfs,argparse,mimetypes
+import bcrypt, json, requests, bson.binary, logging, time, threading, gridfs,argparse,mimetypes, os, os.path
 from flask import Markup
 from app import app
 from io import StringIO
@@ -340,9 +340,11 @@ def profile():
         file_id = fp._id
 
     if grid_fs.find_one(file_id) is not None:
-        return json.dumps({'status': 'File saved successfully'}), 200
+        flash('File saved successfully')
+        return redirect(url_for('home'))
     else:
-        return json.dumps({'status': 'Error occurred while saving file.'}), 500
+        flash('Error occurred while saving file.')
+        return redirect(url_for('home'))
 
 @app.route('/image', methods=['POST', 'GET'])
 def get_image():
@@ -352,7 +354,8 @@ def get_image():
     grid_fs = gridfs.GridFS(mongo.db)
     file_name = secure_filename(request.files['display'].filename)
     grid_fs_file = grid_fs.find_one({'filename': file_name})
-    response = make_response(grid_fs_file.read())
+    with open(grid_fs_file, 'r') as file_to_read:
+        response = make_response(grid_fs_file.read(), "rb")
     response.headers['Content-Type'] = 'application/octet-stream'
     response.headers["Content-Disposition"] = "attachment; filename={}".format(file_name)
     return response
