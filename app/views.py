@@ -350,23 +350,22 @@ def profile():
 
 @app.route('/profile1', methods=['POST', 'GET'])
 def profile1():
-    users = mongo.db.users
-    user = users.find_one({'name': session['username']})
     """add an image to mongo's gridfs"""
     grid_fs = gridfs.GridFS(mongo.db)   
     # gridfs filename
     file_name = secure_filename(request.files['display'].filename)
     image_path = os.path.abspath(file_name)
-    if 'images' not in user:
-            user.update({'images' : []})
-    if image_path not in user['images']:
-        users.update({'name': request.form['bktName']},{ '$push': {'images': image_path}})
-        flash('image has been saved')
-        return redirect(url_for('home'))
-    else:
-        flash("the image exists")
-        return redirect(url_for('home'))
-
+    if request.method == 'POST':
+        users = mongo.db.users
+        user = users.find_one({'name': session['username']})
+        if file_name != '':
+            users.update({"name": session['username']}, {"$set": {"images": image_path}})
+            flash('image has been saved')
+            return redirect(url_for('home'))
+        else:
+            flash("No image has been selected")
+            return redirect(url_for('home')) 
+    return redirect(url_for('home'))
 
 @app.route('/image', methods=['POST', 'GET'])
 def get_image():

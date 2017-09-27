@@ -53,7 +53,7 @@
         </div>
         <div class="imageUpload">
             <p>Profile</p>
-            <form action="/profile" method='post' enctype='multipart/form-data'>
+            <form action="/profile1" method='post' enctype='multipart/form-data'>
                 <img class="user one" id="image1" src="{{ url_for('static', filename='images/profileboy.jpeg')}}" alt="your image" />
                 <p></p>
                 <input name="display" onclick="{{ url_for('profile') }};" class="custom1" id="imageSubmit" type='file' accept="image/" />
