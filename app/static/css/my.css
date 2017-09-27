@@ -419,17 +419,19 @@ a {
 
 .user {
   position: relative;
-  display: inline-block;
+  overflow: hidden;
   width: 150px;
   height: 150px;
   border-radius: 50%;
   background-repeat: no-repeat;
   background-position: center center;
-  background-size: cover;
+  background-size: auto;
+  border: 4px solid bisque;
 }
 
 .one {
   position: relative;
+  margin: 1 auto;
   background-image: url('../images/profileboy.jpeg');
 }
 
