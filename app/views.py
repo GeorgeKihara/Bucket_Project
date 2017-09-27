@@ -354,7 +354,7 @@ def profile():
     """add an image to mongo's gridfs"""
     grid_fs = gridfs.GridFS(mongo.db)   
     # gridfs filename
-    filename = secure_filename(request.files['display'].filename) 
+    file_name = secure_filename(request.files['display'].filename) 
     with grid_fs.new_file(filename=file_name) as fp:
         fp.write(request.data)
         file_id = fp._id
