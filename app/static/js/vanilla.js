@@ -56,3 +56,10 @@ $("#imageSubmit").change(function(){
     readURL(this);
 });
 
+$("#imageSubmit1").click(function(){
+    if ($("#imageSubmit").val() == ""){
+        alert("please select an image");
+        event.preventdefault();
+    }
+});
+
