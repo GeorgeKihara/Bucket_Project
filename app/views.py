@@ -10,6 +10,7 @@ from io import StringIO
 from time import sleep
 from PIL import Image
 from flask.ext.uploads import UploadSet, IMAGES
+import urllib
 
 
 #connections to the mongo database
@@ -354,7 +355,9 @@ def get_image():
     grid_fs = gridfs.GridFS(mongo.db)
     file_name = 'https://stackoverflow.com/questions/42879727/attributeerror-str-object-has-no-attribute-read-python'
     grid_fs_file = grid_fs.find_one({'filename': file_name})
-    response = make_response(file_name.read())
+    data = requests.get(file_name)
+    response = json.loads(data.read())
+    #response = make_response(file_name.read())
     response.headers['Content-Type'] = 'application/octet-stream'
     response.headers["Content-Disposition"] = "attachment; filename={}".format(file_name)
     return response
