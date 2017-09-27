@@ -336,6 +336,26 @@ def profile():
     grid_fs = gridfs.GridFS(mongo.db)   
     # gridfs filename
     file_name = secure_filename(request.files['display'].filename)
+    image_path = os.path.abspath(file_name) 
+    with grid_fs.new_file(path=image_path, filename = file_name) as fp:
+        fp.write(request.data)
+        file_id = fp._id
+
+    if grid_fs.find_one(file_id) is not None:
+        flash('Image saved successfully')
+        return redirect(url_for('home'))
+    else:
+        flash('Error occurred while saving file.')
+        return redirect(url_for('home'))
+
+@app.route('/profile1', methods=['POST', 'GET'])
+def profile1():
+    users = mongo.db.users
+    user = users.find_one({'name': session['username']})
+    """add an image to mongo's gridfs"""
+    grid_fs = gridfs.GridFS(mongo.db)   
+    # gridfs filename
+    file_name = secure_filename(request.files['display'].filename)
     image_path = os.path.abspath(file_name)
     if 'images' not in user:
             user.update({'images' : []})
@@ -345,16 +365,8 @@ def profile():
         return redirect(url_for('home'))
     else:
         flash("the image exists")
-    with grid_fs.new_file(filename=file_name) as fp:
-        fp.write(request.data)
-        file_id = fp._id
+        return redirect(url_for('home'))
 
-    if grid_fs.find_one(file_id) is not None:
-        flash('File saved successfully')
-        return redirect(url_for('home'))
-    else:
-        flash('Error occurred while saving file.')
-        return redirect(url_for('home'))
 
 @app.route('/image', methods=['POST', 'GET'])
 def get_image():
