@@ -442,8 +442,8 @@ a {
 
 .one {
   position: relative;
-  margin: 1 auto;
   background-image: url('../images/profileboy.jpeg');
+  background-size: 150px;
 }
 
 #scroll #one,#scroll #two,#scroll #three,
