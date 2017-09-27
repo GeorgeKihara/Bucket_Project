@@ -350,17 +350,21 @@ def profile():
 
 @app.route('/profile1', methods=['POST', 'GET'])
 def profile1():
-    """add an image to mongo's gridfs"""
-    grid_fs = gridfs.GridFS(mongo.db)   
-    # gridfs filename
-    file_name = secure_filename(request.files['display'].filename)
-    image_path = os.path.abspath(file_name)
     if request.method == 'POST':
         users = mongo.db.users
         user = users.find_one({'name': session['username']})
+        """add an image to mongo's gridfs"""
+        grid_fs = gridfs.GridFS(mongo.db)   
+        # gridfs filename
+        file_name = secure_filename(request.files['display'].filename)
+        image_path = os.path.abspath(file_name)
+        ALLOWED_EXTENSIONS = set(['pdf', 'png', 'jpg', 'jpeg', 'ico', 'gif'])
+        if(image_path.rsplit('.',1)[1].lower()) not in ALLOWED_EXTENSIONS:
+            flash('The file extension is not allowed')
+            return redirect(url_for('home'))        
         if file_name != '':
             users.update({"name": session['username']}, {"$set": {"images": image_path}})
-            flash('image has been saved')
+            flash('Image has been saved successfully')
             return redirect(url_for('home'))
         else:
             flash("No image has been selected")
