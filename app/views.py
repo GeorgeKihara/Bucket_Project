@@ -351,13 +351,11 @@ def profile():
 def get_image():
     users = mongo.db.users
     user = users.find_one({'name': session['username']})        
-    """retrieve an image from mongodb gridfs"""
+    #retrieve an image from mongodb gridfs
     grid_fs = gridfs.GridFS(mongo.db)
-    file_name = 'https://stackoverflow.com/questions/42879727/attributeerror-str-object-has-no-attribute-read-python'
+    file_name = secure_filename(request.files['display'].filename)
     grid_fs_file = grid_fs.find_one({'filename': file_name})
-    data = requests.get(file_name)
-    response = json.loads(data.read())
-    #response = make_response(file_name.read())
+    response = make_response(grid_fs_file.read())
     response.headers['Content-Type'] = 'application/octet-stream'
     response.headers["Content-Disposition"] = "attachment; filename={}".format(file_name)
     return response
