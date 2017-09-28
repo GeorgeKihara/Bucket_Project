@@ -29,7 +29,7 @@ body #indexDiv{
 }
 
 #book {
-    
+    background: url(../images/book.jpeg);
     -webkit-transform: rotate(-30deg);
     -moz-transform: rotate(-30deg);
     -ms-transform: rotate(-30deg);
@@ -41,6 +41,7 @@ body #indexDiv{
     width: 100px;
     height: 100px;
     overflow: hidden;
+    background-size: 100px;
 }
 
 #book1 {

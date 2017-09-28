@@ -105,9 +105,9 @@ def home():
                 image_profile['pic1'] = user['images']
                 return render_template('home.html', data=posts, image_profile = image_profile)
                 
-            return render_template('home.html', data=posts, image_profile = image_profile)
+            return render_template('home.html', data=posts, image_profile = None)
         
-        return render_template('home.html', data=None, image_profile = image_profile)
+        return render_template('home.html', data=None, image_profile = None)
 
     return redirect(url_for('login'))
 
