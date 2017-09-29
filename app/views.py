@@ -8,7 +8,6 @@ from flask import Markup
 from app import app
 from io import StringIO
 from time import sleep
-from PIL import Image
 from flask.ext.uploads import UploadSet, IMAGES
 import urllib
 
