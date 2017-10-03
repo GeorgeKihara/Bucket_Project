@@ -1,8 +1,5 @@
-from flask import Flask
+from flask import Flask,  render_template, url_for, request, session, redirect, flash, make_response
 from datetime import datetime
-app = Flask(__name__)
-
-from flask import Flask, render_template, url_for, request, session, redirect, flash, make_response
 from flask.ext.pymongo import PyMongo
 from flask_wtf import Form
 from flask_wtf.file import FileField
@@ -11,9 +8,9 @@ import bcrypt, json, requests, bson.binary, logging, time, threading, gridfs,arg
 from flask import Markup
 from io import StringIO
 from time import sleep
-from flask.ext.uploads import UploadSet, IMAGES
 import urllib
 
+app = Flask(__name__)
 
 #connections to the mongo database
 app.config['MONGO_DBNAME'] = 'bktlist'
