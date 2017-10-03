@@ -1,13 +1,10 @@
 from flask import Flask,  render_template, url_for, request, session, redirect, flash, make_response
 from datetime import datetime
 from flask_pymongo import PyMongo
-from flask_wtf import Form
-from flask_wtf.file import FileField
 from werkzeug import secure_filename
 import bcrypt, json, requests, bson.binary, logging, time, threading, gridfs,argparse,mimetypes, os, os.path
 from flask import Markup
 from io import StringIO
-from time import sleep
 import urllib
 
 app = Flask(__name__)
