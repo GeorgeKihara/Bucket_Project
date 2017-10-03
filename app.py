@@ -416,7 +416,6 @@ def sendPassword():
         return redirect(url_for('forgot'))
     return 'something wrong'
 
-if  __name__ == '__main__':
-    app.secret_key='mysecret'
+if __name__ == '__main__':
     app.run(debug=True, use_reloader=True, port=8000)
 	
