@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>MyBucket</title>
+    <link rel="shortcut icon" href="{{url_for('static', filename='images/lava.jpg')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/my.css') }}" type="text/css">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="angular.min.js"></script>
+    <!-- shim is needed to support non-HTML5 FormData browsers (IE8-9)-->
+    <script src="ng-file-upload-shim.min.js"></script>
+    <script src="ng-file-upload.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
+</head>
+
+<body ng-app="valApp" ng-controller="form1Ctrl" w3-test-directive>
+
+    <div style="background:floralwhite;" id="header">
+        <div class="area">
+            <div id="headerImage">
+                <a href="{{ url_for('index')}}" target>
+                    <img id="book" src="{{ url_for('static',filename='images/book.jpeg')}}">
+                </a>
+                <a href="{{ url_for('index')}}" target>
+                    <img id="book1" src="{{ url_for('static', filename='images/book.jpeg')}}">
+                </a>
+            </div>
+            <div id="title">
+                <u>MyBucket List</u>
+            </div>
+
+            <ul id="navigation">
+                <li>
+                    <a href="{{ url_for('about')}}">About</a>
+                </li>
+                <li class="selected">
+                    <a id="lSignIn" href="{{ url_for('login')}}">Sign in</a>
+                </li>
+                <li>
+                    <a id="lSignUp" href="{{ url_for('register')}}">Sign up</a>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+
+    <div id="contents">
+        <!-- the Sign in and register forms -->
+        <div id="signIn" class="form">
+            <img src="{{ url_for('static', filename='images/smiling.png') }}" />
+            <form ng-app="fileUpload" ng-controller="MyCtrl" name="form">
+                Single Image with validations
+                <div class="button" ngf-select ng-model="file" name="file" ngf-pattern="'image/*'" ngf-accept="'image/*'" ngf-max-size="20MB"
+                    ngf-min-height="100" ngf-resize="{width: 100, height: 100}">Select</div>
+                Multiple files
+                <div class="button" ngf-select ng-model="files" ngf-multiple="true">Select</div>
+                Drop files:
+                <div ngf-drop ng-model="files" class="drop-box">Drop</div>
+                <button type="submit" ng-click="submit()">submit</button>
+                Upload right away after file selection:
+                <div class="button" ngf-select="upload($file)">Upload on file select</div>
+                <div class="button" ngf-select="uploadFiles($files)" multiple="multiple">Upload on file select</div>
+                Drop File:
+                <div ngf-drop="uploadFiles($files)" class="drop-box" ngf-drag-over-class="'dragover'" ngf-multiple="true" ngf-pattern="'image/*,application/pdf'">Drop Images or PDFs files here</div>
+                <div ngf-no-file-drop>File Drag/Drop is not supported for this browser</div>
+
+                Image thumbnail: <img ngf-thumbnail="file || '/thumb.jpg'"> Audio preview:
+                <audio controls ngf-src="file"></audio>
+                Video preview:
+                <video controls ngf-src="file"></video>
+            </form>
+
+
+        </div>
+
+    </div>
+
+    <div style="background:wheat;" id="footer">
+        <span class="divider"></span>
+        <div class="area">
+            <div id="connect">
+                <a href="gegohcomp@gmail.com" target="_blank" class="googleplus"></a>
+                <a href="" target="_blank" class="mail"></a>
+                <a href="www.facebook.com/georgiegegoh" target="_blank" class="facebook"></a>
+                <a href="www.twitter.com/georgiegegoh" target="_blank" class="twitter"></a>
+            </div>
+            <p id="copyright">
+                © 2017 MyBucket List. All Rights Reserved.
+                <br> Proudly powered by <a href="http://tuklab.tk" target="_blank">TUKLAB.</a>
+            </p>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/vanilla.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/angular.js') }}"></script>
+</body>
+
+</html>
