@@ -4,7 +4,6 @@ from flask_pymongo import PyMongo
 from werkzeug import secure_filename
 import bcrypt, json, requests, bson.binary, logging, time, threading, gridfs,argparse,mimetypes, os, os.path
 from flask import Markup
-from io import StringIO
 import urllib
 
 app = Flask(__name__)
