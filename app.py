@@ -1,6 +1,6 @@
 from flask import Flask,  render_template, url_for, request, session, redirect, flash, make_response
 from datetime import datetime
-from flask.ext.pymongo import PyMongo
+from flask_pymongo import PyMongo
 from flask_wtf import Form
 from flask_wtf.file import FileField
 from werkzeug import secure_filename
