@@ -21,9 +21,6 @@ app.config['MONGO_URI'] = 'mongodb://kihara:kihara@ds151752.mlab.com:51752/bktli
 
 mongo = PyMongo(app)
 
-class UploadForm(Form):
-    file = FileField()
-
 #index page
 @app.route('/')
 def index():
@@ -418,12 +415,6 @@ def sendPassword():
         flash(message)
         return redirect(url_for('forgot'))
     return 'something wrong'
-
-
-
-if  __name__ == '__main__':
-	app.secret_key='mysecret'
-	app.run(debug=True)
 
 if  __name__ == '__main__':
     app.secret_key='mysecret'
