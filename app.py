@@ -409,5 +409,6 @@ def sendPassword():
     return 'something wrong'
 
 if __name__ == '__main__':
+    app.secret_key = 'secret_key'
     app.run(debug=True, use_reloader=True, port=8000)
 	
