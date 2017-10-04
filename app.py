@@ -1,11 +1,17 @@
 from flask import Flask,  render_template, url_for, request, session, redirect, flash, make_response
 from datetime import datetime
-from flask_pymongo import PyMongo
+from flask.ext.pymongo import PyMongo
 from werkzeug import secure_filename
 import bcrypt, json, requests
 from flask import Markup
 
 app = Flask(__name__)
+
+#connections to the mongo database
+app.config['MONGO_DBNAME'] = 'bktlist'
+app.config['MONGO_URI'] = 'mongodb://kihara:kihara@ds151752.mlab.com:51752/bktlist'
+
+mongo = PyMongo(app)
 
 #index page
 @app.route('/')
