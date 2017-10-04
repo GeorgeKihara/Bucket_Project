@@ -2,7 +2,7 @@ from flask import Flask,  render_template, url_for, request, session, redirect, 
 from datetime import datetime
 from flask_pymongo import PyMongo
 from werkzeug import secure_filename
-import bcrypt, json, requests, bson.binary
+import bcrypt, json, requests
 from flask import Markup
 
 app = Flask(__name__)
