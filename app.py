@@ -2,9 +2,8 @@ from flask import Flask,  render_template, url_for, request, session, redirect, 
 from datetime import datetime
 from flask_pymongo import PyMongo
 from werkzeug import secure_filename
-import bcrypt, json, requests, bson.binary, logging, time, threading, gridfs,argparse,mimetypes, os, os.path
+import bcrypt, json, requests, bson.binary
 from flask import Markup
-import urllib
 
 app = Flask(__name__)
 
