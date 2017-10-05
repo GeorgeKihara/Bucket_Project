@@ -1,17 +1,19 @@
 from flask import Flask,  render_template, url_for, request, session, redirect, flash, make_response
 from datetime import datetime
-from flask.ext.pymongo import PyMongo
+from flask_pymongo import PyMongo
 from werkzeug import secure_filename
-import bcrypt, json, requests
+import bcrypt, json, requests, os
 from flask import Markup
+
+MONGO_URL = os.environ.get('MONGO_URL')
+if not MONGO_URL:
+    MONGO_URL = "mongodb://kihara:kihara@ds151752.mlab.com:51752/bktlist";
 
 app = Flask(__name__)
 
-#connections to the mongo database
-app.config['MONGO_DBNAME'] = 'bktlist'
-app.config['MONGO_URI'] = 'mongodb://kihara:kihara@ds151752.mlab.com:51752/bktlist'
-
+app.config['MONGO_URI'] = MONGO_URL
 mongo = PyMongo(app)
+
 
 #index page
 @app.route('/')
