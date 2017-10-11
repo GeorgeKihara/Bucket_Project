@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>MyBucket</title>
+    <link rel="shortcut icon" href="{{url_for('static', filename='images/lava.jpg')}}" >
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/my.css') }}" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+</head>
+
+<body ng-app="register" ng-controller="registerCtrl">
+
+    <div style="background:floralwhite;" id="header">
+        <div class="area">
+            <div id="headerImage">
+                <a href="{{ url_for('index')}}" target>
+                    <img id="book" src="{{ url_for('static',filename='images/book.jpeg')}}">
+                </a>
+                <a href="{{ url_for('index')}}" target>
+                    <img id="book1" src="{{ url_for('static', filename='images/book.jpeg')}}">
+                </a>
+            </div>
+            <div id="title">
+                <u>MyBucket List</u>
+            </div>
+
+            <ul id="navigation">
+                <li>
+                    <a href="{{ url_for('about')}}">About</a>
+                </li>
+                <li >
+                    <a id="lSignIn" href="{{ url_for('login')}}">Sign in</a>
+                </li>
+                <li class="selected">
+                    <a id="lSignUp" href="{{ url_for('register')}}">Sign up</a>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+
+    <div id="contents">
+        <!-- register form -->
+        <div id="signUp" class="form1">
+            <img src="{{ url_for('static', filename='images/phone.jpeg') }}" />
+            <form method="POST" action="{{ url_for('register')}}" name="bucketUp" ng-submit="regUsr()">
+                <div class="form-input">
+                    <b>Username: </b><input ng-maxlength="10" ng-minlength="5" ng-model="regUser"  type="text" name="username" placeholder="e.g. georgie" required/>
+                </div>
+                    <span ng-show="bucketUp.username.$error.text">Username too short</span>
+                <div class="form-input">
+                    <b >Email: </b><input id="email" ng-model="regEmail" type="email" name="email" placeholder="e.g. georgie@gmail.com" required/>
+                </div>
+                    <span style="color:red;" ng-show="bucketUp.email.$error.email">Not a valid e-mail address</span>
+                <div class="form-input">
+                    <b>Password: </b><input type="password" ng-model="regPass" name="password" placeholder="*******" required/>
+                </div>
+                <div class="form-input">
+                    <big>Confirm password: </big><input ng-model="regConfirm" type="password" name="confirm" placeholder="*******" required/>
+                </div>
+                <div id="flashes" ng-show="!timer()" ng-model="flashes" class="flashes">
+                    {% for message in get_flashed_messages()%} {{ message }} {% endfor %}
+                </div>
+                <br>
+                <input type="submit"   name="submit" value="SIGN UP" class="btn-sign"/>
+                <br>
+                <a href="{{ url_for('login')}}"><u>Already have an account?</u></a>
+            </form>
+        </div>
+
+    </div>
+
+    <div style="background:wheat;" id="footer">
+        <span class="divider"></span>
+        <div class="area">
+            <div id="connect">
+                <a href="gegohcomp@gmail.com" target="_blank" class="googleplus"></a>
+                <a href="" target="_blank" class="mail"></a>
+                <a href="www.facebook.com/georgiegegoh" target="_blank" class="facebook"></a>
+                <a href="www.twitter.com/georgiegegoh" target="_blank" class="twitter"></a>
+            </div>
+            <p id="copyright">
+                © 2017 MyBucket List. All Rights Reserved.
+                <br> Proudly powered by <a href="http://tuklab.tk" target="_blank">TUKLAB.</a>
+            </p>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/vanilla.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/angular.js') }}"></script>
+</body>
+
+</html>
