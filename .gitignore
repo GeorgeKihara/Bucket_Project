@@ -82,7 +82,7 @@ celerybeat-schedule
 .env
 
 # virtualenv
-venv/
+bktEnv/
 ENV/
 
 # apps folder
