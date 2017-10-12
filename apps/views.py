@@ -31,6 +31,47 @@ def index():
 def login():        
     return render_template('login.html')
 
+#login process
+@app.route('/login1', methods=['GET', 'POST'])
+def login1():
+    users = mongo.db.users
+    login_user = users.find_one({'name': request.form['username']})
+    
+    if login_user:
+        if bcrypt.hashpw(request.form['pass'].encode('utf-8'), login_user['password']) == login_user['password']:
+            session['username'] = request.form['username']
+            return redirect(url_for('home'))
+        flash(request.form['username'] + ", thats not your password!")
+        return redirect(url_for('login'))
+    message = Markup("Sorry, the username does not exist")
+    flash(message)
+    return redirect(url_for('login'))
+
+#register process
+@app.route('/register', methods=['POST', 'GET'])
+def register():
+    error = None
+    if request.method == 'POST':
+        users = mongo.db.users
+        existing_user = users.find_one({'name' : request.form['username']})
+        form = request.form['confirm']
+
+        if request.form['username'] != "":
+            if form != request.form['password']:
+                message = Markup('Passwords have to match!')
+                flash(message)
+                return redirect(url_for('register'))
+            elif existing_user is None:
+                hashpass = bcrypt.hashpw(request.form['password'].encode('utf-8'), bcrypt.gensalt())
+                users.insert({'name':request.form['username'], 'email':request.form['email'], 'password': hashpass})
+                session['username'] =  request.form['username']
+                return redirect(url_for('login'))
+
+            error = 'That username already exists!'
+            return render_template('register.html', error=error)
+
+    return render_template("register.html", error = error)
+
 #the bucket list home page
 @app.route('/home')
 def home():
@@ -110,46 +151,7 @@ def home():
 
     return redirect(url_for('login'))
 
-#login process
-@app.route('/login1', methods=['GET', 'POST'])
-def login1():
-    users = mongo.db.users
-    login_user = users.find_one({'name': request.form['username']})
-    
-    if login_user:
-        if bcrypt.hashpw(request.form['pass'].encode('utf-8'), login_user['password']) == login_user['password']:
-            session['username'] = request.form['username']
-            return redirect(url_for('home'))
-        flash(request.form['username'] + ", thats not your password!")
-        return redirect(url_for('login'))
-    message = Markup("Sorry, the username does not exist")
-    flash(message)
-    return redirect(url_for('login'))
 
-#register process
-@app.route('/register', methods=['POST', 'GET'])
-def register():
-    error = None
-    if request.method == 'POST':
-        users = mongo.db.users
-        existing_user = users.find_one({'name' : request.form['username']})
-        form = request.form['confirm']
-
-        if request.form['username'] != "":
-            if form != request.form['password']:
-                message = Markup('Passwords have to match!')
-                flash(message)
-                return redirect(url_for('register'))
-            elif existing_user is None:
-                hashpass = bcrypt.hashpw(request.form['password'].encode('utf-8'), bcrypt.gensalt())
-                users.insert({'name':request.form['username'], 'email':request.form['email'], 'password': hashpass})
-                session['username'] =  request.form['username']
-                return redirect(url_for('login'))
-
-            error = 'That username already exists!'
-            return render_template('register.html', error=error)
-
-    return render_template("register.html", error = error)
 
 #details about MyBucketList
 @app.route('/about')
