@@ -1,0 +1,539 @@
+@import url(https://fonts.googleapis.com/css?family=Sofia);
+body #ent{
+    position: relative;
+    margin: 0 auto;
+    font-size: 20px;
+    color: black;
+    left: 40%; 
+    top: 30%;
+}
+#content #welcome{
+    position: relative;
+    color: limegreen;
+    font-family: cambria;
+    font-size: 20px;
+    top: -2%;
+    left: 1%;
+    
+}
+#welcome #welcome1{
+    position: relative;
+    color: wheat;
+    font-family: castellar;
+    font-size: 25px;
+}
+body #indexDiv{
+    position: relative;
+    left: 30%;
+    top:20%;
+}
+
+#book {
+    background: url(../images/book.jpeg);
+    -webkit-transform: rotate(-30deg);
+    -moz-transform: rotate(-30deg);
+    -ms-transform: rotate(-30deg);
+    -o-transform: rotate(-30deg);
+    transform: rotate(-30deg);
+    position: absolute;
+    left: -18%;
+    margin-top: 2%;
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    background-size: 100px;
+}
+
+#book1 {
+    background: url(../images/book.jpeg);
+    background-size: 100px;
+    -webkit-transform: rotate(30deg);
+    -moz-transform: rotate(30deg);
+    -ms-transform: rotate(30deg);
+    -o-transform: rotate(30deg);
+    transform: rotate(30deg);
+    position: absolute;
+    right: -18%;
+    margin-top: 2%;
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+}
+
+.form {
+    width: 500px;
+    height: 400px;
+    text-align: center;
+    background-color: rgba(52, 73, 94, 0.7);
+    margin-top: 200px;
+    margin: 0 auto;
+    border-radius: 4px;
+}
+
+.form img {
+    width: 120px;
+    height: 120px;
+    margin-top: -40px;
+    margin-bottom: 30px;
+    border-radius: 60px;
+}
+
+input {
+    height: 45px;
+    width: 250px;
+    font-size: 16px;
+    margin-bottom: 20px;
+    background-color: white;
+    padding-left: 30px;
+    border-radius: 4px;
+    border: none;
+}
+
+.form-input::before {
+    position: absolute;
+    font-family: tahoma;
+    font-size: 24px;
+    padding-left: 5px;
+    padding-top: 7px;
+    font-size: 25px;
+    color: black;
+}
+.form-input #email{
+    position: relative;
+    left: 26px;
+}
+
+.form b {
+    color: black;
+    font-size: 25px;
+}
+
+.btn-signIn {
+    padding: 15px 25px;
+    color: #fff;
+    border: none;
+    background-color: goldenrod;
+    color: black;
+    margin-bottom: 20px;
+    cursor: pointer;
+    width: 100px;
+    height: 40px;
+}
+
+a {
+    color: wheat;
+    cursor: pointer;
+}
+
+.form1 {
+    width: 630px;
+    height: 470px;
+    text-align: center;
+    background-color: rgba(52, 73, 94, 0.7);
+    margin-top: 200px;
+    margin: 0 auto;
+    border-radius: 4px;
+}
+
+.form1 img {
+    width: 120px;
+    height: 120px;
+    margin-top: -40px;
+    margin-bottom: 30px;
+    border-radius: 60px;
+}
+
+input {
+    height: 45px;
+    width: 300px;
+    font-size: 16px;
+    margin-bottom: 10px;
+    background-color: white;
+    padding-left: 0px;
+    border-radius: 4px;
+    border: none;
+    display: inline-block;
+    position: relative;
+    right: -10px;
+}
+
+.form1-input::before {
+    position: absolute;
+    font-family: tahoma;
+    font-size: 24px;
+    padding-left: 0px;
+    padding-top: 7px;
+    font-size: 25px;
+    color: black;
+}
+
+.form-input big {
+    position: relative;
+    left: -30px;
+    margin-left: -50px;
+    margin-right: -27px;
+    font-weight: bold;
+}
+
+.form1 b {
+    color: black;
+    font-size: 18px;
+    position: relative;
+    left: -3%;
+}
+.form1 form a {
+    margin-top: -20%;
+}
+
+.btn-sign {
+    padding: 15px 25px;
+    color: #fff;
+    border: none;
+    background-color: goldenrod;
+    color: black;
+    margin-bottom: 20px;
+    cursor: pointer;
+    width: 100px;
+    height: 40px;
+}
+
+a {
+    color: wheat;
+    cursor: pointer;
+}
+
+.bucket {
+    width: 700px;
+    height: 500px;
+    text-align: center;
+    background-color: mediumturquoise;
+    margin-top: -100px;
+    margin: 0 auto;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.bucket input {
+    position: relative;
+    height: 45px;
+    width: 420px;
+    font-size: 16px;
+    margin-bottom: 1px;
+    background-color: white;
+    padding-left: 8px;
+    border-radius: 4px;
+    border: none;
+    margin-left: -10px;
+    margin-top: 5px;
+    left: 5px;
+    border: 2px solid black;
+    border-radius: 4px;
+}
+
+#btn-tick {
+    position: relative;
+    height: 30px;
+    width: 30px;
+    font-size: 16px;
+    margin-bottom: -1.0%;
+    background: url(../images/tick.jpeg);
+    cursor: pointer;
+    background-size: 30px;
+    border-radius: 4px;
+    border: none;
+    left: 2%;
+}
+
+.bucket header {
+    text-align: center;
+    text-decoration: underline;
+    font-family: script Mt;
+    font-size: 25px;
+    color: black
+}
+
+#scroll div {
+    position: relative;
+    height: 50;
+    width: 500px;
+    font-size: 16px;
+    margin-bottom: 2px;
+    background-color: lightgray;
+    padding-left: 3px;
+    border-radius: 4px;
+    border: none;
+    text-align: left;
+    margin-left: 10px;
+    margin-top: 2px;
+    left: 40px;
+    text-decoration: inherit;
+}
+#scroll div label{
+    position: relative;
+    top:50%;
+}
+
+#scroll #edit {
+    color: black;
+    background: url(../images/edit.jpeg);
+    background-size: 100px;
+    width: 100px;
+    height: 40px;
+    border-radius: 5px;
+    overflow: hidden;
+    text-align: center;
+    margin-left: 20px;
+    margin-top: 1px;
+    margin-bottom: 1px;
+    cursor: pointer;
+}
+
+#scroll #add {
+    color: black;
+    background: url(../images/add.jpeg);
+    background-size: 40px;
+    background-position-y: -3px;
+    background-position-x: -3px;
+    width: 40px;
+    height: 40px;
+    border-radius: 40px;
+    overflow: hidden;
+    text-align: center;
+    margin-left: 20px;
+    margin-top: 1px;
+    margin-bottom: 1px;
+    cursor: pointer;
+}
+
+#scroll #delete {
+    color: black;
+    background: url(../images/delete.jpeg) no-repeat;
+    background-size: 100px;
+    width: 100px;
+    height: 40px;
+    background-position-y: -5px;
+    border-radius: 5px;
+    overflow: hidden;
+    text-align: center;
+    margin-left: 20px;
+    margin-top: 1px;
+    margin-bottom: 1px;
+    cursor: pointer;
+}
+#scroll big{
+    font-size: 15px;
+    font-weight: normal;
+}
+
+.bucket #scroll {
+    width: 590px;
+    height: 350px;
+    text-align: center;
+    background-color: maroon;
+    margin-top: 200px;
+    margin: 0 auto;
+    border-radius: 10px;
+    overflow: scroll;
+    overflow-x: hidden;
+    color: black;
+    font-size: 16px;
+    margin-bottom: 30px;
+}
+.area #copyright{
+    position: relative;
+    text-align: center;
+}
+
+/*about page*/
+.about{
+    width: 1000px;
+    height: 440px;
+    border: none;
+    text-align: left;
+    position: relative;
+    left: 15%;
+    background-color: lightslategrey;
+    font-size: 18px;
+    border: #CCC solid #CCC;
+    border-radius: 4px;
+}
+.about b{
+    position: relative;
+    font-size: 18px;
+    margin-bottom: 20px;
+    margin-top: 400px;
+    left: 2%;
+}
+.about p{
+    font-family: Georgia;
+    font-size: 19px;
+    margin-left: 4%;
+    color: black;
+    margin-top: 30px;
+    position: relative;
+    left: 20%;
+}
+.about li{
+    margin-top: 20px;
+    left: 4%;
+    margin-bottom: 20px;
+    font-family: Cambria;
+    font-size: 18px;
+}
+
+#homieInput {
+    visibility: hidden;
+    position: relative;
+    display: none;
+}
+
+#flashes {
+    position: relative;
+    font-size: 13px;
+    color: palevioletred;
+    font-family: Tahoma;
+}
+
+.imageUpload{
+    position: relative;
+    width: 150px;
+    height: 150px;
+    margin-top: -80px;
+    margin-bottom: -100px;
+    right: -84%;
+}
+
+.imageUpload p{
+    color: #E18022;
+    text-align: center;
+    font-size: 35px;
+    text-decoration: underline;
+    font-family: ar darling;
+}
+
+#imageSubmit{
+    position: relative;
+    width: 150px;
+    height: 40px;
+    margin-bottom: 4px;    
+}
+#imageSubmit1{
+    position: relative;
+    width: 150px;
+    height: 40px;
+    background-color: #E4C8AF;
+    font-size: 16px;
+}
+#imagesubmit1:hover{
+    cursor: pointer;
+    background-color: lightblue;
+}
+
+.user {
+  position: relative;
+  overflow: hidden;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: auto;
+  border: 4px solid bisque;
+}
+
+.one {
+  position: relative;
+  background-image: url('../images/profileboy.jpeg');
+  background-size: 150px;
+}
+
+#scroll #one,#scroll #two,#scroll #three,
+#scroll #four,#scroll #five,#scroll #six,#scroll #seven,#scroll #eight,#scroll #nine,#scroll #ten {
+    overflow: scroll;
+    overflow-x: hidden;
+    overflow-wrap: unset;
+    font-size: 14.5px;    
+}
+
+#datepicker{
+    background-image: url('../images/calendar.png');
+    background-size: 28px;
+    background-repeat: no-repeat;
+    position: relative; 
+    left: -6.9%;
+    margin-bottom: -1%;
+    width: 98px;  
+    height: 30px;
+    cursor: pointer;
+    text-indent: 21%;
+    font-size: 13px;
+    border: 0.1px solid #795708;
+    border-radius: 4px;
+
+}
+#choice{
+    position: relative;
+    left: 12.4%;
+    margin-bottom: -1%;
+    width: 40px;  
+    height: 30px;
+    cursor: pointer;
+    border: 0.2px solid #795708;
+    border-radius: 6px;
+}
+
+.wrap{
+	max-width: 600px;
+	margin:50px auto;
+}
+
+.type-wrap{
+    position: relative;
+    max-width: 600px;
+    max-height: 240px;
+    margin-left: 2%;
+    margin-bottom: 2%;
+	background:#f0f0f0;
+	border-radius:5px;
+	border:#CCC 1px solid;
+}
+
+.custom1::-webkit-file-upload-button {
+    visibility: hidden;
+    margin-top: -40px;
+  }
+  .custom1::before {
+    content: 'Change Picture';
+    display: inline-block;
+    width: 150px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    background: -webkit-linear-gradient(top, #f9f9f9, #e3e3e3);
+    border: 1px solid #999;
+    border-radius: 3px;
+    outline: none;
+    white-space: nowrap;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 16px;
+  }
+  .custom1:hover::before {
+    border-color: black;
+  }
+  .custom1:active::before {
+    background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+  }
+
+  #flasher {
+    position: fixed;
+    width: 280px;
+    color: red;
+    margin-left: -6%;
+    margin-top: 2px;
+  }
+
+  #headerImage{
+      position: relative;
+  }
+  
