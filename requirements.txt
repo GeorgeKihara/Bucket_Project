@@ -1,8 +1,2 @@
-Flask
-gunicorn
-pymongo
-Flask-PyMongo
-werkzeug
-bcrypt 
-requests
+
 
