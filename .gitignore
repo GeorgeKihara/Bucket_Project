@@ -86,7 +86,7 @@ bktEnv/
 ENV/
 
 # apps folder
-apps/
+
 
 # Spyder project settings
 .spyderproject
